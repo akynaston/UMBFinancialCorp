@@ -1,0 +1,2281 @@
+<?xml version="1.0" encoding="UTF-8"?><driver-configuration dn="cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" driver-set-dn="cn=IDMDriverSet,ou=Services,o=UMB" name="SecurID Driver">
+	<packages/>
+	<attributes>
+		<configuration-manifest>
+			<manifest>
+				<health-config>
+					<green>
+						<and>
+							<driver-state state="running"/>
+							<in-cache-overflow state="false"/>
+							<sample-history minutes="2" op="not-lt"/>
+						</and>
+					</green>
+					<yellow>
+						<or>
+							<in-cache-overflow state="true"/>
+							<transactions op="gt" value="10"/>
+							<sample-history minutes="2" op="lt"/>
+						</or>
+					</yellow>
+					<red>
+						<actions/>
+					</red>
+				</health-config>
+			</manifest>
+		</configuration-manifest>
+		<driver-filter-xml>
+			<filter>
+				<filter-class class-name="User" publisher="sync" publisher-create-homedir="false" publisher-track-template-member="false" subscriber="sync">
+					<filter-attr attr-name="umbTokenStatus" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="umbTokenUser" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="umbLastModBy" merge-authority="default" publisher="sync" publisher-optimize-modify="false" subscriber="notify"/>
+					<filter-attr attr-name="umbLastModDate" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="notify"/>
+					<filter-attr attr-name="umbTokenLockoutStatus" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="reset"/>
+					<filter-attr attr-name="umbTokenShippingAddress" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="umbIdentityAnswer" merge-authority="default" publisher="ignore" publisher-optimize-modify="true" subscriber="notify"/>
+					<filter-attr attr-name="umbIdentityQuestion" merge-authority="edir" publisher="ignore" publisher-optimize-modify="true" subscriber="notify"/>
+					<filter-attr attr-name="umbStaticPasscodeExpirationDate" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="umbTokenLastAuthentication" merge-authority="default" publisher="notify" publisher-optimize-modify="true" subscriber="ignore"/>
+				</filter-class>
+			</filter>
+		</driver-filter-xml>
+		<driver-image>R0lGODlhZABQAPcAAAAAAA0NDRUVFB0dHSEgHiQkJCgnJS4tKzQzMT09PRUpYx4rbBgqcDUtYjsqYDw5cSBBe0k4Z0NDQ09LQk9PT0ZTWlNTU1paWkpaYU9jZlZjaFZpbVhmaVhscWBcU2ZTe2RjYGlpaWJ0dWVze2Z8fHVwaHNzc39/fyJEhixKgCpOkSxViDZPgzZMlTtOlDVWlDVRmjhVoUVai05VjUFZkkNamU1allBci1NijFZmmF1qlV9tnl9ylk9oo1Rso2RunGt1jWt/gWdxmHh9mGh2o2x5o2t7rm9/tGqBf2uEg22NiHGDg3OGjXSKjHqMi3aFnXyIm3qUkXCArX+LpneDsneIt3yFs3qGunyRub8ODr8TFKkmMaQ0MrwzM4B7cbhRUr1lY8YREcgtNM88Pd4hKNE2N+0BAe0NDfQCAv4AAPoLC/4VFf0fH+EwLfUhIf4oKP4yMv05Oc9GRsBFVddaWt5RVcBpbMtsbN9iYedFSf1KSvxSUuRvauF1eepzdf5lZf10dPh8fISDgo2Mi4aYl4yTlo+VmY+Zm5aAkJSTlJKXmpKYnJiVlJqYl5ubm46AoI6Uoo2Zq5KFsZKUq5Scqp6foJego5Wiq5qhpJuiq5yjsZyosaGfoqSinqSkpKWmqKWprKimpqipp62srKSts6CuuaytsqewsqWzuq+1tqy0uq+4vLKusLKysrK3urW6vri2t7m4t729vbe9wbm9wbzBxMaSktOKit6Kgt2Kk9+SjsWfoc+nqPqMjP6YmP6kpP6urv20tPm5ucXFxczMzM/Q0dHLwNXV1N7b1N3d3f7Ly/bY2P3V1f3e3uPj4+jo5+zs7Pbn5/Xr6/3l5f7u7vLw7vT09Pb+/v329v7+/qusrQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANoALAAAAABkAFAAAAj+ALUJHEiwoMGDCBMqXLjw2bBBICQcKJDAg5dOyKwx3Mixo8eOx7wYAABAgIEECQ4MICnAQ6yPMGPKRFjNy0oDJToNc2YN27NjsgRJIElh2MyjSDceQ1CykbNsUKNKrSYrQclOSbNqFTiMAAAQ0KSKFYutkQAAjraqlYls5KCxcMUSOztqrV2O2YYKEgttWCdBXrwM0llNbKySx+4qTtgIgAVsUh+W8CJokOVBghoNE+vIscbFoAVaIyBgM1Rro0pUbhRqlOtRoRoNigUZKrahdUODFvRV6ijBjUbFGmas+LBhsUY1ihUZAAVsCocJAmFBgvXr2LNr3869e/cJJpH+RTUmuJOsYceQOVvvDNkx5J2ORbUmQQAyhMc8nAUwoD+B/gAGKOCABBZoYIEJmJYNNJZ1EosxyDwDjTUUWgPNM8gYE0ss1kSVCABYGTTKWQc4BU01Faao4ooqosjiizCuGJkgjshijDPQYFMbZNhYU40zGsoH1WEgGBSLAALsFdeSTDbp5JOdDDLKMMhMmM01Y1mYoYLIEJBAQV0CwNyTZJZp5liNLHfMMx0uac1PClqDwAEEYVMCAG81ecwxxBDDp5/EFCNoMYAeI+gwxCCaaKF9/skooIUi+pRUg3gCYY5NYhhnAgZ8po0zAhzwDJPHJBLCIIkwwogjjbDKaqv+rzoSq6uyytpqmrIqgmust6ZpggltQiXlTsHG1aMzcUpgADQDjQKAknF9ciojmHziWiunmNLKtq1oyy224H4r7rinsDJuK64NIiRUnbByY09NWuPMutAgYMAzA3kh5pKflJCII6K0UstxfRZs8KIHH6yowQsnXPAwtRAjVXLvOinvpNkcQwAC+ArkwQDrinVMCIU4woosfiajsjPJsOwyey+vt3LMLbcMc800JwOUVMeM8m5tbjozKlTOUtCxNhYQgLFYiQziyJTFJCMhNFRXXfXU1Vit9dZUW9j1hCdWg+KFztQSrDXDVYnlktdA4wzQvAnCrEAUDDA0XyckAor+LFFPWCGKYp/o9YRZWxi4hRSGLbjgPXVozTXYXAO5hejxHMuaxZL1ZlhQQXOAAKNAR7fdcD1zgiOtDJPMhNik4frrsMcu++yvq/GMi2tniSzQGVOJYu5S+cg50Y4ZQ5AFpI8FzQmVwHKMM9VATvv01MOuxjGrwwvXmyhLhc0xN6JYG5Y9VnN3NtW45czxyYtluieyYK5j9fRPHz/0kcOFjdsRizVvhH5LnJWkAgLHyKIgdTtfVJYXivhN6BrWgN01qEHBYLzhdXFgBlSCEQfY7UEZHbQeK9DzQP296RiKCFk2fMKeZ0ioMGIZBAAI0In1ESSBpTtBKGohtcbBLhv+0mAGM7CkhzSwIRvU+EMvsLGGH2ajGbFTAyZiUQw2uUlexWCEgsokQwFoxiA4VJ4OHfi4CL4uG704IxR7kQ3avSEb0chGE2vXiFYUgyfAC56FkkGMQohiaaQq4AAGQQzR3bB9UnnGEkKBHjZB8IdpdF02ppGGOGRjGReMnQbTkI1gWI8RrCAG9PIoFQi67RiYaUVYSAkVZ5RgJSWKxdwQiMgFeuETJPThGXuxBg1mAw6uC0RUfvFDT24yDWhAZiIYyRPeZelN8xoGIwTBiPOIxRogOIsAQDClaiAkjHj7hAMjZ0ZJplGDmXzdG4JxJdcBo41pcIMzeLELWsjCFif+aAQPrci2bFDoGTqrRXJOUCx9EYACDjqGIQ2CPAVCxXTiPIaVysnJNK4hG8KYnS/gCcc0qOELtHgFLSAmi1MoYko4SpE//+ajrK0He8WQztKy+bRheFMh4EzkLXn4QIqi0XW/kKPrIpmGabTxD780wx1i4QpVQAEIQ8jEK14BC0tgwhNYxSUxaoFVrIbiE1iVBXv2dEcCDmAUHWJIQ+ECDUF8ohZr0pFPfXFGaqRBmFL5AyfbKAdYqGISP7jCEXqgABy0YhaIncVUESuLxDp2FrJwhVhd+IyyRiWbL9lITqNiugbKj6JqUEPtROs6PQBiD7VLwxlu4YpITOEDEXD+wAMe0AAh1GKxj80tLWjhik+04nkXeoYzcodZjqxVjJ5oZBnrN70wyGIVPJhDH+qAhzLkQQwQgARiLbGIQxxiEYsohCHGewhDUMIVsxAnMaTmtpkKILNqreVDT4BLiS6XubPLwiw0QYMt4IIPdMiDH8bwgk3MAhRJSHASRBAEDIxAAxrgQAWcYIpZiMIU6MHRegj4Xo5stnNjlKhc8Ss7NGhBFpRgwBbK0AYyiIELXZABKl5hCSQo4cYbYEIGmjCCDnQAA1GosCk8wYv1ko3D8F3Ih7PRWeVCDk5DnlWtZIVVR3iiEpVwxAlgUYoFuAAFKkDBClwwAxtc4sAiiIL+mknA4CCQoAlB+AAhVDGLUThiFUaWF5I9LN8F6RCuD9xfNGFxrnO5YluDCCkOqnCDIlhBB1LAQg0yMYvbrmIVrniFKjataVKAwhS0OHAl8Ly6DV+2w5rtsyJ3uCbJ9QgaKhNUnxRFKIRBahip268PYBCDHsQgBi14wjBmEerE0oISVDDCESSRC114gRSvwKor1itc9yYZp32Gxi0bWZuWuhBm4A73Sz8RalLs4AUpYEEOpjBsxu4WsaUgQhGK8Ag7gAERqpBFJUaROg1bm88O9XNE+XmlHsXoRcIlxipCfQlIQCIVr3CFKTjBCUdwohKc8AQnYBOKjnf84o5IRCv+jGxqqBR3I8d1H325Xcrx5S9yLvfnlcbmDGJEHL23bYUnHIEqVflcVYlIRCEKEfRUecIUfJOacPeMclX/2b5niouPjiEKVrACrJ1oRMASUQlTmMtcVRdFKPa9cVGIYhTnsa+eT33thCyZgXB9hjOjfpo3JSMWjMCMIE6AVXPJ4u/HGYYsavH3v4/0PCnz2r9THfBV55Lu24PmnmTBLcAHak8605mhNv+8lYnNpUyPb8C1XV+CQz54ZAvUojAvNAlRNrhUo6wLf3es0C8k5VJZ3lsxd/rIQ/NlLgxgilzkIpVeae0mRzVDlvyMbUdo7r1fqdgM5yMKydxMgrY9thv+bwJRADpz3lvhac6kIrL4c3LXH8vkFr/8bJ/A+9m74oUqBH0nAW/4WWMcXNrGfiVnOwT1hSlwUQxDIQAXsCa3QyFYYn22wUriRyEAkDUkMYGKIDT6FxXZx3YAVzqCAH8DdE0IIAhAcQEWIEovxCLTlyIGJ0AAAFAA8CcypC4pVSy1p4GMl0MBOHc9EgAxFQutEAAjRQxWkQDP8wzEUAAB4AjrAQBUUw0RCA0AYAIF4AwvSAwAEHixwBvHEX9RwX/alxC4t0CCwEhQd030cQEmUAifEDDDYAGjUAyDcIDHIAF8BzLHAADr8Qx4SIWCcBwAcB4AUHmycIXDUEU0iHz+2XBy7RdwziAIoMByYtE2xWABBVASt9QKpSELRyILtBAAsXAefrgnd8gnf0h5gdgKp9gKf1eKdxQskOM2X4gQYfhQXkCGpmcbP4JrjHABA9B1E0gSAfOHPpg6hDgMhBiIo2AKAOAaAKAtgVeKqvOBXmiDi6h+zzAIAQh+6BMAyOEJH1IJnxAAoOAJsFIJAeAJVccKh2FPzrIty8iMoyAKy5g6D3GFKMOFK4SIinh77rd7JSQW1XABIdAKn0ABB+AIlSABmXEBBNAIlYAAIXACAiBZzzIKFLCM8mgKweiO/CYLMiQIiLc6QJOBydd2stiP4/RMyUABAQAACOA0n+D+CAfAH6fzCYkgAAHgBarIGwEQAgDwCZ/QjKp4haj4i30YCxHDE6Wkj8rnf43Hd8q1PdDwHhp5dvzWLaPwCa0RC7DgCq7wicNAC+iSlR1JMMehidtCea0wHM/DgCsEi9TolGw1hnGnjRYSTZQHioKniYAXeIh3ltsCln5CVmd5HkgpKX6DgXBZkhs4FtXACAOnjdhgPslQa4MpioOpMqKIeYuCKNiThzKzJ4nimUKTOdPImDc4FtggC55wOXi0PS4FM7EnNBYoIXn4bSxjM00oPFQjM+whOGQRC8MVlwqBPIAUFccACiPXTMaSOMPnnNXXUs+JOI3DUlpDIc4EQcX+wDv6YZIHAQIgExfVUAwYhjkOaH0KOH7a4zjHt1LuOX624U9yJX5ZshNiIQED4J0GYRNjAhfzEgui5Dc8Ajn542riV6CQAzkFp6AwJzkJGjkJGqEL+qAUYp9iMQAFkBgb4SzQUjo6Q21NWHzSKXyAEzjT1zXUd6IpAjZ/w6Jg4yfHeRgJcB8bASoFEHAYyB41ozI8yqO52aMrs6M2E6QzA6RCGqQuszLa6AEAUAJHsxDZcCcd2k/RV6VlchgFQBsdgQwzOQpW+qVVegwj4QUa2hFHAgBecJxguqZMYg2dsBIgsBkwEQszaQCz8Tzilqd6uqd82qfihgzD0AhD8RVfHCITjbgfB5KoijoA/7Go/kEgjTogJCEBgzAMnsIWoeAFEoASnNqpnvqpKLGpoDqqpFqqo2oBILAcT6EWPuEem/mqsBqrsjqrtFqrogg92aAburqrvNqrvvqrwKoNAQEAOw==</driver-image>
+		<log-events>
+			<value value="3"/>
+			<value value="4"/>
+			<value value="5"/>
+			<value value="35"/>
+			<value value="38"/>
+			<value value="39"/>
+		</log-events>
+		<trace-file value="/var/opt/novell/eDirectory/trace/SecurID.trc"/>
+		<trace-size-limit value="400000"/>
+		<trace-level value="3"/>
+		<driver-trace-level value="1"/>
+		<log-limit value="50"/>
+		<log-events-type value="1"/>
+		<java-module value="com.novell.nds.dirxml.remote.driver.DriverShimImpl"/>
+		<trace-name value="SecurID"/>
+		<trace-file-encoding value="UTF-8"/>
+		<policy-linkage>
+			<linkage-item dn="cn=MappingRule,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="0" policy-set-name="Schema Mapping"/>
+			<linkage-item dn="cn=PubInputTransform,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="1" policy-set-name="Input"/>
+			<linkage-item dn="cn=Retry Counter,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="1" policy-set="1" policy-set-name="Input"/>
+			<linkage-item dn="cn=UUIDGenerator,cn=UMB Driver Library,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="3" policy-set-name="ECMAScript"/>
+			<linkage-item dn="cn=SubEventTransform,cn=Subscriber,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="4" policy-set-name="Subscriber Event"/>
+			<linkage-item dn="cn=SubAuditPolicy,cn=Subscriber,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="1" policy-set="4" policy-set-name="Subscriber Event"/>
+			<linkage-item dn="cn=PubMatchingPolicy,cn=Publisher,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="7" policy-set-name="Publisher Matching"/>
+			<linkage-item dn="cn=SubCreatePolicy,cn=Subscriber,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="8" policy-set-name="Subscriber Create"/>
+			<linkage-item dn="cn=PubCreatePolicy,cn=Publisher,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="9" policy-set-name="Publisher Create"/>
+			<linkage-item dn="cn=SubCommandTransform,cn=Subscriber,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="10" policy-set-name="Subscriber Command"/>
+			<linkage-item dn="cn=PubCommandTransform,cn=Publisher,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="11" policy-set-name="Publisher Command"/>
+			<linkage-item dn="cn=PubAuditPolicy,cn=Publisher,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="1" policy-set="11" policy-set-name="Publisher Command"/>
+			<linkage-item dn="cn=SubPlacementPolicy,cn=Subscriber,cn=SecurID Driver,cn=IDMDriverSet,ou=Services,o=UMB" order="0" policy-set="12" policy-set-name="Subscriber Placement"/>
+		</policy-linkage>
+		<shim-auth-id value="IDMAdmin"/>
+		<shim-auth-password-query/>
+		<shim-auth-server value="REMOTE(hostname=pl90143.umb.com port=8095)t3s://osys8555a.umb.com:7002/"/>
+		<driver-password-query/>
+		<driver-start-option no-resync="false" value="2"/>
+		<shim-config-info-xml>
+			<driver-config name="SecurID Driver">
+				<driver-options>
+					<configuration-values>
+						<definitions>
+							<definition display-name="SecurID Administration Realm" name="securid-domain" type="string">
+								<description>The SecurID Realm that this driver will be performing administration in.</description>
+								<value/>
+							</definition>
+							<definition display-name="Command Client Username" name="command-client-username" type="string">
+								<description>The username that the driver will use to connect to the API connector.  (Usually CmdClient_XXXXXXXX)</description>
+								<value>CmdClient_rrqia5if</value>
+							</definition>
+							<definition display-name="Command Client Password" name="command-client-password" type="string">
+								<description>The password that the driver will use to connect to the API connector.</description>
+								<value>XHrH4fcSEMIogIxkdJqzQcvMXLemvP</value>
+							</definition>
+							<definition display-name="Command Client Naming Factory" name="command-client-naming-factory" type="string">
+								<description>The JNDI Naming Factory Class for the driver to use to connect to the API connector.</description>
+								<value>weblogic.jndi.WLInitialContextFactory</value>
+							</definition>
+							<definition display-name="Command Client Provider Endpoint URL" name="command-client-provider-url" type="string">
+								<description>The URL for the command client endpoint that the driver should connect to.  Multiple endpoints may be listed as a comma-separated list.</description>
+								<value>t3s://osys8555a.umb.com:7002</value>
+							</definition>
+						</definitions>
+					</configuration-values>
+				</driver-options>
+				<publisher-options>
+					<configuration-values>
+						<definitions>
+							<definition display-name="Publisher heartbeat interval" name="pub-heartbeat-interval" type="integer">
+								<description>Configures the driver shim to send a periodic status message on the publisher channel when there has been no publisher traffic for the given number of seconds.</description>
+								<value>0</value>
+							</definition>
+						</definitions>
+					</configuration-values>
+				</publisher-options>
+			</driver-config>
+		</shim-config-info-xml>
+		<global-engine-values>
+			<configuration-values>
+				<definitions>
+					<definition display-name="Subscriber channel retry interval in seconds" display-name-ref="ecnm_rint" name="dirxml.engine.retry-interval" range-lo="1" type="integer">
+						<description description-ref="ecds_rint">The subscriber channel retry interval controls how frequently the DirXML Engine will retry the processing of a cached transaction after the application shim's Subscriber object returns a retry status.</description>
+						<value>30</value>
+					</definition>
+					<definition display-name="Qualified form for DN-syntax attribute values" display-name-ref="ecnm_dnvf" name="dirxml.engine.qualified-dn-values" type="boolean">
+						<description description-ref="ecds_dnvf">The qualified form for DN-syntax attribute values controls whether values for DN-syntax attribute values are presented in unqualified slash form or qualified slash form. A "true" setting means the values are presented in qualified form.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Qualified form for rename events" display-name-ref="ecnm_refm" name="dirxml.engine.qualified-rename-values" type="boolean">
+						<description description-ref="ecds_refm">The qualified form for rename events controls whether the new-name portion of rename events coming from the Identity Vault are presented to the Subscriber channel with type qualifier(s) (e.g. CN=). A "true" setting means the names are presented in qualified form.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Maximum eDirectory replication wait time in seconds" display-name-ref="ecnm_mrpw" name="dirxml.engine.max-replication-wait" range-lo="1" type="integer">
+						<description description-ref="ecds_mrpw">The maximum eDirectory replication wait time controls the maximum time that the DirXML Engine will wait for a particular change to replicate between the local replica and a remote replica. This only affects operations where the DirXML Engine is required to contact a remote eDirectory server in the same tree to perform an operation and may need to wait until some change has replicated to or from the remote server before the operation can be completed (e.g. object moves when the DirXML server does not hold the master replica of the moved object ;file system rights operations for Users created from a template.)</description>
+						<value>180</value>
+					</definition>
+					<definition display-name="Use non-compliant backwards-compatible mode for XSLT" display-name-ref="ecnm_xbcm" name="dirxml.engine.xslt-bc-mode" type="boolean">
+						<description description-ref="ecds_xbcm">This control sets the XSLT processor used by the DirXML Engine to a backwards-compatible mode. The backwards-compatible mode causes the XSLT processor to use one or more behaviors that are not XPath 1.0 and/or XSLT 1.0 standards-compliant. This is done in the interest of backwards-compatiblity with existing DirXML stylesheets that depend on the non-standard behavior(s). 
+ 
+ In particular: 
+ 
+ The behavior of the XPath "!=" operator when one operand is a node-set and the other operand is other than a node-set is incorrect in DirXML releases up to and including DirXML 2.0 (Novell Identity Manager 2.0). This behavior has been corrected; however, the corrected behavior is disabled by default through this control in favor of backwards-compatibility with existing DirXML stylesheets.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Maximum application objects to migrate at once" display-name-ref="ecnm_mxappm" name="dirxml.engine.max-migrate-app-count" range-lo="1" type="integer">
+						<description description-ref="ecds_mxappm">This control is used to limit the number of application objects that the DirXML Engine will request from an application during a single query that is performed as part of a "migrate objects from application" operation. 
+ 
+ If "java.lang.OutOfMemoryError" errors are encountered during a migrate from application operation then this number should be set lower than the default. 
+ 
+ Note that this control does not limit the number of application objects that can be migrated; it merely limits the "batch size".</description>
+						<value>50</value>
+					</definition>
+					<definition display-name="Set creatorsName on objects created in Identity Vault" display-name-ref="ecnm_scrnm" name="dirxml.engine.set-creators-name" type="boolean">
+						<description description-ref="ecds_scrnm">This control is used by the DirXML Engine to determine if the creatorsName attribute should be set to the DN of this driver on all objects created in the Identity Vault by this driver.
+ 
+ Setting the creatorsName attribute allows for easily identifying objects created by this driver, but also carries a performance penalty. If not set, the creatorsName attribute will default to the DN of the NCP Server object that is hosting the driver.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Write pending associations" display-name-ref="ecnm_pass" name="dirxml.engine.use-pending-association" type="boolean">
+						<description description-ref="ecds_pass">This control determines whether the DirXML Engine will write a pending association on an object during subscriber channel processing.
+ 
+ Writing a pending association confers little or no benefit but does incur a performance penalty. Nevertheless, the option exists to turn it on for backward compatibility.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Use password event values" display-name-ref="ecnm_pevvl" name="dirxml.engine.use-password-event-values" type="boolean">
+						<description description-ref="ecds_pevvl">This control determines the source of the value reported for the nspmDistributionPassword attribute for subscriber channel add and modify events.
+ 
+ Setting the control to false means that the current value of nspmDistributionPassword is obtained and reported as the value of the attribute event. This means that only the current password value is available. This is the default behavior.
+ 
+ Setting the control to true means that the value recorded with the eDirectory event will be decrypted and reported as the value of the attribute event. This means that both the old password value (if it exists) and the replacement password value at the time of the event are available. This is useful for synchronizing passwords to certain applications that require the old password to enable setting a new password.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Enable password synchronization status reporting" display-name-ref="ecnm_pss" name="dirxml.engine.pwd-sync-status" type="boolean">
+						<description description-ref="ecds_pss">This control determines whether the DirXML Engine will report the status of subscriber channel password change events. 
+ 
+ Reporting the status of subscriber channel password change events allows applications such as the Identity Manager User Application to monitor the synchronization progress of a password change that should be synchronized to the connected application.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Combine values from template object with those from add operation" display-name-ref="ecnm_ctv" name="dirxml.engine.combine-template-values" type="boolean">
+						<description description-ref="ecds_ctv">This control determines how the DirXML Engine will use values from a template object when the template is used to create objects in the Identity Vault. Setting the control to true causes multi-valued attribute values from the template to be used in addition to those values for the same attribute that are  specified in the add operation. Setting the control to false causes the value(s) from the template to be ignored if there are values for the same attribute specified in the add operation.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Allow event loopback from publisher to subscriber channel" display-name-ref="ecnm_ael" name="dirxml.engine.allow-event-loopback" type="boolean">
+						<description description-ref="ecds_ael">This control determines whether the DirXML Engine will allow an event to loopback from the publisher channel of a driver to the subscriber channel of the same driver. Setting the control to false means that the loopback of the event from the publisher to the subscriber channel will not be allowed. Setting the control to true means that events would flow from the publisher channel to the subscriber channel of the same driver.  </description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Revert to calculated membership value behavior" display-name-ref="ecnm_cavl" name="dirxml.engine.use-calculated-values" type="boolean">
+						<description description-ref="ecds_cavl">Prior to Identity Manager 3.6 the DirXML Engine retrieved "calculated" values for the attributes "Member" and "Group Membership". The Engine now retrieves static values. This behavior is more generally useful and makes synchronizing Nested Groups possible. Setting this control to true reverts to the pre-3.6 behavior. 
+ 
+ It is possible even with the post-3.6 default behavior to read the calculated values for "Member" and "Group Membership" by using the special attribute names "[pseudo].Member" and "[pseudo].Group Membership".</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Maximum time to wait for driver shutdown  in seconds" display-name-ref="ecnm_mdst" name="dirxml.engine.max-driver-shutdown-timeout" range-hi="3600" range-lo="5" type="integer">
+						<description description-ref="ecds_mdst">This control determines the maximum time in seconds for which the DirXML Engine will wait for the drivers publisher channel to shutdown. If the driver does not shutdown within the provided time value, then the driver will be terminated by the DirXML Engine.</description>
+						<value>60</value>
+					</definition>
+					<definition display-name="Regular Expression escape meta-characters" display-name-ref="ecnm_reecn" name="dirxml.engine.reg-ex-escape-chars" type="string">
+						<description description-ref="ecds_reecd">This control determines the meta-characters that will be escaped while evaluating regular expressions. If a meta-char is not present in control value then it will not be escaped during local variable expansion containing a regular expression. 
+ 
+ To escape all the regular expression meta-characters, "\,$,^,.,?,*,+,[,],(,),|" should be added as the value. 
+ 
+ If a meta-character need not be escaped, then remove it from the control value. 
+ 
+ The control value should be a valid comma(,) separated list, else errors may be encountered during policy evaluation.</description>
+						<value xml:space="preserve">$</value>
+					</definition>
+				</definitions>
+			</configuration-values>
+		</global-engine-values>
+		<global-config-values>
+			<configuration-values>
+				<definitions>
+					<definition display-name="Driver Realm" name="gcvDriverRealm" type="string">
+						<description>The name of the realm on the SecurID server that we will be working with. </description>
+						<value>UMB</value>
+					</definition>
+					<definition display-name="Security Domain in which to place Internal Users" name="gcvInternalSecurityDomain" type="string">
+						<description/>
+						<value>Internal</value>
+					</definition>
+					<definition display-name="Security Domain in which to place Commercial Users" name="gcvCommercialSecurityDomain" type="string">
+						<description/>
+						<value>Customers\Commercial</value>
+					</definition>
+					<definition display-name="Security Domain in which to place Retail Users" name="gcvRetailSecurityDomain" type="string">
+						<description/>
+						<value>Customers\Retail</value>
+					</definition>
+					<definition critical-change="true" display-name="Default Number of Days for Initial Grace Period" name="gcvDefaultInitialGracePeriodDays" range-hi="30" range-lo="0" type="integer">
+						<description/>
+						<value>14</value>
+					</definition>
+					<definition display-name="Email Address for Token Approvers" name="GCVCommercialTokenApproverEmail" type="string">
+						<description>This is the Email account for Token Approvers</description>
+						<value>SecurityToken.Approvers@umb.com</value>
+					</definition>
+					<definition display-name="Email Address for Token Distributers" name="GCVTokenDistributorsEmail" type="string">
+						<description>This is the Email account for Token Distributers</description>
+						<value>SecurityToken.Distributors@umb.com</value>
+					</definition>
+					<definition display-name="RSA Admin Site for Approvers" name="GCVAdminSiteApprovers" type="string">
+						<description>RSA Admin Site for Approvers</description>
+						<value>https://access.umb.com/console-ims/</value>
+					</definition>
+				</definitions>
+			</configuration-values>
+		</global-config-values>
+		<named-password-query display-name="Command Client Named Password" name="command-client-named-password"/>
+		<application-schema/>
+		<pkg-initial-states/>
+	</attributes>
+	<children>
+		<publisher name="Publisher">
+			<attributes/>
+			<children>
+				<rule name="PubMatchingPolicy">
+					<policy>
+						<rule>
+							<description>User Matching Policy</description>
+							<conditions>
+								<and>
+									<if-class-name mode="nocase" op="equal">User</if-class-name>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVsrcdnusername" scope="policy">
+									<arg-string>
+										<token-parse-dn dest-dn-format="dot" src-dn-format="slash" start="-1">
+											<token-src-dn/>
+										</token-parse-dn>
+									</arg-string>
+								</do-set-local-variable>
+								<do-find-matching-object scope="subtree">
+									<arg-match-attr name="uniqueID">
+										<arg-value type="string">
+											<token-local-variable name="LVsrcdnusername"/>
+										</arg-value>
+									</arg-match-attr>
+								</do-find-matching-object>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule name="PubCommandTransform">
+					<policy xmlns:es="http://www.novell.com/nxsl/ecmascript">
+						<rule>
+							<description>Add Grace Period if Only Token is Shipping</description>
+							<conditions>
+								<and>
+									<if-op-attr mode="nocase" name="umbTokenStatus" op="changing-from">000000000000:SHIPPING</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:DISABLED.*</if-op-attr>
+									<if-dest-attr mode="regex" name="umbTokenStatus" op="not-equal">.*:ACTIVE</if-dest-attr>
+									<if-dest-dn op="not-in-container">UMB\Internal</if-dest-dn>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVcurrentTime" scope="policy">
+									<arg-string>
+										<token-time format="!CTIME" tz="UTC"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-generate-event id="1959" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - The default </token-text>
+										<token-global-variable name="gcvDefaultInitialGracePeriodDays"/>
+										<token-text xml:space="preserve"> day grace period was set for a user.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-dest-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">User "</token-text>
+										<token-dest-attr name="CN"/>
+										<token-text xml:space="preserve">" was set to be in the default initial </token-text>
+										<token-global-variable name="gcvDefaultInitialGracePeriodDays"/>
+										<token-text xml:space="preserve"> day grace period by the SecurID driver.</token-text>
+									</arg-string>
+								</do-generate-event>
+								<do-set-dest-attr-value class-name="User" name="umbTokenGraceLoginExpiration">
+									<arg-value type="time">
+										<token-xpath expression="$LVcurrentTime + (~gcvDefaultInitialGracePeriodDays~ * 86400)"/>
+									</arg-value>
+								</do-set-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Remove Grace Period if Token is being Activated</description>
+							<conditions>
+								<and>
+									<if-dest-attr name="umbTokenGraceLoginExpiration" op="available"/>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-from">[0-9]{12}:DISABLED:.*</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:ACTIVE</if-op-attr>
+									<if-dest-dn op="not-in-container">UMB\Internal</if-dest-dn>
+								</and>
+							</conditions>
+							<actions>
+								<do-remove-dest-attr-value name="umbTokenGraceLoginExpiration">
+									<arg-value type="time">
+										<token-dest-attr name="umbTokenGraceLoginExpiration"/>
+									</arg-value>
+								</do-remove-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Add Default Attributes for Internal Users (umbTokenGraceLoginExpiration)</description>
+							<conditions>
+								<and>
+									<if-dest-dn op="in-container">UMB\Internal</if-dest-dn>
+									<if-dest-attr name="umbTokenGraceLoginExpiration" op="not-available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-add-dest-attr-value name="umbTokenGraceLoginExpiration">
+									<arg-value type="string">
+										<token-text xml:space="preserve">20120101010101Z</token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Add Default Attributes for Internal Users (umbIdentityQuestion &amp; umbIdentityAnswer)</description>
+							<conditions>
+								<and>
+									<if-dest-dn op="in-container">UMB\Internal</if-dest-dn>
+									<if-dest-attr name="umbIdentityQuestion" op="not-available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-add-dest-attr-value name="umbIdentityQuestion">
+									<arg-value type="string">
+										<token-text xml:space="preserve">{blowfish}0</token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-add-dest-attr-value name="umbIdentityAnswer">
+									<arg-value type="string">
+										<token-text xml:space="preserve">{blowfish}0</token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Remove Static Passcode Expiration if Static Passcode Is Removed</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-from">.*:STATIC:.*</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="not-changing-to">.*:STATIC:.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-clear-dest-attr-value name="umbStaticPasscodeExpirationDate"/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule name="PubCreatePolicy">
+					<policy>
+						<rule>
+							<description>Veto All Creations</description>
+							<conditions>
+								<and/>
+							</conditions>
+							<actions>
+								<do-veto/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule name="PubAuditPolicy">
+					<policy xmlns:XDSQuery="http://www.novell.com/nxsl/java/com.novell.nds.dirxml.driver.XdsQueryProcessor" xmlns:es="http://www.novell.com/nxsl/ecmascript">
+						<rule>
+							<description>Audit Filter</description>
+							<conditions>
+								<and>
+									<if-operation mode="nocase" op="not-equal">modify</if-operation>
+								</and>
+							</conditions>
+							<actions>
+								<do-break/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Create Audit Date if Available</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbLastModDate" op="available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varNewLastModDate" scope="policy">
+									<arg-string>
+										<token-convert-time dest-format="!LONG.DATETIME" dest-lang="en-US" dest-tz="UTC" src-format="!CTIME" src-tz="Zulu">
+											<token-op-attr name="umbLastModDate"/>
+										</token-convert-time>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varPrevLastModDate" scope="policy">
+									<arg-string>
+										<token-dest-attr name="umbLastModDate"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Populate Audit Variables</description>
+							<conditions>
+								<and/>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varCN" scope="policy">
+									<arg-string>
+										<token-dest-attr name="CN"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varGCID" scope="policy">
+									<arg-string>
+										<token-dest-attr name="umbCustomer"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varGUID" scope="policy">
+									<arg-string>
+										<token-dest-attr name="umbGUID"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varCompanyInformation" scope="driver">
+									<arg-node-set>
+										<token-xpath expression='XDSQuery:search($destQueryProcessor,"subtree","","~gcvDefaultCompanyContainer~","Organizational Unit","OU", $varGCID,"umbCompanyShortName, umbCompanyFullName")'/>
+									</arg-node-set>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Populate Company ShortName and FullName</description>
+							<conditions>
+								<and>
+									<if-local-variable name="varCompanyInformation" op="available"/>
+									<if-local-variable mode="regex" name="varCompanyInformation" op="equal">^.*$</if-local-variable>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varCompanyShortName">
+									<arg-string>
+										<token-xpath expression="$varCompanyInformation/attr[@attr-name='umbCompanyShortName']/value/text()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varCompanyFullName">
+									<arg-string>
+										<token-xpath expression="$varCompanyInformation/attr[@attr-name='umbCompanyFullName']/value/text()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-trace-message color="brblue">
+									<arg-string>
+										<token-text xml:space="preserve">Query parsed: </token-text>
+										<token-text xml:space="preserve">[Company short name: </token-text>
+										<token-local-variable name="varCompanyShortName"/>
+										<token-text xml:space="preserve">] - [Company full name: </token-text>
+										<token-local-variable name="varCompanyFullName"/>
+										<token-text xml:space="preserve">]</token-text>
+									</arg-string>
+								</do-trace-message>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Account Locks - XXX</description>
+							<conditions>
+								<and>
+									<if-op-attr mode="nocase" name="umbTokenLockoutStatus" op="changing-to">TRUE</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event id="1957" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - A user's SecurID Lockout status was changed.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-dest-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">User "</token-text>
+										<token-dest-attr class-name="User" name="CN"/>
+										<token-text xml:space="preserve"> was locked in the SecurID system at "</token-text>
+										<token-local-variable name="LV_LastModDate"/>
+										<token-text xml:space="preserve">".</token-text>
+									</arg-string>
+									<arg-string name="target">
+										<token-dest-dn/>
+									</arg-string>
+								</do-generate-event>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Account Unlocks - XXX</description>
+							<conditions>
+								<and>
+									<if-op-attr mode="nocase" name="umbTokenLockoutStatus" op="changing-to">FALSE</if-op-attr>
+									<if-dest-attr mode="nocase" name="umbTokenLockoutStatus" op="equal">TRUE</if-dest-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event id="1958" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - A userÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s SecurID Lockout status was changed.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-dest-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">User "</token-text>
+										<token-dest-attr class-name="User" name="CN"/>
+										<token-text xml:space="preserve">" was unlocked in the SecurID system by administrator "</token-text>
+										<token-op-attr name="umbLastModBy"/>
+										<token-text xml:space="preserve">" at "</token-text>
+										<token-local-variable name="LV_LastModDate"/>
+										<token-text xml:space="preserve">".</token-text>
+									</arg-string>
+									<arg-string name="target">
+										<token-dest-dn/>
+									</arg-string>
+								</do-generate-event>
+							</actions>
+						</rule>
+						<rule disabled="true">
+							<description>Audit Token Status Changes</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event id="1952" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - A userÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s SecurID Token status was changed.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-dest-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">User "</token-text>
+										<token-dest-attr class-name="User" name="CN"/>
+										<token-text xml:space="preserve">" token status was changed: "</token-text>
+										<token-op-attr name="umbTokenStatus"/>
+										<token-text xml:space="preserve">" at "</token-text>
+										<token-convert-time dest-format="!LONG.DATETIME" dest-lang="en-US" dest-tz="CST6CDT" src-format="!JTIME" src-lang="en-US" src-tz="CST6CDT">
+											<token-op-attr name="umbLastModDate"/>
+										</token-convert-time>
+										<token-text xml:space="preserve">".</token-text>
+									</arg-string>
+									<arg-string name="target">
+										<token-dest-dn/>
+									</arg-string>
+								</do-generate-event>
+							</actions>
+						</rule>
+						<rule disabled="true">
+							<description>Put Old Shipping Address in LV</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenShippingAddress" op="changing"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVoldShippingAddress" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Authentications</description>
+							<comment xml:space="preserve">Audit specifically when token is being disabled.  (Event: 458531)</comment>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenLastAuthentication" op="changing"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varEventCode" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">458531</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeTo" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">TRUE</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varMessage" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">SecurID principal authentication occurred.</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varEventTimestamp" scope="policy">
+									<arg-string>
+										<token-convert-time dest-format="MM-dd-yyyy HH:mm:ss.S z" dest-tz="UTC" offset="-6" offset-unit="hour" src-format="!JTIME" src-tz="UTC">
+											<token-attr name="umbTokenLastAuthentication"/>
+										</token-convert-time>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-dest-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-dest-object>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-convert-time dest-format="!CTIME" dest-tz="UTC" src-format="!JTIME" src-tz="UTC">
+											<token-op-attr name="umbTokenLastAuthentication"/>
+										</token-convert-time>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>$varEventCode$&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>$varMessage$&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp>$varEventTimestamp$&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>SecurID&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbTokenLastAuthentication">&lt;to>$varEventTimestamp$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-strip-op-attr name="umbTokenLastAuthentication"/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Shipping Address Changes</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenShippingAddress" op="changing"/>
+									<if-op-attr mode="nocase" name="umbTokenShippingAddress" op="not-equal">$LVoldShippingAddress$</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varEventCode" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">198561</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varAttribName" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">Token Shipping Address</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeFrom" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeTo" scope="policy">
+									<arg-string>
+										<token-op-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-dest-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-dest-object>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>$varEventCode$&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>$varAttribName$ was changed in SecurID and synchronized to Identity Vault.&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="$varAttribName$">&lt;from>$varChangeFrom$&lt;/from>&lt;to>$varChangeTo$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Status Changes</description>
+							<comment xml:space="preserve">Audit anytime token status is changing, except for static token codes.  </comment>
+							<conditions>
+								<or>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+								</or>
+								<or>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:ACTIVE.*</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:PENDING.*</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:SHIPPING.*</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:DISABLED.*</if-op-attr>
+									<if-op-attr name="umbTokenStatus" op="not-available"/>
+								</or>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varEventCode" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">198560</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varAttribName" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">Token Status</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeFrom" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeTo" scope="policy">
+									<arg-string>
+										<token-op-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-dest-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-dest-object>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>$varEventCode$&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>$varAttribName$ was changed in SecurID and synchronized to Identity Vault.&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="$varAttribName$">&lt;from>$varChangeFrom$&lt;/from>&lt;to>$varChangeTo$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Enablement</description>
+							<comment xml:space="preserve">Audit specifically when token is being enabled.  (Event: 458510)</comment>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:ACTIVE.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varEventCode" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">458510</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varAttribName" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">Token Status</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeFrom" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeTo" scope="policy">
+									<arg-string>
+										<token-op-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varMessage" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">SecurID token was enabled.</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-dest-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-dest-object>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>$varEventCode$&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>$varMessage$&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="$varAttribName$">&lt;from>$varChangeFrom$&lt;/from>&lt;to>$varChangeTo$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Disablement</description>
+							<comment xml:space="preserve">Audit specifically when token is being disabled.  (Event: 458511)</comment>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:DISABLED.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varEventCode" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">458511</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varAttribName" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">Token Status</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeFrom" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeTo" scope="policy">
+									<arg-string>
+										<token-op-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varMessage" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">SecurID token was disabled.</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-dest-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-dest-object>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>$varEventCode$&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>$varMessage$&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="$varAttribName$">&lt;from>$varChangeFrom$&lt;/from>&lt;to>$varChangeTo$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Token Lockout</description>
+							<comment xml:space="preserve">Audit specifically when token is being disabled.  (Event: 458531)</comment>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenLockoutStatus" op="changing"/>
+									<if-op-attr mode="nocase" name="umbTokenLockoutStatus" op="changing-to">TRUE</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varEventCode" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">458532</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varAttribName" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">Token Lockout Status</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeFrom" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">FALSE</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varChangeTo" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">TRUE</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varMessage" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">SecurID principal was locked out.</token-text>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-dest-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-dest-object>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+								<do-add-dest-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>$varEventCode$&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>$varMessage$&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="$varAttribName$">&lt;from>$varChangeFrom$&lt;/from>&lt;to>$varChangeTo$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule disabled="true">
+							<description>Audit Token Unassignment Changes</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-xpath op="true">count(modify/modify-attr[@attr-name='umbTokenStatus']/remove-value)>0</if-xpath>
+									<if-xpath op="true">count(modify/modify-attr[@attr-name='umbTokenStatus']/add-value)=0</if-xpath>
+								</and>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-xpath op="true">count(modify/modify-attr[@attr-name='umbTokenStatus']/remove-all-values)>0</if-xpath>
+									<if-xpath op="true">count(modify/modify-attr[@attr-name='umbTokenStatus']/add-value)=0</if-xpath>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event id="1952" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">asdf</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-dest-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">Token "</token-text>
+										<token-op-attr name="umbTokenStatus"/>
+									</arg-string>
+								</do-generate-event>
+							</actions>
+						</rule>
+						<rule>
+							<description>Put E-Mail Address in LV</description>
+							<conditions>
+								<and/>
+							</conditions>
+							<actions>
+								<do-if>
+									<arg-conditions>
+										<and>
+											<if-dest-attr name="Internet EMail Address" op="available"/>
+										</and>
+									</arg-conditions>
+									<arg-actions>
+										<do-set-local-variable name="LV_emailAddress" scope="policy">
+											<arg-string>
+												<token-dest-attr name="Internet EMail Address"/>
+											</arg-string>
+										</do-set-local-variable>
+									</arg-actions>
+									<arg-actions>
+										<do-set-local-variable name="LV_emailAddress" scope="policy">
+											<arg-string>
+												<token-text xml:space="preserve">NO EMAIL ADDRESS AVAILABLE</token-text>
+											</arg-string>
+										</do-set-local-variable>
+									</arg-actions>
+								</do-if>
+							</actions>
+						</rule>
+						<rule>
+							<description>Email if Token changes to PENDING</description>
+							<comment xml:space="preserve">Send an email to admins if a Commercial user's token status changes to PENDING</comment>
+							<conditions>
+								<and>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:PENDING.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-send-email-from-template notification-dn="Security\Default Notification Collection" template-dn="Security\Default Notification Collection\Token Pending Email" template-dn-dot-dn="cn=Token Pending Email,cn=Default Notification Collection,cn=Security">
+									<arg-string name="to">
+										<token-global-variable name="GCVCommercialTokenApproverEmail"/>
+									</arg-string>
+									<arg-string name="TokenStatus">
+										<token-op-attr name="umbTokenStatus"/>
+									</arg-string>
+									<arg-string name="UserID">
+										<token-src-attr name="uniqueID"/>
+									</arg-string>
+									<arg-string name="givenName">
+										<token-dest-attr name="Given Name"/>
+									</arg-string>
+									<arg-string name="sn">
+										<token-dest-attr name="Surname"/>
+									</arg-string>
+									<arg-string name="ShippingAddress">
+										<token-dest-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+									<arg-string name="AdminSite">
+										<token-global-variable name="GCVAdminSiteApprovers"/>
+									</arg-string>
+								</do-send-email-from-template>
+							</actions>
+						</rule>
+						<rule>
+							<description>Email if Token changes to SHIPPING</description>
+							<comment xml:space="preserve">Send an email to the distributers if a Commercial user's token status changes to SHIPPING</comment>
+							<conditions>
+								<and>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:SHIPPING.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-send-email-from-template notification-dn="Security\Default Notification Collection" template-dn="Security\Default Notification Collection\Token Shipping Email" template-dn-dot-dn="cn=Token Shipping Email,cn=Default Notification Collection,cn=Security">
+									<arg-string name="to">
+										<token-global-variable name="GCVTokenDistributorsEmail"/>
+									</arg-string>
+									<arg-string name="TokenStatus">
+										<token-op-attr name="umbTokenStatus"/>
+									</arg-string>
+									<arg-string name="UserID">
+										<token-src-attr name="uniqueID"/>
+									</arg-string>
+									<arg-string name="givenName">
+										<token-dest-attr name="Given Name"/>
+									</arg-string>
+									<arg-string name="sn">
+										<token-dest-attr name="Surname"/>
+									</arg-string>
+									<arg-string name="ShippingAddress">
+										<token-dest-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+									<arg-string name="AdminSite">
+										<token-global-variable name="GCVAdminSiteApprovers"/>
+									</arg-string>
+									<arg-string name="PhoneNumber">
+										<token-dest-attr name="Telephone Number"/>
+									</arg-string>
+									<arg-string name="emailAddress">
+										<token-local-variable name="LV_emailAddress"/>
+									</arg-string>
+								</do-send-email-from-template>
+							</actions>
+						</rule>
+						<rule>
+							<description>Email if Token changes to DISABLED and e-mail is unavailable</description>
+							<conditions>
+								<and>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">[0-9]{12}:DISABLED:.*</if-op-attr>
+									<if-dest-attr name="Internet EMail Address" op="not-available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVsplitStatus" scope="policy">
+									<arg-node-set>
+										<token-split delimiter=":">
+											<token-op-attr name="umbTokenStatus"/>
+										</token-split>
+									</arg-node-set>
+								</do-set-local-variable>
+								<do-send-email-from-template notification-dn="Security\Default Notification Collection" template-dn="Security\Default Notification Collection\Token Distribution Email" template-dn-dot-dn="cn=Token Distribution Email,cn=Default Notification Collection,cn=Security">
+									<arg-string name="to">
+										<token-global-variable name="GCVTokenDistributorsEmail"/>
+									</arg-string>
+									<arg-string name="enablementCode">
+										<token-xpath expression="$LVsplitStatus[3]"/>
+									</arg-string>
+									<arg-string name="givenName">
+										<token-dest-attr name="Given Name"/>
+									</arg-string>
+									<arg-string name="UserID">
+										<token-dest-attr name="CN"/>
+									</arg-string>
+									<arg-string name="sn">
+										<token-dest-attr name="Surname"/>
+									</arg-string>
+									<arg-string name="shippingAddress">
+										<token-dest-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+								</do-send-email-from-template>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+			</children>
+		</publisher>
+		<subscriber name="Subscriber">
+			<attributes/>
+			<children>
+				<rule name="SubEventTransform">
+					<policy>
+						<rule>
+							<description>Veto Based on Context</description>
+							<comment xml:space="preserve">Only allow Internal and Commercial users for now.</comment>
+							<conditions>
+								<and>
+									<if-src-dn op="not-in-container">$gcvDefaultUserContainer$</if-src-dn>
+									<if-src-dn op="not-in-container">$gcvDefaultInternalContainer$</if-src-dn>
+								</and>
+							</conditions>
+							<actions>
+								<do-veto/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Use User-Specific Shipping Address if Set</description>
+							<conditions>
+								<and>
+									<if-src-attr name="umbTokenShippingAddress" op="available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVshipping-address" scope="policy">
+									<arg-string>
+										<token-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Build Shipping Address from Company Address</description>
+							<conditions>
+								<and>
+									<if-src-attr name="umbTokenShippingAddress" op="not-available"/>
+									<if-op-attr mode="nocase" name="umbTokenUser" op="changing-to">true</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVcompany" scope="policy">
+									<arg-string>
+										<token-src-attr name="umbCustomer"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="LVcompany-dn" scope="policy">
+									<arg-string>
+										<token-global-variable name="gcvDefaultCompanyContainer"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-local-variable name="LVcompany"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="LVshipping-address" scope="policy">
+									<arg-string>
+										<token-src-attr name="Given Name"/>
+										<token-text xml:space="preserve"> </token-text>
+										<token-src-attr name="Surname"/>
+										<token-text xml:space="preserve">
+</token-text>
+										<token-src-attr name="umbCompanyFullName">
+											<arg-dn>
+												<token-local-variable name="LVcompany-dn"/>
+											</arg-dn>
+										</token-src-attr>
+										<token-text xml:space="preserve">
+</token-text>
+										<token-src-attr name="SA">
+											<arg-dn>
+												<token-local-variable name="LVcompany-dn"/>
+											</arg-dn>
+										</token-src-attr>
+										<token-text xml:space="preserve">
+</token-text>
+										<token-src-attr name="Postal Office Box">
+											<arg-dn>
+												<token-local-variable name="LVcompany-dn"/>
+											</arg-dn>
+										</token-src-attr>
+										<token-text xml:space="preserve">
+</token-text>
+										<token-src-attr name="Physical Delivery Office Name">
+											<arg-dn>
+												<token-local-variable name="LVcompany-dn"/>
+											</arg-dn>
+										</token-src-attr>
+										<token-text xml:space="preserve">, </token-text>
+										<token-src-attr name="S">
+											<arg-dn>
+												<token-local-variable name="LVcompany-dn"/>
+											</arg-dn>
+										</token-src-attr>
+										<token-text xml:space="preserve">  </token-text>
+										<token-src-attr name="Postal Code">
+											<arg-dn>
+												<token-local-variable name="LVcompany-dn"/>
+											</arg-dn>
+										</token-src-attr>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-src-attr-value name="umbTokenShippingAddress">
+									<arg-value>
+										<token-local-variable name="LVshipping-address"/>
+									</arg-value>
+								</do-set-src-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Add Required Attribute (CN)</description>
+							<conditions>
+								<and>
+									<if-op-attr name="CN" op="not-available"/>
+									<if-op-attr mode="nocase" name="umbTokenUser" op="changing-to">true</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-add-dest-attr-value class-name="User" name="CN">
+									<arg-value>
+										<token-src-attr class-name="User" name="CN"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Add Required Attribute (umbTokenShippingAddress)</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenShippingAddress" op="not-available"/>
+									<if-op-attr mode="nocase" name="umbTokenUser" op="changing-to">true</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-add-dest-attr-value class-name="User" name="umbTokenShippingAddress">
+									<arg-value>
+										<token-local-variable name="LVshipping-address"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Get Static Passcode Expiration Date</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-to">.*:STATIC:.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varStaticPasscodeField" scope="policy">
+									<arg-node-set>
+										<token-split delimiter=":">
+											<token-op-attr name="umbTokenStatus"/>
+										</token-split>
+									</arg-node-set>
+								</do-set-local-variable>
+								<do-set-local-variable name="varStaticPasscodeExpiration" scope="policy">
+									<arg-string>
+										<token-convert-time dest-format="!CTIME" dest-tz="UTC" src-format="yyyyMMddHHmmss'Z'" src-lang="en-US" src-tz="UTC">
+											<token-xpath expression="$varStaticPasscodeField[3]"/>
+										</token-convert-time>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Set umbStaticPasscodeExpirationDate</description>
+							<comment xml:space="preserve">If a static passcode is being set, set the Static Passcode Expiration Date</comment>
+							<conditions>
+								<and>
+									<if-local-variable name="varStaticPasscodeExpiration" op="available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-src-attr-value name="umbStaticPasscodeExpirationDate">
+									<arg-value type="time">
+										<token-local-variable name="varStaticPasscodeExpiration"/>
+									</arg-value>
+								</do-set-src-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Remove umbStaticPasscodeExpirationDate</description>
+							<comment xml:space="preserve">If static passcode is being removed, remove the Static Passcode Expiration Date</comment>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenStatus" op="changing"/>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="changing-from">.*:STATIC:.*</if-op-attr>
+									<if-op-attr mode="regex" name="umbTokenStatus" op="not-changing-to">.*:STATIC:.*</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-clear-src-attr-value name="umbStaticPasscodeExpirationDate"/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule name="SubPlacementPolicy">
+					<policy xmlns:es="http://www.novell.com/nxsl/ecmascript">
+						<rule>
+							<description>Commercial User Placement</description>
+							<conditions>
+								<and>
+									<if-class-name mode="nocase" op="equal">User</if-class-name>
+									<if-src-attr mode="nocase" name="umbUserType" op="equal">Commercial</if-src-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-op-dest-dn>
+									<arg-dn>
+										<token-global-variable name="gcvDriverRealm"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-global-variable name="gcvCommercialSecurityDomain"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-src-attr class-name="User" name="uniqueID"/>
+									</arg-dn>
+								</do-set-op-dest-dn>
+								<do-break/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Retail User Placement</description>
+							<conditions>
+								<and>
+									<if-class-name mode="nocase" op="equal">User</if-class-name>
+									<if-src-attr mode="nocase" name="umbUserType" op="equal">Retail</if-src-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-op-dest-dn>
+									<arg-dn>
+										<token-global-variable name="gcvDriverRealm"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-global-variable name="gcvRetailSecurityDomain"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-src-attr class-name="User" name="CN"/>
+									</arg-dn>
+								</do-set-op-dest-dn>
+								<do-break/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Internal User Placement</description>
+							<conditions>
+								<or>
+									<if-class-name mode="nocase" op="equal">User</if-class-name>
+								</or>
+								<or>
+									<if-src-attr mode="nocase" name="umbUserType" op="equal">Employee</if-src-attr>
+									<if-src-attr mode="nocase" name="umbUserType" op="equal">Contractor</if-src-attr>
+									<if-src-attr mode="nocase" name="umbUserType" op="equal">Vendor</if-src-attr>
+									<if-src-attr mode="nocase" name="umbUserType" op="equal">Temporary</if-src-attr>
+								</or>
+							</conditions>
+							<actions>
+								<do-set-op-dest-dn>
+									<arg-dn>
+										<token-global-variable name="gcvDriverRealm"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-global-variable name="gcvInternalSecurityDomain"/>
+										<token-text xml:space="preserve">\</token-text>
+										<token-src-attr class-name="User" name="CN"/>
+									</arg-dn>
+								</do-set-op-dest-dn>
+								<do-break/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule name="SubCommandTransform">
+					<policy/>
+				</rule>
+				<rule name="SubCreatePolicy">
+					<policy>
+						<rule>
+							<description>Veto Adds That Aren't Really Adds</description>
+							<conditions>
+								<and>
+									<if-op-attr mode="nocase" name="umbTokenUser" op="not-changing-to">true</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-veto/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Add Required Attributes</description>
+							<conditions>
+								<and>
+									<if-operation mode="case" op="equal">add</if-operation>
+									<if-op-attr name="umbTokenShippingAddress" op="not-available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-add-dest-attr-value name="umbTokenShippingAddress">
+									<arg-value>
+										<token-src-attr name="umbTokenShippingAddress"/>
+									</arg-value>
+								</do-add-dest-attr-value>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule name="SubAuditPolicy">
+					<policy xmlns:XDSQuery="http://www.novell.com/nxsl/java/com.novell.nds.dirxml.driver.XdsQueryProcessor" xmlns:es="http://www.novell.com/nxsl/ecmascript">
+						<rule>
+							<description>Create Audit Date if Available</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbLastModDate" op="available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varNewLastModDate" scope="policy">
+									<arg-string>
+										<token-convert-time dest-format="!LONG.DATETIME" dest-lang="en-US" dest-tz="UTC" src-format="!CTIME" src-tz="Zulu">
+											<token-op-attr name="umbLastModDate"/>
+										</token-convert-time>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varPrevLastModDate" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbLastModDate"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Put LastModBy in LV from Operation</description>
+							<conditions>
+								<and/>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varLastModBy" scope="policy">
+									<arg-string>
+										<token-op-attr name="umbLastModBy"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Put LastModBy in LV from Source if not in Operation</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbLastModBy" op="not-available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varLastModBy" scope="policy">
+									<arg-string>
+										<token-src-attr name="umbLastModBy"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Put Old Shipping Address in LV</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenShippingAddress" op="changing"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="LVoldShippingAddress" scope="policy">
+									<arg-string>
+										<token-removed-attr name="umbTokenShippingAddress"/>
+									</arg-string>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Populate Audit Variables</description>
+							<conditions>
+								<and/>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varCN" scope="policy">
+									<arg-string>
+										<token-attr name="CN"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varGCID" scope="policy">
+									<arg-string>
+										<token-attr name="umbCustomer"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varGUID" scope="policy">
+									<arg-string>
+										<token-attr name="umbGUID"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varCompanyInformation" scope="driver">
+									<arg-node-set>
+										<token-xpath expression='XDSQuery:search($srcQueryProcessor,"subtree","","~gcvDefaultCompanyContainer~","Organizational Unit","OU", $varGCID,"umbCompanyShortName, umbCompanyFullName")'/>
+									</arg-node-set>
+								</do-set-local-variable>
+							</actions>
+						</rule>
+						<rule>
+							<description>Populate Company ShortName and FullName</description>
+							<conditions>
+								<and>
+									<if-class-name op="equal">User</if-class-name>
+									<if-operation op="equal">modify</if-operation>
+									<if-xpath op="not-true">@from-merge='true'</if-xpath>
+									<if-local-variable name="varCompanyInformation" op="available"/>
+									<if-local-variable mode="regex" name="varCompanyInformation" op="equal">^.*$</if-local-variable>
+								</and>
+							</conditions>
+							<actions>
+								<do-set-local-variable name="varCompanyShortName">
+									<arg-string>
+										<token-xpath expression="$varCompanyInformation/attr[@attr-name='umbCompanyShortName']/value/text()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-set-local-variable name="varCompanyFullName">
+									<arg-string>
+										<token-xpath expression="$varCompanyInformation/attr[@attr-name='umbCompanyFullName']/value/text()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-trace-message color="brblue">
+									<arg-string>
+										<token-text xml:space="preserve">Query parsed: </token-text>
+										<token-text xml:space="preserve">[Company short name: </token-text>
+										<token-local-variable name="varCompanyShortName"/>
+										<token-text xml:space="preserve">] - [Company full name: </token-text>
+										<token-local-variable name="varCompanyFullName"/>
+										<token-text xml:space="preserve">]</token-text>
+									</arg-string>
+								</do-trace-message>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Identification Question Changes</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbIdentityQuestion" op="changing"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event id="1955" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - User's Identification Question was changed.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-src-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">The Identification Question for user "</token-text>
+										<token-src-attr name="CN"/>
+										<token-text xml:space="preserve">" was changed by "</token-text>
+										<token-op-attr name="umbLastModBy"/>
+										<token-text xml:space="preserve">" on "</token-text>
+										<token-local-variable name="LV_LastModDate"/>
+										<token-text xml:space="preserve">".</token-text>
+									</arg-string>
+									<arg-string name="target">
+										<token-src-dn/>
+									</arg-string>
+								</do-generate-event>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-src-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-src-object>
+								<do-add-src-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-src-attr-value>
+								<do-add-src-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>198563&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>User's Identification Question was changed in Identity Vault and synchronized to SecurID.&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="Identitification Question">&lt;from></token-text>
+										<token-text xml:space="preserve">*********</token-text>
+										<token-text xml:space="preserve">&lt;/from>&lt;to></token-text>
+										<token-text xml:space="preserve">*********</token-text>
+										<token-text xml:space="preserve">&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-src-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Identification Answer Changes</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbIdentityAnswer" op="changing"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event id="1956" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - User's Identification Question Answer was changed.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-src-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">The Identification Question Answer for user "</token-text>
+										<token-src-attr name="CN"/>
+										<token-text xml:space="preserve">" was changed by "</token-text>
+										<token-op-attr name="umbLastModBy"/>
+										<token-text xml:space="preserve">" on "</token-text>
+										<token-local-variable name="LV_LastModDate"/>
+										<token-text xml:space="preserve">".</token-text>
+									</arg-string>
+									<arg-string name="target">
+										<token-src-dn/>
+									</arg-string>
+								</do-generate-event>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-src-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-src-object>
+								<do-add-src-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-src-attr-value>
+								<do-add-src-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>198564&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>User's Identification Question Answer was changed in Identity Vault and synchronized to SecurID.&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="Identity Question Answer">&lt;from></token-text>
+										<token-text xml:space="preserve">*********</token-text>
+										<token-text xml:space="preserve">&lt;/from>&lt;to></token-text>
+										<token-text xml:space="preserve">*********</token-text>
+										<token-text xml:space="preserve">&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-src-attr-value>
+							</actions>
+						</rule>
+						<rule>
+							<description>Audit Shipping Address Changes</description>
+							<conditions>
+								<and>
+									<if-op-attr name="umbTokenShippingAddress" op="changing"/>
+									<if-op-attr mode="nocase" name="umbTokenShippingAddress" op="not-equal">$LVoldShippingAddress$</if-op-attr>
+								</and>
+							</conditions>
+							<actions>
+								<do-generate-event disabled="true" id="1953" level="log-info">
+									<arg-string name="text1">
+										<token-text xml:space="preserve">SecurID Driver - User's shipping information was changed.</token-text>
+									</arg-string>
+									<arg-string name="text2">
+										<token-src-dn/>
+									</arg-string>
+									<arg-string name="text3">
+										<token-text xml:space="preserve">The shipping address for user "</token-text>
+										<token-src-attr name="CN"/>
+										<token-text xml:space="preserve">" changed from "</token-text>
+										<token-removed-attr name="umbTokenShippingAddress"/>
+										<token-text xml:space="preserve">" to "</token-text>
+										<token-op-attr name="umbTokenShippingAddress"/>
+										<token-text xml:space="preserve">". It was changed by "</token-text>
+										<token-local-variable name="LV_LastModBy"/>
+										<token-text xml:space="preserve">" at "</token-text>
+										<token-local-variable name="LV_LastModDate"/>
+										<token-text xml:space="preserve">".</token-text>
+									</arg-string>
+									<arg-string name="target">
+										<token-src-dn/>
+									</arg-string>
+								</do-generate-event>
+								<do-set-local-variable name="eventDN" scope="policy">
+									<arg-string>
+										<token-text xml:space="preserve">\$dirxml.auto.treename$\$gcvDefaultEventContainer$\</token-text>
+										<token-xpath expression="es:generateUUID()"/>
+									</arg-string>
+								</do-set-local-variable>
+								<do-add-src-object class-name="umbAuditEvent">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+								</do-add-src-object>
+								<do-add-src-attr-value class-name="umbAuditEvent" name="umbEventTimestamp">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-time format="!CTIME" lang="en-US" tz="America/Chicago"/>
+									</arg-value>
+								</do-add-src-attr-value>
+								<do-add-src-attr-value class-name="umbAuditEvent" name="umbAuditEventData">
+									<arg-dn>
+										<token-local-variable name="eventDN"/>
+									</arg-dn>
+									<arg-value type="string">
+										<token-text xml:space="preserve">&lt;event></token-text>
+										<token-text xml:space="preserve">&lt;id>198561&lt;/id></token-text>
+										<token-text xml:space="preserve">&lt;description>Token shipping address was changed in Identity Vault and synchronized to SecurID.&lt;/description></token-text>
+										<token-text xml:space="preserve">&lt;level>audit&lt;/level></token-text>
+										<token-text xml:space="preserve">&lt;timestamp></token-text>
+										<token-time format="MM-dd-yyyy HH:mm:ss.S z" lang="en-US" tz="America/Chicago"/>
+										<token-text xml:space="preserve">&lt;/timestamp></token-text>
+										<token-text xml:space="preserve">&lt;source>IDV&lt;/source></token-text>
+										<token-text xml:space="preserve">&lt;perpetrator>$varLastModBy$&lt;/perpetrator></token-text>
+										<token-text xml:space="preserve">&lt;attributes></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="CN">&lt;to>$varCN$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGCID">&lt;to>$varGCID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbGUID">&lt;to>$varGUID$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyShortName">&lt;to>$varCompanyShortName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;invoke name="umbCompanyFullName">&lt;to>$varCompanyFullName$&lt;/to>&lt;/invoke></token-text>
+										<token-text xml:space="preserve">&lt;update name="umbLastModDate">&lt;from>$varPrevLastModDate$&lt;/from>&lt;to>$varNewLastModDate$&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;update name="Token Shipping Address">&lt;from></token-text>
+										<token-removed-attr name="umbTokenShippingAddress"/>
+										<token-text xml:space="preserve">&lt;/from>&lt;to></token-text>
+										<token-op-attr name="umbTokenShippingAddress"/>
+										<token-text xml:space="preserve">&lt;/to>&lt;/update></token-text>
+										<token-text xml:space="preserve">&lt;/attributes></token-text>
+										<token-text xml:space="preserve">&lt;/event></token-text>
+									</arg-value>
+								</do-add-src-attr-value>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+			</children>
+		</subscriber>
+		<rule name="MappingRule">
+			<attr-name-map>
+				<class-name>
+					<nds-name>User</nds-name>
+					<app-name>User</app-name>
+				</class-name>
+				<attr-name class-name="User">
+					<nds-name>umbLastModBy</nds-name>
+					<app-name>last-modified-by</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>umbLastModDate</nds-name>
+					<app-name>last-modified-time</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>umbTokenLastAuthentication</nds-name>
+					<app-name>token-last-authentication</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>umbTokenLockoutStatus</nds-name>
+					<app-name>is-locked-out</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>umbTokenShippingAddress</nds-name>
+					<app-name>token-shipping-address</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>umbTokenStatus</nds-name>
+					<app-name>token-info</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>umbTokenUser</nds-name>
+					<app-name>is-token-user</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>uniqueId</nds-name>
+					<app-name>username</app-name>
+				</attr-name>
+			</attr-name-map>
+		</rule>
+		<rule name="PubInputTransform">
+			<policy>
+				<rule>
+					<description>Reformat LastAuthenticationTime</description>
+					<conditions>
+						<and>
+							<if-op-attr name="token-last-authentication" op="available"/>
+						</and>
+					</conditions>
+					<actions>
+						<do-reformat-op-attr name="token-last-authentication">
+							<arg-value type="time">
+								<token-convert-time dest-format="!JTIME" dest-tz="UTC" src-format="yyyy-MM-dd HH:mm:ss.S" src-tz="America/Chicago">
+									<token-op-attr name="token-last-authentication"/>
+								</token-convert-time>
+							</arg-value>
+						</do-reformat-op-attr>
+					</actions>
+				</rule>
+			</policy>
+		</rule>
+		<rule name="Retry Counter">
+			<policy>
+				<rule>
+					<description>Scoping Rule</description>
+					<conditions>
+						<and>
+							<if-operation mode="case" op="not-equal">status</if-operation>
+						</and>
+						<and>
+							<if-operation mode="case" op="equal">status</if-operation>
+							<if-xml-attr mode="case" name="level" op="not-equal">retry</if-xml-attr>
+						</and>
+					</conditions>
+					<actions>
+						<do-break/>
+					</actions>
+				</rule>
+				<rule>
+					<description>Get eventId</description>
+					<conditions>
+						<and/>
+					</conditions>
+					<actions>
+						<do-if>
+							<arg-conditions>
+								<and>
+									<if-xpath op="true">/nds/output/status[@level='retry']/@event-id</if-xpath>
+								</and>
+							</arg-conditions>
+							<arg-actions>
+								<do-set-local-variable name="eventId" scope="policy">
+									<arg-string>
+										<token-xpath expression="/nds/output/status[@level='retry']/@event-id"/>
+									</arg-string>
+								</do-set-local-variable>
+							</arg-actions>
+							<arg-actions>
+								<do-set-local-variable name="eventId" scope="policy">
+									<arg-string>
+										<token-xpath expression="@event-id"/>
+									</arg-string>
+								</do-set-local-variable>
+							</arg-actions>
+						</do-if>
+						<do-set-local-variable disabled="true" name="eventId" scope="policy">
+							<arg-string>
+								<token-xpath expression="/nds/output/status[@level='retry']/@event-id"/>
+							</arg-string>
+						</do-set-local-variable>
+					</actions>
+				</rule>
+				<rule>
+					<description>Count the retries</description>
+					<conditions>
+						<and>
+							<if-local-variable name="eventId" op="available"/>
+						</and>
+					</conditions>
+					<actions>
+						<do-if>
+							<arg-conditions>
+								<and>
+									<if-xpath op="true">$retryCounts//events/event[@id=$eventId]</if-xpath>
+								</and>
+							</arg-conditions>
+							<arg-actions>
+								<do-set-xml-attr expression="$retryCounts//events/event[@id=$eventId]" name="count">
+									<arg-string>
+										<token-xpath expression="($retryCounts//events/event[@id=$eventId]/@count)+1"/>
+									</arg-string>
+								</do-set-xml-attr>
+							</arg-actions>
+							<arg-actions>
+								<do-if>
+									<arg-conditions>
+										<and>
+											<if-local-variable name="retryCounts" op="not-available"/>
+										</and>
+									</arg-conditions>
+									<arg-actions>
+										<do-set-local-variable name="retryCounts" scope="driver">
+											<arg-node-set>
+												<token-xml-parse>
+													<token-text xml:space="preserve">&lt;events>&lt;event id="</token-text>
+													<token-local-variable name="eventId"/>
+													<token-text xml:space="preserve">" count="1" />&lt;/events></token-text>
+												</token-xml-parse>
+											</arg-node-set>
+										</do-set-local-variable>
+									</arg-actions>
+									<arg-actions>
+										<do-set-local-variable name="thisEvent" scope="policy">
+											<arg-node-set>
+												<token-xml-parse>
+													<token-text xml:space="preserve">&lt;event id="</token-text>
+													<token-local-variable name="eventId"/>
+													<token-text xml:space="preserve">" count="1" /></token-text>
+												</token-xml-parse>
+											</arg-node-set>
+										</do-set-local-variable>
+										<do-clone-xpath dest-expression="$thisEvent" src-expression="$retryCounts//events/event"/>
+									</arg-actions>
+								</do-if>
+							</arg-actions>
+						</do-if>
+						<do-trace-message level="1">
+							<arg-string>
+								<token-xml-serialize>
+									<token-local-variable name="retryCounts"/>
+								</token-xml-serialize>
+							</arg-string>
+						</do-trace-message>
+					</actions>
+				</rule>
+				<rule>
+					<description>Convert to error after 5 retries</description>
+					<conditions>
+						<and>
+							<if-local-variable name="eventId" op="available"/>
+							<if-xpath op="true">($retryCounts//events/event[@id=$eventId]/@count) > 5</if-xpath>
+						</and>
+					</conditions>
+					<actions>
+						<do-set-xml-attr expression="/nds/output/status[@event-id=$eventId and @level='retry']" name="level">
+							<arg-string>
+								<token-text xml:space="preserve">error</token-text>
+							</arg-string>
+						</do-set-xml-attr>
+						<do-strip-xpath expression="$retryCounts//events/event[@id=$eventId]"/>
+					</actions>
+				</rule>
+			</policy>
+		</rule>
+		<policy-library base-dn="cn=UMB Driver Library,cn=IDMDriverSet,ou=Services,o=UMB" container-dn="cn=IDMDriverSet,ou=Services,o=UMB" name="UMB Driver Library">
+			<pkg-initial-states/>
+			<descriptions/>
+			<resource content-type="text/ecmascript;charset=UTF-8" name="UUIDGenerator">
+				<content contains="text"><![CDATA[function generateUUID()
+{
+    var s = [];
+    var varFinalString = [];
+    var varMyString = [];
+    var hexDigits = "0123456789abcdef";
+    for (var i = 0; i < 32; i++)
+        {
+            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+        }
+    s[12] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
+    s[16] = hexDigits.substr((s[16] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
+    var uuid = s.join("");
+    var varMyString1 = uuid.substring(0,8);
+    var varMyString2 = uuid.substring(8,12);
+    var varMyString3 = uuid.substring(12,16);
+    var varMyString4 = uuid.substring(16,20);
+    var varMyString5 = uuid.substring(20,32);                
+    var varMyReturnString = (varMyString1 + '-' + varMyString2 + '-' + varMyString3 + '-' + varMyString4 + '-' + varMyString5);
+    return varMyReturnString;
+}]]></content>
+			</resource>
+			<variable-ref attr-name="container-dn" dn-format="dot" var-name="LibraryPrompt.cn=UMB Driver Library,cn=IDMDriverSet,ou=Services,o=UMB"/>
+		</policy-library>
+	</children>
+	<global-config-values>
+		<configuration-values>
+			<definitions>
+				<definition display-name="Default High Level container for External Users" name="gcvDefaultUserContainer" type="string">
+					<description>External Users container (to be used for User scope filtering and matching)</description>
+					<value xml:space="preserve">UMB\Customers\Commercial</value>
+				</definition>
+				<definition display-name="Default Container for Company" name="gcvDefaultCompanyContainer" type="string">
+					<description>Container to be used for Company scope filtering</description>
+					<value xml:space="preserve">UMB\Companies</value>
+				</definition>
+				<definition display-name="Default High Level container for Internal Users" name="gcvDefaultInternalContainer" type="string">
+					<description>Internal Users container (to be used for User scope filtering and matching)</description>
+					<value xml:space="preserve">UMB\INTERNAL\USERS</value>
+				</definition>
+				<definition display-name="Default Container for Internal Service Accounts" name="gcvInternalServiceAccountContainer" type="string">
+					<description>Internal Service Account Container (to be used for User scope filtering and matching)</description>
+					<value xml:space="preserve">UMB\Internal\ServiceAccounts</value>
+				</definition>
+				<definition display-name="Text for Terminated Objects" name="gcvTerminatedText" type="string">
+					<description>The Human Resources System contains this textual description to identify Terminated Objects.</description>
+					<value xml:space="preserve">DISABLED</value>
+				</definition>
+				<definition display-name="Text for Objects in PREHIRE State" name="gcvPrehireText" type="string">
+					<description/>
+					<value>PREHIRE</value>
+				</definition>
+				<definition display-name="Text for Active Objects" name="gcvActivatedText" type="string">
+					<description>The Human Resources System contains this textual description to identify Active Objects.</description>
+					<value xml:space="preserve">ACTIVE</value>
+				</definition>
+				<definition display-name="Attribute to use for Unique User Identifier" name="gcvUserIDAttribute" type="string">
+					<description>The eDirectory attribute which contains the unique User identifier.</description>
+					<value xml:space="preserve">umbGUID</value>
+				</definition>
+				<definition display-name="Attribute to use for Unique Company Identifier" name="gcvCompanyIDAttribute" type="string">
+					<description>The eDirectory attribute which contains the unique Company identifier</description>
+					<value xml:space="preserve">umbGCID</value>
+				</definition>
+				<definition display-name="User Type for Employee" name="gcvUserTypeTextEmployee" type="string">
+					<description>Text to be used when checking umbUserType for Employee</description>
+					<value xml:space="preserve">Employee</value>
+				</definition>
+				<definition display-name="User Type for Contractor" name="gcvUserTypeTextContractor" type="string">
+					<description>Text to be used when checking umbUserType for Contractor</description>
+					<value xml:space="preserve">Contractor</value>
+				</definition>
+				<definition display-name="User Type for Vendor" name="gcvUserTypeTextVendor" type="string">
+					<description>Text to be used when checking umbUserType for Vendor</description>
+					<value xml:space="preserve">Vendor</value>
+				</definition>
+				<definition display-name="User Type for Temporary" name="gcvUserTypeTextTemporary" type="string">
+					<value>Temporary</value>
+					<description/>
+				</definition>
+				<definition display-name="Length of umbGUID attribute in MPT" name="gcvUMBGUIDLength" type="string">
+					<value>15</value>
+					<description>Used to check if the length of umbGUID originating in Online Banking is too long</description>
+				</definition>
+				<definition display-name="umbAccess Flag for Auto internet Access" name="gcvUMBInternetUserAuto" type="string">
+					<description/>
+					<value>UMBInetUserAuto</value>
+				</definition>
+				<definition display-name="umbAccess Flag for Manual internet Access" name="gcvUMBInternetUser" type="string">
+					<description/>
+					<value>UMBInetUser</value>
+				</definition>
+				<definition display-name="umbAccess Flag for Manual No internet Access" name="gcvUMBInternetUserDisable" type="string">
+					<description/>
+					<value>UMBInetDisable</value>
+				</definition>
+				<definition display-name="umbAccess Flag for Auto RACF Entitlement" name="gcvumbRACFUserAUTO" type="string">
+					<description>The Text to be placed in umbAccess when an automatic entitlement has been granted through Role Based Entitlement</description>
+					<value>UMBRACFUserAuto</value>
+				</definition>
+				<definition display-name="umbAccess Flag for Manual RACF Entitlement" name="gcvumbRACFUser" type="string">
+					<description>The text that is displayed in the umbAccess Attribute for a manual entitlement granted through MPT.</description>
+					<value>UMBRACFUser</value>
+				</definition>
+				<definition display-name="umbAccess Flag for Manual RACF Entitlement Revoked" name="gcvUMBRACFUserDisable" type="string">
+					<description>The text that is displayed in the umbAccess Attribute for the RACF entitlement revoked through MPT.</description>
+					<value>UMBRACFDisable</value>
+				</definition>
+				<definition display-name="Random Password Settings" name="GCV_RandomPasswordSettings" type="string">
+					<description>These Settings determine how the password will be generated.  The first number represents the Password Length (not including the "#" sign appended to the end of all passwords.  The second Digit refers to how many letters. And the third and final number refers to the number of numeric characters to use.  Please Note that the second and third number need to equal the first number or an error will occur during password creation.</description>
+					<value>7,4,3</value>
+				</definition>
+				<definition display-name="Format for converting EVENTLOG OBJECT_LAST_MAINT_DATE" name="gcvMPTTriggerDateFormat" type="string">
+					<value>dd-MMM-yyyy HH:mm:ss</value>
+					<description>This is used when converting a date format like 01-JAN-06 from the EVENTLOG into an eDirectory Date format.</description>
+				</definition>
+				<definition display-name="Default Container for Retail Users" dn-space="dirxml" dn-type="slash" name="gcvDefaultRetailUserContainer" type="dn">
+					<description>Default Container for Retail Users</description>
+					<value>UMB\Customers\Retail</value>
+				</definition>
+				<definition critical-change="true" display-name="WorkOrder Container for Associates" dn-space="application" dn-type="slash" name="GCV_Associate_WorkOrder_Container" type="dn">
+					<description/>
+					<value>UMB\WorkOrders\Associate\Orders</value>
+				</definition>
+				<definition display-name="Default Container For Log/Audit Events" name="gcvDefaultEventContainer" type="string">
+					<description/>
+					<value>UMB\AuditEvents</value>
+				</definition>
+				<definition critical-change="true" display-name="RACF Group" dn-space="dirxml" dn-type="slash" name="RACF_GROUP" type="dn">
+					<description/>
+					<value>UMB\Internal\Groups\RACF-Group</value>
+				</definition>
+				<definition display-name="User Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.users" type="dn">
+					<value>UMB\Internal\Users</value>
+				</definition>
+				<definition display-name="Group Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.groups" type="dn">
+					<value>UMB\Internal\Groups</value>
+				</definition>
+			</definitions>
+		</configuration-values>
+	</global-config-values>
+	<variable-decl>
+		<text-var browse="yes" description="When importing a configuration containing a policy library that was outside the context of what was exported, you must specify the container in which you want the imported policy library created.  All references to policies within this policy library will be adjusted to correspond to its new location." prompt="Select the container where you want to create the policy library named 'UMB Driver Library'. " prompt-required="true" var-name="LibraryPrompt.cn=UMB Driver Library,cn=IDMDriverSet,ou=Services,o=UMB"><![CDATA[cn=IDMDriverSet,ou=Services,o=UMB]]></text-var>
+	</variable-decl>
+</driver-configuration>

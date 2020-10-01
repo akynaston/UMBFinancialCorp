@@ -27,12 +27,11 @@
     </target>
 	
 	<target name="build-ace_conn">
-	
+		<antcall C:\work\UMBBank\SVN-RSA-UMBBankBranch\ace_conn
 		
 	</target>
 	
 	<target name="dist" depends="init, build-ace_conn">
-		
 
         <!-- Set up rev filter -->
         <filter token="BUILD_AND_REV" value="${iteration}.${build.number}"/>

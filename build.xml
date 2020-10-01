@@ -1,6 +1,7 @@
 <project name="FCPS" default="dist" basedir=".">
     <property name="iteration" value="1"/>
     <property name="docs.dir" value="doc"/>
+	<property name="build.dir" value="build"/>
 
     <macrodef name="xsltAndVersion">
         <attribute name="in"/>
@@ -20,8 +21,12 @@
         <delete dir="${build.dir}"/>
     </target>
 	
-	<target name="dist">
+    <target name="init">
+        <buildnumber/>
+    </target>
 
+	
+	<target name="dist" depends="init">
         <!-- Set up rev filter -->
         <filter token="BUILD_AND_REV" value="${iteration}.${build.number}"/>
 
@@ -30,8 +35,7 @@
         </copy>
 
         <copy todir="build/export">
-            <fileset file="export/RSA-vanilla-from-packages.xml">
-              <include name="**/*.ps1"/>
+            <fileset file="export/RSA-vanilla-from-packages.xml">              
             </fileset>
 		</copy>
 

@@ -1,0 +1,560 @@
+https://www.netiq.com/documentation/identity-manager-48/designer_admin/data/packman.html#packmanimport
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?><driver-configuration dn="cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" driver-set-dn="cn=IdvaultDriverSet1,o=IDM.census" name="RSA" package-id="NBUA62PL_201103241141180062">
+	<packages>
+		<package id="NBUA62PL_201103241141180062" symbolic-name="com.trivirllc.trvrrsabase" version="1.0.2.20150317171209"/>
+		<package id="3XCZYJDR_201103250934350416" symbolic-name="com.trivirllc.trvrrsadcfg" version="1.0.2.20150317171228"/>
+	</packages>
+	<attributes package-id="NBUA62PL_201103241141180062" package-version="1.0.2.20150317171209">
+		<configuration-manifest>
+			<manifest/>
+		</configuration-manifest>
+		<driver-filter-xml>
+			<filter>
+				<filter-class class-name="User" publisher="sync" subscriber="sync">
+					<filter-attr attr-name="CN" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="Given Name" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="Surname" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+					<filter-attr attr-name="nspmDistributionPassword" merge-authority="default" publisher="ignore" publisher-optimize-modify="true" subscriber="sync"/>
+				</filter-class>
+			</filter>
+		</driver-filter-xml>
+		<driver-image>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</driver-image>
+		<log-events inherit="true"/>
+		<trace-file inherit="true"/>
+		<trace-size-limit inherit="true"/>
+		<trace-level inherit="true"/>
+		<driver-trace-level inherit="true"/>
+		<log-limit inherit="true"/>
+		<log-events-type inherit="true"/>
+		<java-module value="com.trivir.idm.driver.ace.AceDriverShim"/>
+		<trace-name value="RSA"/>
+		<policy-linkage>
+			<linkage-item dn="cn=TRVRRSADCFG-smp,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="0" policy-set-name="Schema Mapping"/>
+			<linkage-item dn="cn=TRVRRSADCFG-sub-ep-DefaultFilter,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="4" policy-set-name="Subscriber Event"/>
+			<linkage-item dn="cn=TRVRRSADCFG-pub-ep-DefaultFilter,cn=Publisher,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="5" policy-set-name="Publisher Event"/>
+			<linkage-item dn="cn=TRVRRSADCFG-sub-mp-MatchUser,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="6" policy-set-name="Subscriber Matching"/>
+			<linkage-item dn="cn=TRVRSADCFG-sub-cp-CreateUser,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="8" policy-set-name="Subscriber Create"/>
+			<linkage-item dn="cn=TRVRRSADCFG-GCVs,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="14" policy-set-name="Global Configs"/>
+		</policy-linkage>
+		<driver-cache-limit value="0"/>
+		<shim-auth-id value="authid"/>
+		<shim-auth-password-query/>
+		<driver-password-query/>
+		<driver-start-option no-resync="" value="1"/>
+		<shim-config-info-xml>
+			<driver-config name="RSA Driver">
+				<driver-options>
+					<configuration-values>
+						<definitions>
+							<definition display-name="RSA Command Client User" name="commandClientUsername" type="string">
+								<description>Enter the RSA command client username. e.g. CmdClient_qytc0b7i</description>
+								<value/>
+							</definition>
+							<definition display-name="RSA Command Client Password" name="commandClientPassword" type="string">
+								<description>Enter the RSA command client password. e.g. eWTDf6yiet</description>
+								<value/>
+							</definition>
+							<definition display-name="RSA Realm" name="rsaRealm" type="string">
+								<description>Enter the realm.</description>
+								<value>SystemDomain</value>
+							</definition>
+							<definition display-name="Weblogic Library Directory" name="weblogicLibDir" type="string">
+								<description>Contains the Weblogic library and license.</description>
+								<value>/opt/novell/eDirectory/lib/dirxml/classes</value>
+							</definition>
+							<definition display-name="RSA Identity Source" name="rsaIdentitySource" type="string">
+								<description>The case-sensitive name of the Identity Source with which to synchronize. If you leave this field empty, the first Identity Source in the Realm will be used. If in doubt, specify an Identity Source.</description>
+								<value/>
+							</definition>
+						</definitions>
+					</configuration-values>
+				</driver-options>
+				<subscriber-options>
+					<configuration-values>
+						<definitions/>
+					</configuration-values>
+				</subscriber-options>
+				<publisher-options>
+					<configuration-values>
+						<definitions>
+							<group>
+								<definition display-name="Disable publisher?" name="disable" type="enum">
+									<description>Do you want to ignore events flowing from ACE to Identity Manager?</description>
+									<enum-choice display-name="no (default)">_</enum-choice>
+									<enum-choice display-name="yes">1</enum-choice>
+									<value>_</value>
+								</definition>
+								<subordinates active-value="_">
+									<definition display-name="Polling Interval in minutes" name="pollRate" type="integer">
+										<description>Enter the number of minutes the publisher channel should wait between polling the ACE server for updates.</description>
+										<value>3</value>
+									</definition>
+									<definition display-name="Publisher heartbeat interval in minutes" name="pub-heartbeat-interval" type="integer">
+										<description>Configures the driver shim to send a periodic status message on the publisher channel when there has been no publisher traffic for the given number of minutes.</description>
+										<value>3</value>
+									</definition>
+								</subordinates>
+							</group>
+						</definitions>
+					</configuration-values>
+				</publisher-options>
+			</driver-config>
+		</shim-config-info-xml>
+		<global-engine-values>
+			<configuration-values>
+				<definitions>
+					<definition display-name="Subscriber channel retry interval in seconds" display-name-ref="ecnm_rint" name="dirxml.engine.retry-interval" range-lo="1" type="integer">
+						<description description-ref="ecds_rint">The subscriber channel retry interval controls how frequently the DirXML Engine will retry the processing of a cached transaction after the application shim's Subscriber object returns a retry status.</description>
+						<value>30</value>
+					</definition>
+					<definition display-name="Qualified form for DN-syntax attribute values" display-name-ref="ecnm_dnvf" name="dirxml.engine.qualified-dn-values" type="boolean">
+						<description description-ref="ecds_dnvf">The qualified form for DN-syntax attribute values controls whether values for DN-syntax attribute values are presented in unqualified slash form or qualified slash form. A "true" setting means the values are presented in qualified form.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Qualified form for rename events" display-name-ref="ecnm_refm" name="dirxml.engine.qualified-rename-values" type="boolean">
+						<description description-ref="ecds_refm">The qualified form for rename events controls whether the new-name portion of rename events coming from the Identity Vault are presented to the Subscriber channel with type qualifier(s) (e.g. CN=). A "true" setting means the names are presented in qualified form.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Maximum eDirectory replication wait time in seconds" display-name-ref="ecnm_mrpw" name="dirxml.engine.max-replication-wait" range-lo="1" type="integer">
+						<description description-ref="ecds_mrpw">The maximum eDirectory replication wait time controls the maximum time that the DirXML Engine will wait for a particular change to replicate between the local replica and a remote replica. This only affects operations where the DirXML Engine is required to contact a remote eDirectory server in the same tree to perform an operation and may need to wait until some change has replicated to or from the remote server before the operation can be completed (e.g. object moves when the DirXML server does not hold the master replica of the moved object ;file system rights operations for Users created from a template.)</description>
+						<value>180</value>
+					</definition>
+					<definition display-name="Use non-compliant backwards-compatible mode for XSLT" display-name-ref="ecnm_xbcm" name="dirxml.engine.xslt-bc-mode" type="boolean">
+						<description description-ref="ecds_xbcm">This control sets the XSLT processor used by the DirXML Engine to a backwards-compatible mode. The backwards-compatible mode causes the XSLT processor to use one or more behaviors that are not XPath 1.0 and/or XSLT 1.0 standards-compliant. This is done in the interest of backwards-compatiblity with existing DirXML stylesheets that depend on the non-standard behavior(s). 
+
+In particular: 
+
+The behavior of the XPath "!=" operator when one operand is a node-set and the other operand is other than a node-set is incorrect in DirXML releases up to and including DirXML 2.0 (Novell Identity Manager 2.0). This behavior has been corrected; however, the corrected behavior is disabled by default through this control in favor of backwards-compatibility with existing DirXML stylesheets.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Maximum application objects to migrate at once" display-name-ref="ecnm_mxappm" name="dirxml.engine.max-migrate-app-count" range-lo="1" type="integer">
+						<description description-ref="ecds_mxappm">This control is used to limit the number of application objects that the DirXML Engine will request from an application during a single query that is performed as part of a "migrate objects from application" operation. 
+
+If "java.lang.OutOfMemoryError" errors are encountered during a migrate from application operation then this number should be set lower than the default. 
+
+Note that this control does not limit the number of application objects that can be migrated; it merely limits the "batch size".</description>
+						<value>50</value>
+					</definition>
+					<definition display-name="Set creatorsName on objects created in Identity Vault" display-name-ref="ecnm_scrnm" name="dirxml.engine.set-creators-name" type="boolean">
+						<description description-ref="ecds_scrnm">This control is used by the DirXML Engine to determine if the creatorsName attribute should be set to the DN of this driver on all objects created in the Identity Vault by this driver.
+
+Setting the creatorsName attribute allows for easily identifying objects created by this driver, but also carries a performance penalty. If not set, the creatorsName attribute will default to the DN of the NCP Server object that is hosting the driver.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Write pending associations" display-name-ref="ecnm_pass" name="dirxml.engine.use-pending-association" type="boolean">
+						<description description-ref="ecds_pass">This control determines whether the DirXML Engine will write a pending association on an object during subscriber channel processing.
+
+Writing a pending association confers little or no benefit but does incur a performance penalty. Nevertheless, the option exists to turn it on for backward compatibility.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Use password event values" display-name-ref="ecnm_pevvl" name="dirxml.engine.use-password-event-values" type="boolean">
+						<description description-ref="ecds_pevvl">This control determines the source of the value reported for the nspmDistributionPassword attribute for subscriber channel add and modify events.
+
+Setting the control to false means that the current value of nspmDistributionPassword is obtained and reported as the value of the attribute event. This means that only the current password value is available. This is the default behavior.
+
+Setting the control to true means that the value recorded with the eDirectory event will be decrypted and reported as the value of the attribute event. This means that both the old password value (if it exists) and the replacement password value at the time of the event are available. This is useful for synchronizing passwords to certain applications that require the old password to enable setting a new password.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Enable password synchronization status reporting" display-name-ref="ecnm_pss" name="dirxml.engine.pwd-sync-status" type="boolean">
+						<description description-ref="ecds_pss">This control determines whether the DirXML Engine will report the status of subscriber channel password change events. 
+
+Reporting the status of subscriber channel password change events allows applications such as the Identity Manager User Application to monitor the synchronization progress of a password change that should be synchronized to the connected application.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Combine values from template object with those from add operation" display-name-ref="ecnm_ctv" name="dirxml.engine.combine-template-values" type="boolean">
+						<description description-ref="ecds_ctv">This control determines how the DirXML Engine will use values from a template object when the template is used to create objects in the Identity Vault. Setting the control to true causes multi-valued attribute values from the template to be used in addition to those values for the same attribute that are  specified in the add operation. Setting the control to false causes the value(s) from the template to be ignored if there are values for the same attribute specified in the add operation.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Allow event loopback from publisher to subscriber channel" display-name-ref="ecnm_ael" name="dirxml.engine.allow-event-loopback" type="boolean">
+						<description description-ref="ecds_ael">This control determines whether the DirXML Engine will allow an event to loopback from the publisher channel of a driver to the subscriber channel of the same driver. Setting the control to false means that the loopback of the event from the publisher to the subscriber channel will not be allowed. Setting the control to true means that events would flow from the publisher channel to the subscriber channel of the same driver.  </description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Revert to calculated membership value behavior" display-name-ref="ecnm_cavl" name="dirxml.engine.use-calculated-values" type="boolean">
+						<description description-ref="ecds_cavl">Prior to Identity Manager 3.6 the DirXML Engine retrieved "calculated" values for the attributes "Member" and "Group Membership". The Engine now retrieves static values. This behavior is more generally useful and makes synchronizing Nested Groups possible. Setting this control to true reverts to the pre-3.6 behavior. 
+
+It is possible even with the post-3.6 default behavior to read the calculated values for "Member" and "Group Membership" by using the special attribute names "[pseudo].Member" and "[pseudo].Group Membership".</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Maximum time to wait for driver shutdown  in seconds" display-name-ref="ecnm_mdst" name="dirxml.engine.max-driver-shutdown-timeout" range-hi="3600" range-lo="5" type="integer">
+						<description description-ref="ecds_mdst">This control determines the maximum time in seconds for which the DirXML Engine will wait for the drivers publisher channel to shutdown. If the driver does not shutdown within the provided time value, then the driver will be terminated by the DirXML Engine.</description>
+						<value>60</value>
+					</definition>
+					<definition display-name="Regular Expression escape meta-characters" display-name-ref="ecnm_reecn" name="dirxml.engine.reg-ex-escape-chars" type="string">
+						<description description-ref="ecds_reecd">This control determines the meta-characters that will be escaped while evaluating regular expressions. If a meta-char is not present in control value then it will not be escaped during local variable expansion containing a regular expression. 
+
+To escape all the regular expression meta-characters, "\,$,^,.,?,*,+,[,],(,),|" should be added as the value. 
+
+If a meta-character need not be escaped, then remove it from the control value. 
+
+The control value should be a valid comma(,) separated list, else errors may be encountered during policy evaluation.</description>
+						<value xml:space="preserve">$</value>
+					</definition>
+					<definition display-name="Retry of Out of Band events" display-name-ref="ecnm_robe" name="dirxml.engine.retry-outofband-event" type="boolean">
+						<description description-ref="ecds_robe">This control determines whether the DirXML Engine will retry an out of band event when the status is a RETRY. Setting the control to false means that the Engine will not retry the Out of Band event on a RETRY status. Setting the control to true means that the Engine will retry the Out of band event on a RETRY status.</description>
+						<value>false</value>
+					</definition>
+					<definition display-name="Use Rhino ECMAScript engine" display-name-ref="ecnm_uree" name="dirxml.engine.rhino-ecma-engine" type="boolean">
+						<description description-ref="ecds_uree">This control determines whether DirXML Engine will use the Rhino ECMAScript engine. DirXML Engine uses Rhino as the default ECMAScript engine.</description>
+						<value>true</value>
+					</definition>
+					<definition display-name="Enable Subscriber Service Channel" display-name-ref="ecnm_essc" name="dirxml.engine.enable-subsvc-channel" type="boolean">
+						<description description-ref="ecds_essc">This control determines whether the DirXML Engine will send the out of band queries in subscriber service channel. This is applicable only if the driver supports subscriber service channel. If this is set to true, Engine will send the out of band queries in subscriber service channel.</description>
+						<value>false</value>
+					</definition>
+				</definitions>
+			</configuration-values>
+		</global-engine-values>
+		<global-config-values/>
+		<application-schema/>
+		<pkg-initial-states>
+			<pkg-initial-state package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="31BD0YAL_201103251327270776" version="1.0.2.20150317171228">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZHMtb2JqZWN0IGRzLW9iamVjdC1jbGFzcz0iRGlyWE1MLVJ1bGUiIGRzLW9iamVjdC1uYW1lPSJUUlZSUlNBRENGRy1wdWItZXAtRGVmYXVsdEZpbHRlciIgbmFtZT0iVFJWUlJTQURDRkctcHViLWVwLURlZmF1bHRGaWx0ZXIiPgoJPGRzLWF0dHJpYnV0ZXM+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9IlhtbERhdGEiPgoJCQk8ZHMtdmFsdWU+CgkJCQk8cG9saWN5PgoJCQkJCTxydWxlPgoJCQkJCQk8ZGVzY3JpcHRpb24+RmlsdGVyIEV2ZW50czwvZGVzY3JpcHRpb24+CgkJCQkJCTxjb25kaXRpb25zPgoJCQkJCQkJPG9yPgoJCQkJCQkJCTxpZi1vcGVyYXRpb24gbW9kZT0iY2FzZSIgb3A9ImVxdWFsIj5hZGQ8L2lmLW9wZXJhdGlvbj4KCQkJCQkJCQk8aWYtb3BlcmF0aW9uIG1vZGU9ImNhc2UiIG9wPSJlcXVhbCI+bW92ZTwvaWYtb3BlcmF0aW9uPgoJCQkJCQkJCTxpZi1vcGVyYXRpb24gbW9kZT0iY2FzZSIgb3A9ImVxdWFsIj5yZW5hbWU8L2lmLW9wZXJhdGlvbj4KCQkJCQkJCTwvb3I+CgkJCQkJCTwvY29uZGl0aW9ucz4KCQkJCQkJPGFjdGlvbnM+CgkJCQkJCQk8ZG8tdmV0by8+CgkJCQkJCTwvYWN0aW9ucz4KCQkJCQk8L3J1bGU+CgkJCQk8L3BvbGljeT4KCQkJPC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWluc3RhbGxhdGlvbmRpcmVjdGl2ZSI+CgkJCTxkcy12YWx1ZT5QRDk0Yld3Z2RtVnljMmx2YmowaU1TNHdJaUJsYm1OdlpHbHVaejBpVlZSR0xUZ2lQejQ4YVc1emRHRnNiR0YwYVc5dUxXUnBjbVZqZEdsMlpUNEtDVHh3YkdGalpXMWxiblFnYkc5allYUnBiMjQ5SW5CMVlteHBjMmhsY2lJdlBnb0pQR1J6TFdGMGRISnBZblYwWlhNdlBnb0pQSEJ2YkdsamVTMXNhVzVyWVdkbFBnb0pDVHh3YjJ4cFkza3RjMlYwSUdOb1lXNXVaV3c5SW5CMVlteHBjMmhsY2lJZ2JtRnRaVDBpWlhabGJuUWlJRzl5WkdWeVBTSlhaV2xuYUhRaUlIWmhiSFZsUFNJMU1EQWlMejRLQ1R3dmNHOXNhV041TFd4cGJtdGhaMlUrQ2p3dmFXNXpkR0ZzYkdGMGFXOXVMV1JwY21WamRHbDJaVDQ9PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWRpcmVjdGl2ZWNoZWNrc3VtIj4KCQkJPGRzLXZhbHVlPjI2NjY5NTEyNzc8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tcGFja2FnZWFzc29jZ3VpZCI+CgkJCTxkcy12YWx1ZT4zMUJEMFlBTF8yMDExMDMyNTEzMjcyNzA3NzY8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tcGFja2FnZWd1aWQiPgoJCQk8ZHMtdmFsdWU+M1hDWllKRFJfMjAxMTAzMjUwOTM0MzUwNDE2PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWNvbnRlbnRjaGVja3N1bSI+CgkJCTxkcy12YWx1ZT40ODcxNDc5NTk8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJPC9kcy1hdHRyaWJ1dGVzPgo8L2RzLW9iamVjdD4=</pkg-initial-state>
+			<pkg-initial-state package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="EYFG3DF1_201103251338260026" version="1.0.2.20150317171228">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZHMtb2JqZWN0IGRzLW9iamVjdC1jbGFzcz0iRGlyWE1MLVJ1bGUiIGRzLW9iamVjdC1uYW1lPSJUUlZSU0FEQ0ZHLXN1Yi1jcC1DcmVhdGVVc2VyIiBuYW1lPSJUUlZSU0FEQ0ZHLXN1Yi1jcC1DcmVhdGVVc2VyIj4KCTxkcy1hdHRyaWJ1dGVzPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJYbWxEYXRhIj4KCQkJPGRzLXZhbHVlPgoJCQkJPHBvbGljeT4KCQkJCQk8cnVsZT4KCQkJCQkJPGRlc2NyaXB0aW9uPkV4aXQgaWYgbm90IHVzZXI8L2Rlc2NyaXB0aW9uPgoJCQkJCQk8Y29uZGl0aW9ucz4KCQkJCQkJCTxhbmQ+CgkJCQkJCQkJPGlmLWNsYXNzLW5hbWUgbW9kZT0ibm9jYXNlIiBvcD0ibm90LWVxdWFsIj5Vc2VyPC9pZi1jbGFzcy1uYW1lPgoJCQkJCQkJPC9hbmQ+CgkJCQkJCTwvY29uZGl0aW9ucz4KCQkJCQkJPGFjdGlvbnM+CgkJCQkJCQk8ZG8tYnJlYWsvPgoJCQkJCQk8L2FjdGlvbnM+CgkJCQkJPC9ydWxlPgoJCQkJCTxydWxlPgoJCQkJCQk8ZGVzY3JpcHRpb24+UmVxdWlyZSBhdHRyaWJ1dGVzPC9kZXNjcmlwdGlvbj4KCQkJCQkJPGNvbW1lbnQgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+VmV0byBpZiByZXF1aXJlZCBhdHRyaWJ1dGVzIG5vdCBwcmVzZW50LjwvY29tbWVudD4KCQkJCQkJPGNvbmRpdGlvbnMvPgoJCQkJCQk8YWN0aW9ucz4KCQkJCQkJCTxkby12ZXRvLWlmLW9wLWF0dHItbm90LWF2YWlsYWJsZSBuYW1lPSJDTiIvPgoJCQkJCQkJPGRvLXZldG8taWYtb3AtYXR0ci1ub3QtYXZhaWxhYmxlIG5hbWU9IkdpdmVuIE5hbWUiLz4KCQkJCQkJCTxkby12ZXRvLWlmLW9wLWF0dHItbm90LWF2YWlsYWJsZSBuYW1lPSJTdXJuYW1lIi8+CgkJCQkJCTwvYWN0aW9ucz4KCQkJCQk8L3J1bGU+CgkJCQk8L3BvbGljeT4KCQkJPC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWluc3RhbGxhdGlvbmRpcmVjdGl2ZSI+CgkJCTxkcy12YWx1ZT5QRDk0Yld3Z2RtVnljMmx2YmowaU1TNHdJaUJsYm1OdlpHbHVaejBpVlZSR0xUZ2lQejQ4YVc1emRHRnNiR0YwYVc5dUxXUnBjbVZqZEdsMlpUNEtDVHh3YkdGalpXMWxiblFnYkc5allYUnBiMjQ5SW5OMVluTmpjbWxpWlhJaUx6NEtDVHhrY3kxaGRIUnlhV0oxZEdWekx6NEtDVHh3YjJ4cFkza3RiR2x1YTJGblpUNEtDUWs4Y0c5c2FXTjVMWE5sZENCamFHRnVibVZzUFNKemRXSnpZM0pwWW1WeUlpQnVZVzFsUFNKamNtVmhkR2x2YmlJZ2IzSmtaWEk5SWxkbGFXZG9kQ0lnZG1Gc2RXVTlJalV3TUNJdlBnb0pQQzl3YjJ4cFkza3RiR2x1YTJGblpUNEtQQzlwYm5OMFlXeHNZWFJwYjI0dFpHbHlaV04wYVhabFBnPT08L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tZGlyZWN0aXZlY2hlY2tzdW0iPgoJCQk8ZHMtdmFsdWU+NjExNTA1ODkxPC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLXBhY2thZ2Vhc3NvY2d1aWQiPgoJCQk8ZHMtdmFsdWU+RVlGRzNERjFfMjAxMTAzMjUxMzM4MjYwMDI2PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLXBhY2thZ2VndWlkIj4KCQkJPGRzLXZhbHVlPjNYQ1pZSkRSXzIwMTEwMzI1MDkzNDM1MDQxNjwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1jb250ZW50Y2hlY2tzdW0iPgoJCQk8ZHMtdmFsdWU+MjIwODM3OTM3PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCTwvZHMtYXR0cmlidXRlcz4KPC9kcy1vYmplY3Q+</pkg-initial-state>
+			<pkg-initial-state package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="ZE21Z77T_201103251338260026" version="1.0.2.20150317171228">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZHMtb2JqZWN0IGRzLW9iamVjdC1jbGFzcz0iRGlyWE1MLVJ1bGUiIGRzLW9iamVjdC1uYW1lPSJUUlZSUlNBRENGRy1zdWItZXAtRGVmYXVsdEZpbHRlciIgbmFtZT0iVFJWUlJTQURDRkctc3ViLWVwLURlZmF1bHRGaWx0ZXIiPgoJPGRzLWF0dHJpYnV0ZXM+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9IlhtbERhdGEiPgoJCQk8ZHMtdmFsdWU+CgkJCQk8cG9saWN5PgoJCQkJCTxydWxlPgoJCQkJCQk8ZGVzY3JpcHRpb24+RmlsdGVyIEV2ZW50czwvZGVzY3JpcHRpb24+CgkJCQkJCTxjb21tZW50IHhtbDpzcGFjZT0icHJlc2VydmUiPlZldG8gdW5wcm9jZXNzZWQgZXZlbnRzLjwvY29tbWVudD4KCQkJCQkJPGNvbmRpdGlvbnM+CgkJCQkJCQk8b3I+CgkJCQkJCQkJPGlmLW9wZXJhdGlvbiBtb2RlPSJjYXNlIiBvcD0iZXF1YWwiPm1vdmU8L2lmLW9wZXJhdGlvbj4KCQkJCQkJCQk8aWYtb3BlcmF0aW9uIG1vZGU9ImNhc2UiIG9wPSJlcXVhbCI+cmVuYW1lPC9pZi1vcGVyYXRpb24+CgkJCQkJCQk8L29yPgoJCQkJCQk8L2NvbmRpdGlvbnM+CgkJCQkJCTxhY3Rpb25zPgoJCQkJCQkJPGRvLXZldG8vPgoJCQkJCQk8L2FjdGlvbnM+CgkJCQkJPC9ydWxlPgoJCQkJPC9wb2xpY3k+CgkJCTwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1pbnN0YWxsYXRpb25kaXJlY3RpdmUiPgoJCQk8ZHMtdmFsdWU+UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWlCbGJtTnZaR2x1WnowaVZWUkdMVGdpUHo0OGFXNXpkR0ZzYkdGMGFXOXVMV1JwY21WamRHbDJaVDRLQ1R4d2JHRmpaVzFsYm5RZ2JHOWpZWFJwYjI0OUluTjFZbk5qY21saVpYSWlMejRLQ1R4a2N5MWhkSFJ5YVdKMWRHVnpMejRLQ1R4d2IyeHBZM2t0YkdsdWEyRm5aVDRLQ1FrOGNHOXNhV041TFhObGRDQmphR0Z1Ym1Wc1BTSnpkV0p6WTNKcFltVnlJaUJ1WVcxbFBTSmxkbVZ1ZENJZ2IzSmtaWEk5SWxkbGFXZG9kQ0lnZG1Gc2RXVTlJalV3TUNJdlBnb0pQQzl3YjJ4cFkza3RiR2x1YTJGblpUNEtQQzlwYm5OMFlXeHNZWFJwYjI0dFpHbHlaV04wYVhabFBnPT08L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tZGlyZWN0aXZlY2hlY2tzdW0iPgoJCQk8ZHMtdmFsdWU+NDIxMjQ1MzE0MTwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1wYWNrYWdlYXNzb2NndWlkIj4KCQkJPGRzLXZhbHVlPlpFMjFaNzdUXzIwMTEwMzI1MTMzODI2MDAyNjwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1wYWNrYWdlZ3VpZCI+CgkJCTxkcy12YWx1ZT4zWENaWUpEUl8yMDExMDMyNTA5MzQzNTA0MTY8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tY29udGVudGNoZWNrc3VtIj4KCQkJPGRzLXZhbHVlPjMzNDc2Mjk2NDk8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJPC9kcy1hdHRyaWJ1dGVzPgo8L2RzLW9iamVjdD4=</pkg-initial-state>
+			<pkg-initial-state package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="8TQDKN7I_201103251338260041" version="1.0.2.20150317171228">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZHMtb2JqZWN0IGRzLW9iamVjdC1jbGFzcz0iRGlyWE1MLVJ1bGUiIGRzLW9iamVjdC1uYW1lPSJUUlZSUlNBRENGRy1zdWItbXAtTWF0Y2hVc2VyIiBuYW1lPSJUUlZSUlNBRENGRy1zdWItbXAtTWF0Y2hVc2VyIj4KCTxkcy1hdHRyaWJ1dGVzPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJYbWxEYXRhIj4KCQkJPGRzLXZhbHVlPgoJCQkJPHBvbGljeT4KCQkJCQk8cnVsZT4KCQkJCQkJPGRlc2NyaXB0aW9uPkV4aXQgaWYgbm90IHVzZXI8L2Rlc2NyaXB0aW9uPgoJCQkJCQk8Y29uZGl0aW9ucz4KCQkJCQkJCTxhbmQ+CgkJCQkJCQkJPGlmLWNsYXNzLW5hbWUgbW9kZT0ibm9jYXNlIiBvcD0ibm90LWVxdWFsIj5Vc2VyPC9pZi1jbGFzcy1uYW1lPgoJCQkJCQkJPC9hbmQ+CgkJCQkJCTwvY29uZGl0aW9ucz4KCQkJCQkJPGFjdGlvbnM+CgkJCQkJCQk8ZG8tYnJlYWsvPgoJCQkJCQk8L2FjdGlvbnM+CgkJCQkJPC9ydWxlPgoJCQkJCTxydWxlPgoJCQkJCQk8ZGVzY3JpcHRpb24+RXhpdCBpZiBDTiBub3QgYXZhaWxhYmxlPC9kZXNjcmlwdGlvbj4KCQkJCQkJPGNvbmRpdGlvbnM+CgkJCQkJCQk8YW5kPgoJCQkJCQkJCTxpZi1vcC1hdHRyIG5hbWU9IkNOIiBvcD0ibm90LWF2YWlsYWJsZSIvPgoJCQkJCQkJPC9hbmQ+CgkJCQkJCTwvY29uZGl0aW9ucz4KCQkJCQkJPGFjdGlvbnM+CgkJCQkJCQk8ZG8tYnJlYWsvPgoJCQkJCQk8L2FjdGlvbnM+CgkJCQkJPC9ydWxlPgoJCQkJCTxydWxlPgoJCQkJCQk8ZGVzY3JpcHRpb24+RXhlY3V0ZSB1c2VyIG1hdGNoPC9kZXNjcmlwdGlvbj4KCQkJCQkJPGNvbmRpdGlvbnMvPgoJCQkJCQk8YWN0aW9ucz4KCQkJCQkJCTxkby1maW5kLW1hdGNoaW5nLW9iamVjdCBzY29wZT0ic3VidHJlZSI+CgkJCQkJCQkJPGFyZy1tYXRjaC1hdHRyIG5hbWU9IkNOIi8+CgkJCQkJCQk8L2RvLWZpbmQtbWF0Y2hpbmctb2JqZWN0PgoJCQkJCQk8L2FjdGlvbnM+CgkJCQkJPC9ydWxlPgoJCQkJPC9wb2xpY3k+CgkJCTwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1pbnN0YWxsYXRpb25kaXJlY3RpdmUiPgoJCQk8ZHMtdmFsdWU+UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWlCbGJtTnZaR2x1WnowaVZWUkdMVGdpUHo0OGFXNXpkR0ZzYkdGMGFXOXVMV1JwY21WamRHbDJaVDRLQ1R4d2JHRmpaVzFsYm5RZ2JHOWpZWFJwYjI0OUluTjFZbk5qY21saVpYSWlMejRLQ1R4a2N5MWhkSFJ5YVdKMWRHVnpMejRLQ1R4d2IyeHBZM2t0YkdsdWEyRm5aVDRLQ1FrOGNHOXNhV041TFhObGRDQmphR0Z1Ym1Wc1BTSnpkV0p6WTNKcFltVnlJaUJ1WVcxbFBTSnRZWFJqYUdsdVp5SWdiM0prWlhJOUlsZGxhV2RvZENJZ2RtRnNkV1U5SWpVd01DSXZQZ29KUEM5d2IyeHBZM2t0YkdsdWEyRm5aVDRLUEM5cGJuTjBZV3hzWVhScGIyNHRaR2x5WldOMGFYWmxQZz09PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWRpcmVjdGl2ZWNoZWNrc3VtIj4KCQkJPGRzLXZhbHVlPjM2NTEwMTg5MTY8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tcGFja2FnZWFzc29jZ3VpZCI+CgkJCTxkcy12YWx1ZT44VFFES043SV8yMDExMDMyNTEzMzgyNjAwNDE8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tcGFja2FnZWd1aWQiPgoJCQk8ZHMtdmFsdWU+M1hDWllKRFJfMjAxMTAzMjUwOTM0MzUwNDE2PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWNvbnRlbnRjaGVja3N1bSI+CgkJCTxkcy12YWx1ZT4zMDM1MDIyMTg5PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCTwvZHMtYXR0cmlidXRlcz4KPC9kcy1vYmplY3Q+</pkg-initial-state>
+			<pkg-initial-state package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="6O5S3HNV_201103251319220229" version="1.0.2.20150317171228">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZHMtb2JqZWN0IGRzLW9iamVjdC1jbGFzcz0iRGlyWE1MLVJ1bGUiIGRzLW9iamVjdC1uYW1lPSJUUlZSUlNBRENGRy1zbXAiIG1hcHBpbmctcG9saWN5PSJ0cnVlIiBuYW1lPSJUUlZSUlNBRENGRy1zbXAiPgoJPGRzLWF0dHJpYnV0ZXM+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9IlhtbERhdGEiPgoJCQk8ZHMtdmFsdWU+CgkJCQk8YXR0ci1uYW1lLW1hcD4KCQkJCQk8Y2xhc3MtbmFtZT4KCQkJCQkJPG5kcy1uYW1lPlVzZXI8L25kcy1uYW1lPgoJCQkJCQk8YXBwLW5hbWU+VXNlcjwvYXBwLW5hbWU+CgkJCQkJPC9jbGFzcy1uYW1lPgoJCQkJCTxhdHRyLW5hbWUgY2xhc3MtbmFtZT0iVXNlciI+CgkJCQkJCTxuZHMtbmFtZT5hY2Nlc3NDYXJkTnVtYmVyPC9uZHMtbmFtZT4KCQkJCQkJPGFwcC1uYW1lPlRva2VuU2VyaWFsTnVtYmVyPC9hcHAtbmFtZT4KCQkJCQk8L2F0dHItbmFtZT4KCQkJCQk8YXR0ci1uYW1lIGNsYXNzLW5hbWU9IlVzZXIiPgoJCQkJCQk8bmRzLW5hbWU+Q048L25kcy1uYW1lPgoJCQkJCQk8YXBwLW5hbWU+RGVmYXVsdExvZ2luPC9hcHAtbmFtZT4KCQkJCQk8L2F0dHItbmFtZT4KCQkJCQk8YXR0ci1uYW1lIGNsYXNzLW5hbWU9IlVzZXIiPgoJCQkJCQk8bmRzLW5hbWU+R2l2ZW4gTmFtZTwvbmRzLW5hbWU+CgkJCQkJCTxhcHAtbmFtZT5GaXJzdE5hbWU8L2FwcC1uYW1lPgoJCQkJCTwvYXR0ci1uYW1lPgoJCQkJCTxhdHRyLW5hbWUgY2xhc3MtbmFtZT0iVXNlciI+CgkJCQkJCTxuZHMtbmFtZT5TdXJuYW1lPC9uZHMtbmFtZT4KCQkJCQkJPGFwcC1uYW1lPkxhc3ROYW1lPC9hcHAtbmFtZT4KCQkJCQk8L2F0dHItbmFtZT4KCQkJCQk8YXR0ci1uYW1lIGNsYXNzLW5hbWU9IlVzZXIiPgoJCQkJCQk8bmRzLW5hbWU+bnNwbURpc3RyaWJ1dGlvblBhc3N3b3JkPC9uZHMtbmFtZT4KCQkJCQkJPGFwcC1uYW1lPlBhc3N3b3JkPC9hcHAtbmFtZT4KCQkJCQk8L2F0dHItbmFtZT4KCQkJCTwvYXR0ci1uYW1lLW1hcD4KCQkJPC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWluc3RhbGxhdGlvbmRpcmVjdGl2ZSI+CgkJCTxkcy12YWx1ZT5QRDk0Yld3Z2RtVnljMmx2YmowaU1TNHdJaUJsYm1OdlpHbHVaejBpVlZSR0xUZ2lQejQ4YVc1emRHRnNiR0YwYVc5dUxXUnBjbVZqZEdsMlpUNEtDVHh3YkdGalpXMWxiblFnYkc5allYUnBiMjQ5SW1SbFptRjFiSFFpTHo0S0NUeGtjeTFoZEhSeWFXSjFkR1Z6THo0S0NUeHdiMnhwWTNrdGJHbHVhMkZuWlQ0S0NRazhjRzlzYVdONUxYTmxkQ0JqYUdGdWJtVnNQU0p3ZFdKc2FYTm9aWElpSUc1aGJXVTlJbk5qYUdWdFlTSWdiM0prWlhJOUlsZGxhV2RvZENJZ2RtRnNkV1U5SWpVd01DSXZQZ29KUEM5d2IyeHBZM2t0YkdsdWEyRm5aVDRLUEM5cGJuTjBZV3hzWVhScGIyNHRaR2x5WldOMGFYWmxQZz09PC9kcy12YWx1ZT4KCQk8L2RzLWF0dHJpYnV0ZT4KCQk8ZHMtYXR0cmlidXRlIGRzLWF0dHItbmFtZT0iaWRtLWRpcmVjdGl2ZWNoZWNrc3VtIj4KCQkJPGRzLXZhbHVlPjUyOTk5Njg5NTwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1wYWNrYWdlYXNzb2NndWlkIj4KCQkJPGRzLXZhbHVlPjZPNVMzSE5WXzIwMTEwMzI1MTMxOTIyMDIyOTwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1wYWNrYWdlZ3VpZCI+CgkJCTxkcy12YWx1ZT4zWENaWUpEUl8yMDExMDMyNTA5MzQzNTA0MTY8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tY29udGVudGNoZWNrc3VtIj4KCQkJPGRzLXZhbHVlPjEzOTIwMzc2ODc8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJPC9kcy1hdHRyaWJ1dGVzPgo8L2RzLW9iamVjdD4=</pkg-initial-state>
+			<pkg-initial-state package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="KHVTZ2KZ_201103251046160854" version="1.0.2.20150317171228">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48ZHMtb2JqZWN0IGRzLW9iamVjdC1jbGFzcz0iRGlyWE1MLUdsb2JhbENvbmZpZ0RlZiIgZHMtb2JqZWN0LW5hbWU9IlRSVlJSU0FEQ0ZHLUdDVnMiIG5hbWU9IlRSVlJSU0FEQ0ZHLUdDVnMiPgoJPGRzLWF0dHJpYnV0ZXM+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1pbnN0YWxsYXRpb25kaXJlY3RpdmUiPgoJCQk8ZHMtdmFsdWU+UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWlCbGJtTnZaR2x1WnowaVZWUkdMVGdpUHo0OGFXNXpkR0ZzYkdGMGFXOXVMV1JwY21WamRHbDJaVDRLQ1R4d2JHRmpaVzFsYm5RZ2JHOWpZWFJwYjI0OUltUmxabUYxYkhRaUx6NEtDVHhrY3kxaGRIUnlhV0oxZEdWekx6NEtDVHh3YjJ4cFkza3RiR2x1YTJGblpUNEtDUWs4Y0c5c2FXTjVMWE5sZENCdVlXMWxQU0puWTNZaUlHOXlaR1Z5UFNKWFpXbG5hSFFpSUhaaGJIVmxQU0kxTURBaUx6NEtDVHd2Y0c5c2FXTjVMV3hwYm10aFoyVStDand2YVc1emRHRnNiR0YwYVc5dUxXUnBjbVZqZEdsMlpUND08L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tZGlyZWN0aXZlY2hlY2tzdW0iPgoJCQk8ZHMtdmFsdWU+MjA4NDU2NTMyMDwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1wYWNrYWdlYXNzb2NndWlkIj4KCQkJPGRzLXZhbHVlPktIVlRaMktaXzIwMTEwMzI1MTA0NjE2MDg1NDwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+CgkJPGRzLWF0dHJpYnV0ZSBkcy1hdHRyLW5hbWU9ImlkbS1wYWNrYWdlZ3VpZCI+CgkJCTxkcy12YWx1ZT4zWENaWUpEUl8yMDExMDMyNTA5MzQzNTA0MTY8L2RzLXZhbHVlPgoJCTwvZHMtYXR0cmlidXRlPgoJCTxkcy1hdHRyaWJ1dGUgZHMtYXR0ci1uYW1lPSJpZG0tY29udGVudGNoZWNrc3VtIj4KCQkJPGRzLXZhbHVlPjEzNTgzNDQxODwvZHMtdmFsdWU+CgkJPC9kcy1hdHRyaWJ1dGU+Cgk8L2RzLWF0dHJpYnV0ZXM+CjwvZHMtb2JqZWN0Pg==</pkg-initial-state>
+		</pkg-initial-states>
+	</attributes>
+	<children>
+		<publisher name="Publisher">
+			<attributes/>
+			<children>
+				<rule checksum="487147959" name="TRVRRSADCFG-pub-ep-DefaultFilter" package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="31BD0YAL_201103251327270776">
+					<policy>
+						<rule>
+							<description>Filter Events</description>
+							<conditions>
+								<or>
+									<if-operation mode="case" op="equal">add</if-operation>
+									<if-operation mode="case" op="equal">move</if-operation>
+									<if-operation mode="case" op="equal">rename</if-operation>
+								</or>
+							</conditions>
+							<actions>
+								<do-veto/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+			</children>
+		</publisher>
+		<subscriber name="Subscriber">
+			<attributes/>
+			<children>
+				<rule checksum="220837937" name="TRVRSADCFG-sub-cp-CreateUser" package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="EYFG3DF1_201103251338260026">
+					<policy>
+						<rule>
+							<description>Exit if not user</description>
+							<conditions>
+								<and>
+									<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+								</and>
+							</conditions>
+							<actions>
+								<do-break/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Require attributes</description>
+							<comment xml:space="preserve">Veto if required attributes not present.</comment>
+							<conditions/>
+							<actions>
+								<do-veto-if-op-attr-not-available name="CN"/>
+								<do-veto-if-op-attr-not-available name="Given Name"/>
+								<do-veto-if-op-attr-not-available name="Surname"/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule checksum="3347629649" name="TRVRRSADCFG-sub-ep-DefaultFilter" package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="ZE21Z77T_201103251338260026">
+					<policy>
+						<rule>
+							<description>Filter Events</description>
+							<comment xml:space="preserve">Veto unprocessed events.</comment>
+							<conditions>
+								<or>
+									<if-operation mode="case" op="equal">move</if-operation>
+									<if-operation mode="case" op="equal">rename</if-operation>
+								</or>
+							</conditions>
+							<actions>
+								<do-veto/>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+				<rule checksum="3035022189" name="TRVRRSADCFG-sub-mp-MatchUser" package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="8TQDKN7I_201103251338260041">
+					<policy>
+						<rule>
+							<description>Exit if not user</description>
+							<conditions>
+								<and>
+									<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+								</and>
+							</conditions>
+							<actions>
+								<do-break/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Exit if CN not available</description>
+							<conditions>
+								<and>
+									<if-op-attr name="CN" op="not-available"/>
+								</and>
+							</conditions>
+							<actions>
+								<do-break/>
+							</actions>
+						</rule>
+						<rule>
+							<description>Execute user match</description>
+							<conditions/>
+							<actions>
+								<do-find-matching-object scope="subtree">
+									<arg-match-attr name="CN"/>
+								</do-find-matching-object>
+							</actions>
+						</rule>
+					</policy>
+				</rule>
+			</children>
+		</subscriber>
+		<rule checksum="1392037687" name="TRVRRSADCFG-smp" package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="6O5S3HNV_201103251319220229">
+			<attr-name-map>
+				<class-name>
+					<nds-name>User</nds-name>
+					<app-name>User</app-name>
+				</class-name>
+				<attr-name class-name="User">
+					<nds-name>accessCardNumber</nds-name>
+					<app-name>TokenSerialNumber</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>CN</nds-name>
+					<app-name>DefaultLogin</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>Given Name</nds-name>
+					<app-name>FirstName</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>Surname</nds-name>
+					<app-name>LastName</app-name>
+				</attr-name>
+				<attr-name class-name="User">
+					<nds-name>nspmDistributionPassword</nds-name>
+					<app-name>Password</app-name>
+				</attr-name>
+			</attr-name-map>
+		</rule>
+		<global-config-def checksum="135834418" name="TRVRRSADCFG-GCVs" package-id="3XCZYJDR_201103250934350416" pkg-assoc-id="KHVTZ2KZ_201103251046160854">
+			<attributes>
+				<global-config-values>
+					<configuration-values>
+						<definitions/>
+					</configuration-values>
+				</global-config-values>
+			</attributes>
+		</global-config-def>
+	</children>
+	<global-config-values>
+		<configuration-values>
+			<definitions>
+				<header display-name="Credential Provisioning"/>
+				<header display-name="Operational Settings"/>
+				<header display-name="New employee process"/>
+				<header display-name="Employee Termination process"/>
+				<header display-name="Password Management"/>
+				<header display-name="Credential Provisioning"/>
+				<definition display-name="SecureLogin Repository" dn-space="dirxml" dn-type="slash" name="idv.credprov.nsl.repository" type="dn">
+					<description>Location of the Credential Provisioning SecureLogin Repository which contains all the configuration parameters to enable credential provisioning to take place.</description>
+					<value>system\services\idm\driverset1\Library\lib-CredProv-NSLRepository</value>
+				</definition>
+				<definition display-name="SecretStore Repository" dn-space="dirxml" dn-type="slash" name="idv.credprov.nss.repository" type="dn">
+					<description>Location of the Credential Provisioning SecretStore Repository which contains all the configuration parameters to enable credential provisioning to take place.</description>
+					<value>system\services\idm\driverset1\Library\lib-CredProv-NSSRepository</value>
+				</definition>
+				<header display-name="Operational Settings"/>
+				<definition display-name="User Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.users" type="dn">
+					<description>All Resource Kit drivers use this GCV to get a reference to the container where users are stored.
+The DN is expected in slash-format.</description>
+					<value>CENSUS\PeopleGroups\USERS</value>
+				</definition>
+				<definition display-name="Group Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.groups" type="dn">
+					<description>All Resource Kit drivers use this GCV to get a reference to the container where groups are stored.
+The DN is expected in slash-format.</description>
+					<value>CENSUS\PeopleGroups\GROUPS</value>
+				</definition>
+				<definition display-name="Security Group Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.secgroups" type="dn">
+					<description>All Resource Kit drivers use this GCV to get a reference to the container where groups are stored.
+The DN is expected in slash-format.</description>
+					<value>Census\Mail\SecurityGroups</value>
+				</definition>
+				<header display-name="New employee process"/>
+				<header display-name="Employee Termination process"/>
+				<header display-name="Password Management"/>
+				<definition display-name="Generate random passwords for new employees" name="idv.pwdmgmt.genpwds" type="boolean">
+					<description>If set to "true", random passwords will be generated for new employees.</description>
+					<value>true</value>
+				</definition>
+				<definition display-name="Strict Scoping" hide="true" name="g-scope-sub-strict" type="boolean">
+					<description>If set to "true" the subscriber channel will only handle objects that are in the same subtree as the subtree that the publisher channel creates new objects in.</description>
+					<value>true</value>
+				</definition>
+				<definition display-name="Random Password Policy object" dn-space="dirxml" dn-type="slash" name="idv.users.password-policy" type="dn">
+					<description>The slash DN of the nspmPasswordPolicy object to be used to generate random passwords for new employees.</description>
+					<value>Security\Password Policies\Default Policy Random Passwords</value>
+				</definition>
+				<definition display-name="User account for starting workflows" dn-space="dirxml" dn-type="ldap" name="idv.workflow.user" type="dn">
+					<description>LDAP DN of a user account to specify for starting workflow from policy.</description>
+					<value>cn=padmin,dc=admins,dc=system</value>
+				</definition>
+				<definition display-name="Default workflow approver" dn-space="dirxml" dn-type="ldap" name="idv.workflow.default.approver" type="dn">
+					<description>LDAP DN of a user account or group to send workflows to if no other approver, like manager, can be find.</description>
+					<value>CN=Management,dc=groups,O=company,dc=data</value>
+				</definition>
+				<definition display-name="Workflow definition container" dn-space="dirxml" dn-type="ldap" name="idv.workflow.container" type="dn">
+					<description>LDAP DN of container holding Provisioning Request Definitions</description>
+					<value>CN=RequestDefs,CN=AppConfig,CN=user-application,CN=driverset1,dc=idm,dc=services,dc=system</value>
+				</definition>
+				<definition display-name="Workorder Container" dn-space="dirxml" dn-type="slash" name="idv.workorder.container" type="dn">
+					<description>Slash form of Workorder Driver's workorder container</description>
+					<value>system\services\idm\workorders</value>
+				</definition>
+				<definition display-name="User Application URL" name="idv.workflow.url" type="string">
+					<description>URL of User Application used to start workflows</description>
+					<value>http://127.0.0.1:8080/IDM</value>
+				</definition>
+				<definition display-name="Identity Vault User Container" dn-space="dirxml" dn-type="slash" name="g-dit-data-users" type="dn">
+					<description>All Resource Kit drivers use this GCV to get a reference to the container where users are stored.</description>
+					<value>data\users</value>
+				</definition>
+				<definition display-name="Work Orders Container" name="WORK_ORDERS_DN" type="string">
+					<value>services\idm\WorkOrders</value>
+					<description>This is the container that holds the work orders generated by any driver-  For example, when Lawson needs a delayed rename event - it will write a work order object here.</description>
+				</definition>
+				<definition display-name="Short name of the root domain (upper case):" name="ROOT_DOMAIN_SHORT_NAME" type="string">
+					<description>This is the short name of the root domain in the domain, for example - if your root domain was dc=fcps,dc=edu, this value would be FCPS.</description>
+					<value>IDMDEV</value>
+				</definition>
+				<definition display-name="List of Pilot Users" item-separator=";" name="PilotUsers" type="list">
+					<description>This list is contains the only users authorized to sync when the pub event rule is enabled.</description>
+					<value>
+						<item>colla308</item>
+						<item>pk_fedid=1001131282</item>
+						<item>pk_fedid=1002218331</item>
+						<item>pk_fedid=1000015042</item>
+						<item>pk_fedid=1000039366</item>
+					</value>
+				</definition>
+				<definition display-name="School Board Office Codes" name="school-board-office-codes" type="string">
+					<description>If a teacher has one of these location codes, they'll be placed in the SBO Users container (not a teachers container)</description>
+					<value>900,902,905,906,910,915,920,930,940,945,946,980,981,982,996</value>
+				</definition>
+				<header display-name="LDAP Credentials Email Archive"/>
+				<definition display-name="EmailArchive" name="EmailArchive" type="string">
+					<description/>
+					<value>vlab-it024idmdev.tco.census.gov</value>
+				</definition>
+				<definition display-name="Archive Port" name="ArchivePort" type="string">
+					<description/>
+					<value>636</value>
+				</definition>
+				<definition display-name="Archive User" name="ArchiveUser" type="string">
+					<description/>
+					<value>cn=Archivequery,ou=support,o=census</value>
+				</definition>
+				<definition display-name="Archive DN" name="ArchiveBaseDN" type="string">
+					<description/>
+					<value>ou=mailrecords,o=Census</value>
+				</definition>
+				<definition critical-change="true" display-name="Archive PW" name="Archivepw" type="password-ref">
+					<description/>
+					<value>Archivepw</value>
+				</definition>
+				<definition display-name="Notes DN" name="NotesBasedDN" type="string">
+					<description/>
+					<value>O=BOCvl</value>
+				</definition>
+				<header display-name="LDAP Credentials ID VAULT"/>
+				<definition display-name="Census IDV User DN" dn-space="dirxml" dn-type="slash" name="census-idv-dn" type="dn">
+					<description>The user container in the identity vault.</description>
+					<value>Census\PeopleGroups\Users</value>
+				</definition>
+				<definition display-name="IDV Server" name="IDVServer" type="string">
+					<description/>
+					<value>idm022vaultlab.tco.census.gov</value>
+				</definition>
+				<definition display-name="IDV Port" name="IDVPort" type="string">
+					<description/>
+					<value>389</value>
+				</definition>
+				<definition display-name="IDV Port2" name="IDVPort2" type="string">
+					<description/>
+					<value>636</value>
+				</definition>
+				<definition display-name="LDAPKeystore" name="LDAPKeystore" type="string">
+					<description/>
+					<value>/data/NetIQ/certs/LDAPSearch.keystore</value>
+				</definition>
+				<definition display-name="LDAPKeystorepass" name="LDAPKeystorepass" type="string">
+					<description/>
+					<value>changeit</value>
+				</definition>
+				<definition display-name="IDV User" name="IDVUser" type="string">
+					<description/>
+					<value>cn=ldapproxy,o=census</value>
+				</definition>
+				<definition display-name="IDV User2" name="IDVUser2" type="string">
+					<description/>
+					<value>cn=idmsquery2,ou=support,o=census</value>
+				</definition>
+				<definition display-name="IDVBase DN" name="IDVBasedDN" type="string">
+					<description/>
+					<value>ou=peoplegroups,o=Census</value>
+				</definition>
+				<definition critical-change="true" display-name="IDVUserpwd2" name="IDVUserpwd2" type="password-ref">
+					<description/>
+					<value>IDVUserpwd2</value>
+				</definition>
+				<definition critical-change="true" display-name="ADMailQuery" name="ADMailQuery" type="password-ref">
+					<description/>
+					<value>ADMailQuery</value>
+				</definition>
+				<definition critical-change="true" display-name="Email Notification List" name="emailnotifylist" type="string">
+					<description>List of email admins to alert</description>
+					<value>tco.eab.list@census.gov,willie.joe.thomas@census.gov</value>
+				</definition>
+				<group>
+					<definition display-name="Manager confirms new employee via workflow" name="idv.confirm-new-employee" type="boolean">
+						<description>If true, then a new employee must be confirmed via workflow sent to the employee's manager before the new employee will be provisioned.</description>
+						<value>true</value>
+					</definition>
+					<subordinates active-value="true">
+						<definition display-name="Days before first working day to start confirmation" name="idv.workflow.new-employee.start-window" range-hi="365" range-lo="1" type="integer">
+							<description>The number of days before a new employee's hire date that the confirmation workflow addressed to the new employee's manager will be started.</description>
+							<value>7</value>
+						</definition>
+					</subordinates>
+				</group>
+				<group>
+					<definition display-name="Manager confirms employee termination via workflow" name="idv.confirm-employee-termination" type="boolean">
+						<description>If true, then a employee termination must be confirmed via workflow sent to the employee's manager before the employee termination process begins.</description>
+						<value>false</value>
+					</definition>
+					<subordinates active-value="true">
+						<definition display-name="Days before last working day to start confirmation" name="idv.workflow.employee-termination.start-window" range-hi="365" range-lo="1" type="integer">
+							<description>The number of days before a new employee's hire date that the confirmation workflow addressed to the new employee's manager will be started.</description>
+							<value>7</value>
+						</definition>
+					</subordinates>
+				</group>
+			</definitions>
+		</configuration-values>
+	</global-config-values>
+</driver-configuration>

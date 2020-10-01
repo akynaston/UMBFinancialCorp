@@ -1,0 +1,104 @@
+<project name="FCPS" default="dist" basedir=".">
+    <property name="iteration" value="1"/>
+    <property name="docs.dir" value="doc"/>
+
+    <macrodef name="xsltAndVersion">
+        <attribute name="in"/>
+        <attribute name="out"/>
+        <attribute name="style"/>
+        <attribute name="driverRevision" default="${iteration}.${build.number}"/>
+        <element name="cc-elements" implicit="yes" optional="yes"/>
+        <sequential>
+            <xslt in="@{in}" out="@{out}" style="@{style}">
+        <param name="DRIVER_REVISION" expression="@{driverRevision}"/>
+        <cc-elements/>
+           </xslt>            
+        </sequential>
+    </macrodef>
+    
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+	
+	<target name="dist">
+
+        <!-- Set up rev filter -->
+        <filter token="BUILD_AND_REV" value="${iteration}.${build.number}"/>
+
+        <copy todir="build" filtering="true">
+            <fileset file="${docs.dir}/README.txt"/>
+        </copy>
+
+        <copy todir="build/export">
+            <fileset file="export/RSA-vanilla-from-packages.xml">
+              <include name="**/*.ps1"/>
+            </fileset>
+		</copy>
+
+        <zip destfile="${deliv.zip}">
+            <zipfileset dir="build">
+				<exclude name="**/Trivir-Dev/**"/> 
+            </zipfileset>
+            <zipfileset dir="test" prefix="tests"/>
+            <zipfileset file="${env.ad.dir}/ActiveDirectoryObjectsDev.ldif"/>
+            <zipfileset file="${env.ad.dir}/ActiveDirectoryObjectsTest.ldif"/>
+            <zipfileset file="${env.staff.dir}/IDV-fcpsUserAuxClass-Schema.ldif"/>
+            <zipfileset file="${env.staff.dir}/RenameConsolidationServiceAccount.ldif"/>
+            <!--
+            Not including system email templates any more, as FCPS owns these.
+            <zipfileset dir="${emailTemplates.dir.src}" prefix="SystemEmailTemplates"/>
+            -->
+            <zipfileset file="${envunorganized.dir}/JobServerLists-devl.ldif" prefix="FCPS-Dev"/>
+            <zipfileset file="${envunorganized.dir}/JobServerLists-test.ldif" prefix="FCPS-Test"/>
+            <zipfileset file="${envunorganized.dir}/JobServerLists-prod.ldif" prefix="FCPS-Prod"/>
+            <zipfileset file="${env.dir}/Staff/JobScopes.ldif"/>
+            <zipfileset src="${ps.shim.deliverable}" includes="Exchange2007Shim.jar" fullpath="Exchange2007Shim.jar"/>
+            <zipfileset file="lib/xom-1.2.3.jar" fullpath="lib/xom-1.2.3.jar"/>
+            <zipfileset file="lib/ojdbc7-Oracle12c.jar" fullpath="lib/ojdbc7-Oracle12c.jar"/>
+        </zip>
+    </target>
+    
+   <target name="normalize"> 
+        <echo message="Java Version: ${java.version}"/> 
+        <echo message="Java home: ${java.home}"/> 
+
+        <!-- Call again to remove useless package tags; Designer adds them back upon export, even after removing them for the first time. -->
+        <antcall target="remove-packages"/>
+        
+        <!-- Before sorting, replace the import location with the corrected value, as designer provides the wrong value (dotted unqualified dn format) 
+            Also set the version to X.X so that version is clean in the svn checked in files.
+        -->
+        <!-- ====================================== TRIVIR VM =========================================  -->
+        <xsltAndVersion in="exports/${export.library}" out="exports/temp/${export.library}.tmp" style="config/Library-config.xsl">
+            <param name="LibraryPrompt-DriverSet" expression="CN=Driver Set.OU=idm.O=services"/>             
+            <param name="DRIVER_REVISION" expression="X.X"/>
+        </xsltAndVersion>
+       
+        <!-- Rename the tmp files back to the standard library names, and move them back to the exports directory for sorting. NOTE: WE'RE NOT SORTING USERAPP as we haven't had a need to do so. -->
+        <move file="exports/temp/${export.library}.tmp" tofile="exports/${export.library}"/>
+       
+        <xslt basedir="${exports}" destdir="${exports}/temp" extension=".xml" style="config/normalize.xsl" includes="*.xml" excludes="UserApp4_5.xml, Role and Resource Service Driver.xml"/>
+        <copy todir="${exports}">
+            <fileset dir="${exports}/temp"/>
+        </copy>
+        <delete dir="${exports}/temp"/>
+        
+        <!-- Ensure TriVir settings are in the proper case, so that the build will work properly, and subsequent imports of these files will fix case differences -->
+        <replaceregexp flags="gi" match="DC=fcpstrivir,DC=dev,DC=com" replace="DC=fcpstrivir,DC=dev,DC=com">
+            <fileset dir="exports">
+  <include name="FCPS Library.xml"/>
+            </fileset>
+        </replaceregexp>
+    
+        <replaceregexp flags="gi" match="fcpstrivir.dev.com" replace="fcpstrivir.dev.com">
+            <fileset dir="exports">
+			  <include name="FCPS Library.xml"/>
+			  <include name="FCPS Table Library.xml"/>
+            </fileset>
+        </replaceregexp>
+        
+    </target>   
+    
+
+
+</project>

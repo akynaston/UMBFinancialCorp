@@ -9,9 +9,9 @@ Files included:
  - Latest supported TriVir RSA Driver 
  - Sample Policy XML file - See "RSA-vanilla-from-packages.xml"
 	 - Note: this was the driver export created from the RSA driver Designer packages, also included as 'designer_packages'.
- - block of support hours (retainer) to asssit with rsa driver related issues.
  - IdMUnit customer release (v2.1.43 or later)
- - Production isntallation may be scheduled during non-business hours with two weeks advance notice based on trivir ability.
+
+
 
 
 ===================================================================================================

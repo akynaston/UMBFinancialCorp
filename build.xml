@@ -2,7 +2,7 @@
     <property name="iteration" value="1"/>
     <property name="docs.dir" value="doc"/>
 	<property name="build.dir" value="build"/>
-	<property name="deliv.zip" value="delivery/RSADriver-Release-${iteration}.zip"/>
+	<property name="deliv.zip" value="delivery/UMBBank-RSADriver-Release-${iteration}.zip"/>
 	<property name="customer.name" value="UMBBank"/>
 	
 	<property name="idmunit.dir" value="SVN-IdMUnit-CustomerVersion/dist/expanded"/>
@@ -30,7 +30,10 @@
     <target name="init">
         <buildnumber/>
     </target>
-	
+
+	<!-- 
+		This target not called for now, not sending ace_conn in first release as it doesn't build, and wasn't explicitly asked for.
+	-->
 	<target name="build-ace_conn">
 		<!--
 			<antcall C:\work\UMBBank\SVN-RSA-UMBBankBranch\ace_conn
@@ -52,11 +55,9 @@
             
             <zipfileset file="${build.dir}/idmunit-configTEMP.xml" fullpath="${customer.name}-IdMUnitTests/test/idmunit-config.xml"/>
         </zip>
-        
-        
     </target>
 	
-	<target name="dist" depends="init, build-ace_conn">
+	<target name="dist" depends="init, dist-idmunit"> <!-- , build-ace_conn"> -->
 
         <!-- Set up rev filter -->
         <filter token="BUILD_AND_REV" value="${iteration}.${build.number}"/>
@@ -71,14 +72,17 @@
 		</copy>
 
         <zip destfile="build/export/RSADriver_DesignerPackages.zip">
-            <zipfileset dir="RSA-UMBBankBranch/ace_shim/designer_packages">
+            <zipfileset dir="SVN-RSA-UMBBankBranch/ace_shim/designer_packages">
             </zipfileset>
         </zip>		
 
         <zip destfile="${deliv.zip}">
-            <zipfileset dir="build">
-				<include name="RSA-UMBBankBranch/ace_shim/delivery/RSA-ACE-driver_obfuscated-2.1.62.zip"/>
+            <zipfileset dir="build"/>
+			<zipfileset dir="SVN-RSA-UMBBankBranch/ace_shim/delivery">
+				<include name="RSA-ACE-driver-2.1.62.zip"/>
             </zipfileset>
+            <zipfileset prefix="doc" file="SVN-RSA-UMBBankBranch/ace_shim/doc/rsa.pdf"/>
+            <zipfileset prefix="doc" file="SVN-RSA-UMBBankBranch/ace_shim/doc/readme.txt"/>
         </zip>
 		
     </target>

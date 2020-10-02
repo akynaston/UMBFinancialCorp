@@ -6,12 +6,26 @@ Release notes:
  
 Files included:
 
- - Latest supported TriVir RSA Driver 
- - Sample Policy XML file - See "RSA-vanilla-from-packages.xml"
-	 - Note: this was the driver export created from the RSA driver Designer packages, also included as 'designer_packages'.
- - IdMUnit customer release (v2.1.43 or later)
+doc\readme.txt: RSA readme, delivered previously.
+doc\rsa.pdf: RSA documentation delivered previously.
+export\RSA-vanilla-from-packages: - Latest TriVir RSA Driver XML created from the designer packages included in the RSA delivery zip.
+README.txt: this file
+RSA-ACE-driver-2.1.62.zip: latest ACE driver shim, and corresponding 
+UMBBank-IdMUnitTests.zip: Latest Designer importable project 'archive' of the IdMUnit customer release, version 2.1.54-b31
+	 - This file can be directly imported as an 'archived' java project into Designer.
+	 
+	 
+Contents of UMBBank-IdMUnitTests.zip:
 
+While this file should be imported as a java archive project file, it also includes some additional items:
 
+doc: Documentation for IdMUnit
+lib: Libraries needed to run IdMUnit.
+test: Test folder including sample runner. Review documentation in the doc directory for more information.
+	Note: this folder also contains required idmunit-config.xml, and idmunit-defaults.properties along with a sample test file.
+.classpath: classpath setup for IdMUnit.
+.project: Designer importable project file.
+License.txt: Licence for IdMUnit.
 
 
 ===================================================================================================
@@ -24,5 +38,4 @@ Release Deploy notes:
 CHANGELOG:
 
 Release 1
- - Included delivery of RSA driver files.
- 
+ - Delivery of the requested files from the SOW, as listed above.

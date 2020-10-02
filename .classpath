@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/**|org/idmunit/oldtests/" kind="src" path="test"/>
+	<classpathentry excluding="**/.svn/**" kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="UMBBank-IdMUnitTests/lib/test/dirxml.jar"/>
+	<classpathentry kind="lib" path="UMBBank-IdMUnitTests/lib/test/dirxml_misc.jar"/>
+	<classpathentry kind="lib" path="UMBBank-IdMUnitTests/lib/test/js.jar"/>
+	<classpathentry kind="lib" path="UMBBank-IdMUnitTests/lib/test/ldap.jar"/>
+	<classpathentry kind="lib" path="UMBBank-IdMUnitTests/lib/test/nxsl.jar"/>
+	<classpathentry kind="lib" path="UMBBank-IdMUnitTests/lib/test/xp.jar"/>
+	<classpathentry kind="output" path="bin1"/>
+</classpath>

@@ -27,9 +27,60 @@
     </target>
 	
 	<target name="build-ace_conn">
+		<!--
 		<antcall C:\work\UMBBank\SVN-RSA-UMBBankBranch\ace_conn
+		-->
 		
 	</target>
+	
+    <target name="dist-idmunit" depends="init">
+        
+		<!--
+        <xslt in="test/idmunit-config.xml" out="${build.dir}/idmunit-configTEMP.xml" style="config/idmunit-transformer.xsl" >
+            <param name="live-profile" expression="TEST"/>
+        </xslt>
+
+        <xslt in=".classpath" out="${build.dir}/.classpath" style="config/build-idmunit-classpath.xsl"/>
+		-->
+
+
+        <zip destfile="${build.dir}/${customer.name}-IdMUnitTests.zip">
+            <zipfileset file="${build.dir}/.classpath" prefix="${customer.name}-IdMUnitTests"/>
+            <zipfileset file=".project" prefix="${customer.name}-IdMUnitTests"/>
+            <zipfileset file="License.txt" prefix="${customer.name}-IdMUnitTests"/>
+
+            <!-- Get the main libraries: -->
+            <zipfileset dir="${idmunit-lib.dir}" prefix="${customer.name}-IdMUnitTests/${idmunit-lib.dir}"/>
+            
+            <!-- Get the DXCMD jar files (and any others) in our lib/test directory: -->
+            <zipfileset dir="lib/test" prefix="${customer.name}-IdMUnitTests/idmunit-external/lib/test"/>
+			
+			<!-- Get the latest HTTP file input connector-->
+			<zipfileset dir="lib/sf_data_connector" prefix="${customer.name}-IdMUnitTests/idmunit-external/lib/sf_data_connector"/>
+            
+            <!-- Get the new XMLFileconn and related files -->
+            <zipfileset file="src-xmlfile_conn/dist/xmlfile_conn.jar" prefix="${customer.name}-IdMUnitTests/${idmunit-lib.dir}"/>
+            
+            <!-- Get the batch file to run HRDS standalone listener until we can resolve sf_data connector running as proper idmunit connector-->
+            <zipfileset file="test/runIdMUnitHRDSWebServer.bat" prefix="${customer.name}-IdMUnitTests"/>
+            
+            <zipfileset dir="test" prefix="${customer.name}-IdMUnitTests/test">
+                <exclude name="idmunit-config.xml"/>
+                <exclude name="**/.~*/**"/>
+                <exclude name="com/**"/> <!-- Exclude the XMLSplitter test files . . -->
+                <exclude name="**/xmlsplitter-**/**"/>
+                <exclude name="runHRDSListener.bat"/>
+            </zipfileset>
+            <zipfileset file="${build.dir}/idmunit-configTEMP.xml" fullpath="${customer.name}-IdMUnitTests/test/idmunit-config.xml"/>
+            <zipfileset file="autotests.xml" prefix="${customer.name}-IdMUnitTests"/>
+            <zipfileset file="runtests.bat" prefix="${customer.name}-IdMUnitTests"/>
+        </zip>
+        
+        <!-- Delete the temporary classpath we created for the IdMUnit build.
+        <delete file="${build.dir}/.classpath"/>
+        -->
+        
+    </target>
 	
 	<target name="dist" depends="init, build-ace_conn">
 

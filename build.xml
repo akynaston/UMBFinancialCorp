@@ -38,24 +38,19 @@
 	</target>
 	
     <target name="dist-idmunit" depends="init">
+		<mkdir dir="${build.dir}"/>
         
-        <xslt in="test/idmunit-config.xml" out="${build.dir}/idmunit-configTEMP.xml" style="config/idmunit-transformer.xsl" >
-            <!--
-				<param name="live-profile" expression="TEST"/>
-			-->
-        </xslt>
-
-        <xslt in=".classpath" out="${build.dir}/.classpath" style="config/build-idmunit-classpath.xsl"/>
-
         <zip destfile="${build.dir}/${customer.name}-IdMUnitTests.zip">
-            <zipfileset file="${build.dir}/.classpath" prefix="${customer.name}-IdMUnitTests"/>
+            <zipfileset file=".classpath" prefix="${customer.name}-IdMUnitTests"/>
 			<zipfileset file=".project" prefix="${customer.name}-IdMUnitTests"/>
             <zipfileset file="${idmunit.dir}/License.txt" prefix="${customer.name}-IdMUnitTests"/>
+			<zipfileset dir="${idmunit.dir}/doc" prefix="${customer.name}-IdMUnitTests/doc"/>
+			<zipfileset dir="test" prefix="${customer.name}-IdMUnitTests/test"/>
 
             <!-- Get the main libraries: -->
             <zipfileset dir="${idmunit-lib.dir}" prefix="${customer.name}-IdMUnitTests/lib"/>
             
-            <zipfileset file="${build.dir}/idmunit-configTEMP.xml" fullpath="${customer.name}-IdMUnitTests/idmunit-config.xml"/>
+            <zipfileset file="${build.dir}/idmunit-configTEMP.xml" fullpath="${customer.name}-IdMUnitTests/test/idmunit-config.xml"/>
         </zip>
         
         

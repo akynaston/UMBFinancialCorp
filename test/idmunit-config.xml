@@ -4,9 +4,61 @@
 	<profiles>
 		<profile name="VM">
             <connection> <!-- IDV VM-->
-				<name>IDV</name>
+				<name>IV</name>
 				<description>Connector for the identity vault</description>
-				<type>com.trivir.idmunit.connector.IterationConnector</type>
+				<type>org.idmunit.connector.ldap.LdapConnector</type>
+				<server>172.17.2.19:636</server>
+				<user>cn=admin,o=services</user>
+				<password>B2vPD2UsfKc=</password>
+				<trust-all-certs>true</trust-all-certs>
+				<multiplier>
+					<retry>0</retry> <!-- changed from 2 to 0 on July 11, 2016, 6:14 pm-->
+					<wait>0</wait>
+				</multiplier>
+				<substitutions>
+					<substitution>
+						<replace>%TEST1%</replace>
+						<new>ou=test</new>
+					</substitution>
+                </substitutions>
+				<data-injections>
+					<data-injection>
+						<type>org.idmunit.injector.DateInjection</type>
+						<key>%TODAY%</key>
+						<format>MM/dd/yyyy</format>
+					</data-injection>
+				</data-injections>
+			</connection>
+            <connection> <!-- IDV VM-->
+				<name>ORCL</name>
+				<description>Connector for the Sample ORCL (fix type if using this)</description>
+				<type>org.idmunit.connector.ldap.LdapConnector</type>
+				<server>172.17.2.19:636</server>
+				<user>cn=admin,o=services</user>
+				<password>B2vPD2UsfKc=</password>
+				<trust-all-certs>true</trust-all-certs>
+				<multiplier>
+					<retry>0</retry> <!-- changed from 2 to 0 on July 11, 2016, 6:14 pm-->
+					<wait>0</wait>
+				</multiplier>
+				<substitutions>
+					<substitution>
+						<replace>%TEST1%</replace>
+						<new>ou=test</new>
+					</substitution>
+                </substitutions>
+				<data-injections>
+					<data-injection>
+						<type>org.idmunit.injector.DateInjection</type>
+						<key>%TODAY%</key>
+						<format>MM/dd/yyyy</format>
+					</data-injection>
+				</data-injections>
+			</connection>
+			<connection> <!-- DTF VM-->
+				<name>DTF</name>
+				<description>Connector for the Sample DTF (fix type if using this)</description>
+				<type>org.idmunit.connector.ldap.LdapConnector</type>
 				<server>172.17.2.19:636</server>
 				<user>cn=admin,o=services</user>
 				<password>B2vPD2UsfKc=</password>
@@ -30,7 +82,6 @@
 				</data-injections>
 			</connection>
 		</profile>
-		
 <!-- Add more profiles here, one for each environment as needed. Be sure to keep the same set of connectors in each environment.
 	If a connector isn't needed in that enviornment, disable it:  <disabled>TRUE</disabled>
 -->		

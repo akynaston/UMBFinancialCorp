@@ -1,9 +1,4 @@
-https://www.netiq.com/documentation/identity-manager-48/designer_admin/data/packman.html#packmanimport
-
-
-
-
-<?xml version="1.0" encoding="UTF-8"?><driver-configuration dn="cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" driver-set-dn="cn=IdvaultDriverSet1,o=IDM.census" name="RSA" package-id="NBUA62PL_201103241141180062">
+<?xml version="1.0" encoding="UTF-8"?><driver-configuration dn="cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" driver-set-dn="cn=IdvaultDriverSet1,o=IDM.clientabc" name="RSA" package-id="NBUA62PL_201103241141180062">
 	<packages>
 		<package id="NBUA62PL_201103241141180062" symbolic-name="com.trivirllc.trvrrsabase" version="1.0.2.20150317171209"/>
 		<package id="3XCZYJDR_201103250934350416" symbolic-name="com.trivirllc.trvrrsadcfg" version="1.0.2.20150317171228"/>
@@ -33,12 +28,12 @@ https://www.netiq.com/documentation/identity-manager-48/designer_admin/data/pack
 		<java-module value="com.trivir.idm.driver.ace.AceDriverShim"/>
 		<trace-name value="RSA"/>
 		<policy-linkage>
-			<linkage-item dn="cn=TRVRRSADCFG-smp,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="0" policy-set-name="Schema Mapping"/>
-			<linkage-item dn="cn=TRVRRSADCFG-sub-ep-DefaultFilter,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="4" policy-set-name="Subscriber Event"/>
-			<linkage-item dn="cn=TRVRRSADCFG-pub-ep-DefaultFilter,cn=Publisher,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="5" policy-set-name="Publisher Event"/>
-			<linkage-item dn="cn=TRVRRSADCFG-sub-mp-MatchUser,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="6" policy-set-name="Subscriber Matching"/>
-			<linkage-item dn="cn=TRVRSADCFG-sub-cp-CreateUser,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="8" policy-set-name="Subscriber Create"/>
-			<linkage-item dn="cn=TRVRRSADCFG-GCVs,cn=RSA,cn=IdvaultDriverSet1,o=IDM.census" order="0" policy-set="14" policy-set-name="Global Configs"/>
+			<linkage-item dn="cn=TRVRRSADCFG-smp,cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" order="0" policy-set="0" policy-set-name="Schema Mapping"/>
+			<linkage-item dn="cn=TRVRRSADCFG-sub-ep-DefaultFilter,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" order="0" policy-set="4" policy-set-name="Subscriber Event"/>
+			<linkage-item dn="cn=TRVRRSADCFG-pub-ep-DefaultFilter,cn=Publisher,cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" order="0" policy-set="5" policy-set-name="Publisher Event"/>
+			<linkage-item dn="cn=TRVRRSADCFG-sub-mp-MatchUser,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" order="0" policy-set="6" policy-set-name="Subscriber Matching"/>
+			<linkage-item dn="cn=TRVRSADCFG-sub-cp-CreateUser,cn=Subscriber,cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" order="0" policy-set="8" policy-set-name="Subscriber Create"/>
+			<linkage-item dn="cn=TRVRRSADCFG-GCVs,cn=RSA,cn=IdvaultDriverSet1,o=IDM.clientabc" order="0" policy-set="14" policy-set-name="Global Configs"/>
 		</policy-linkage>
 		<driver-cache-limit value="0"/>
 		<shim-auth-id value="authid"/>
@@ -364,197 +359,6 @@ The control value should be a valid comma(,) separated list, else errors may be 
 	</children>
 	<global-config-values>
 		<configuration-values>
-			<definitions>
-				<header display-name="Credential Provisioning"/>
-				<header display-name="Operational Settings"/>
-				<header display-name="New employee process"/>
-				<header display-name="Employee Termination process"/>
-				<header display-name="Password Management"/>
-				<header display-name="Credential Provisioning"/>
-				<definition display-name="SecureLogin Repository" dn-space="dirxml" dn-type="slash" name="idv.credprov.nsl.repository" type="dn">
-					<description>Location of the Credential Provisioning SecureLogin Repository which contains all the configuration parameters to enable credential provisioning to take place.</description>
-					<value>system\services\idm\driverset1\Library\lib-CredProv-NSLRepository</value>
-				</definition>
-				<definition display-name="SecretStore Repository" dn-space="dirxml" dn-type="slash" name="idv.credprov.nss.repository" type="dn">
-					<description>Location of the Credential Provisioning SecretStore Repository which contains all the configuration parameters to enable credential provisioning to take place.</description>
-					<value>system\services\idm\driverset1\Library\lib-CredProv-NSSRepository</value>
-				</definition>
-				<header display-name="Operational Settings"/>
-				<definition display-name="User Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.users" type="dn">
-					<description>All Resource Kit drivers use this GCV to get a reference to the container where users are stored.
-The DN is expected in slash-format.</description>
-					<value>CENSUS\PeopleGroups\USERS</value>
-				</definition>
-				<definition display-name="Group Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.groups" type="dn">
-					<description>All Resource Kit drivers use this GCV to get a reference to the container where groups are stored.
-The DN is expected in slash-format.</description>
-					<value>CENSUS\PeopleGroups\GROUPS</value>
-				</definition>
-				<definition display-name="Security Group Container" dn-space="dirxml" dn-type="slash" name="idv.dit.data.secgroups" type="dn">
-					<description>All Resource Kit drivers use this GCV to get a reference to the container where groups are stored.
-The DN is expected in slash-format.</description>
-					<value>Census\Mail\SecurityGroups</value>
-				</definition>
-				<header display-name="New employee process"/>
-				<header display-name="Employee Termination process"/>
-				<header display-name="Password Management"/>
-				<definition display-name="Generate random passwords for new employees" name="idv.pwdmgmt.genpwds" type="boolean">
-					<description>If set to "true", random passwords will be generated for new employees.</description>
-					<value>true</value>
-				</definition>
-				<definition display-name="Strict Scoping" hide="true" name="g-scope-sub-strict" type="boolean">
-					<description>If set to "true" the subscriber channel will only handle objects that are in the same subtree as the subtree that the publisher channel creates new objects in.</description>
-					<value>true</value>
-				</definition>
-				<definition display-name="Random Password Policy object" dn-space="dirxml" dn-type="slash" name="idv.users.password-policy" type="dn">
-					<description>The slash DN of the nspmPasswordPolicy object to be used to generate random passwords for new employees.</description>
-					<value>Security\Password Policies\Default Policy Random Passwords</value>
-				</definition>
-				<definition display-name="User account for starting workflows" dn-space="dirxml" dn-type="ldap" name="idv.workflow.user" type="dn">
-					<description>LDAP DN of a user account to specify for starting workflow from policy.</description>
-					<value>cn=padmin,dc=admins,dc=system</value>
-				</definition>
-				<definition display-name="Default workflow approver" dn-space="dirxml" dn-type="ldap" name="idv.workflow.default.approver" type="dn">
-					<description>LDAP DN of a user account or group to send workflows to if no other approver, like manager, can be find.</description>
-					<value>CN=Management,dc=groups,O=company,dc=data</value>
-				</definition>
-				<definition display-name="Workflow definition container" dn-space="dirxml" dn-type="ldap" name="idv.workflow.container" type="dn">
-					<description>LDAP DN of container holding Provisioning Request Definitions</description>
-					<value>CN=RequestDefs,CN=AppConfig,CN=user-application,CN=driverset1,dc=idm,dc=services,dc=system</value>
-				</definition>
-				<definition display-name="Workorder Container" dn-space="dirxml" dn-type="slash" name="idv.workorder.container" type="dn">
-					<description>Slash form of Workorder Driver's workorder container</description>
-					<value>system\services\idm\workorders</value>
-				</definition>
-				<definition display-name="User Application URL" name="idv.workflow.url" type="string">
-					<description>URL of User Application used to start workflows</description>
-					<value>http://127.0.0.1:8080/IDM</value>
-				</definition>
-				<definition display-name="Identity Vault User Container" dn-space="dirxml" dn-type="slash" name="g-dit-data-users" type="dn">
-					<description>All Resource Kit drivers use this GCV to get a reference to the container where users are stored.</description>
-					<value>data\users</value>
-				</definition>
-				<definition display-name="Work Orders Container" name="WORK_ORDERS_DN" type="string">
-					<value>services\idm\WorkOrders</value>
-					<description>This is the container that holds the work orders generated by any driver-  For example, when Lawson needs a delayed rename event - it will write a work order object here.</description>
-				</definition>
-				<definition display-name="Short name of the root domain (upper case):" name="ROOT_DOMAIN_SHORT_NAME" type="string">
-					<description>This is the short name of the root domain in the domain, for example - if your root domain was dc=fcps,dc=edu, this value would be FCPS.</description>
-					<value>IDMDEV</value>
-				</definition>
-				<definition display-name="List of Pilot Users" item-separator=";" name="PilotUsers" type="list">
-					<description>This list is contains the only users authorized to sync when the pub event rule is enabled.</description>
-					<value>
-						<item>colla308</item>
-						<item>pk_fedid=1001131282</item>
-						<item>pk_fedid=1002218331</item>
-						<item>pk_fedid=1000015042</item>
-						<item>pk_fedid=1000039366</item>
-					</value>
-				</definition>
-				<definition display-name="School Board Office Codes" name="school-board-office-codes" type="string">
-					<description>If a teacher has one of these location codes, they'll be placed in the SBO Users container (not a teachers container)</description>
-					<value>900,902,905,906,910,915,920,930,940,945,946,980,981,982,996</value>
-				</definition>
-				<header display-name="LDAP Credentials Email Archive"/>
-				<definition display-name="EmailArchive" name="EmailArchive" type="string">
-					<description/>
-					<value>vlab-it024idmdev.tco.census.gov</value>
-				</definition>
-				<definition display-name="Archive Port" name="ArchivePort" type="string">
-					<description/>
-					<value>636</value>
-				</definition>
-				<definition display-name="Archive User" name="ArchiveUser" type="string">
-					<description/>
-					<value>cn=Archivequery,ou=support,o=census</value>
-				</definition>
-				<definition display-name="Archive DN" name="ArchiveBaseDN" type="string">
-					<description/>
-					<value>ou=mailrecords,o=Census</value>
-				</definition>
-				<definition critical-change="true" display-name="Archive PW" name="Archivepw" type="password-ref">
-					<description/>
-					<value>Archivepw</value>
-				</definition>
-				<definition display-name="Notes DN" name="NotesBasedDN" type="string">
-					<description/>
-					<value>O=BOCvl</value>
-				</definition>
-				<header display-name="LDAP Credentials ID VAULT"/>
-				<definition display-name="Census IDV User DN" dn-space="dirxml" dn-type="slash" name="census-idv-dn" type="dn">
-					<description>The user container in the identity vault.</description>
-					<value>Census\PeopleGroups\Users</value>
-				</definition>
-				<definition display-name="IDV Server" name="IDVServer" type="string">
-					<description/>
-					<value>idm022vaultlab.tco.census.gov</value>
-				</definition>
-				<definition display-name="IDV Port" name="IDVPort" type="string">
-					<description/>
-					<value>389</value>
-				</definition>
-				<definition display-name="IDV Port2" name="IDVPort2" type="string">
-					<description/>
-					<value>636</value>
-				</definition>
-				<definition display-name="LDAPKeystore" name="LDAPKeystore" type="string">
-					<description/>
-					<value>/data/NetIQ/certs/LDAPSearch.keystore</value>
-				</definition>
-				<definition display-name="LDAPKeystorepass" name="LDAPKeystorepass" type="string">
-					<description/>
-					<value>changeit</value>
-				</definition>
-				<definition display-name="IDV User" name="IDVUser" type="string">
-					<description/>
-					<value>cn=ldapproxy,o=census</value>
-				</definition>
-				<definition display-name="IDV User2" name="IDVUser2" type="string">
-					<description/>
-					<value>cn=idmsquery2,ou=support,o=census</value>
-				</definition>
-				<definition display-name="IDVBase DN" name="IDVBasedDN" type="string">
-					<description/>
-					<value>ou=peoplegroups,o=Census</value>
-				</definition>
-				<definition critical-change="true" display-name="IDVUserpwd2" name="IDVUserpwd2" type="password-ref">
-					<description/>
-					<value>IDVUserpwd2</value>
-				</definition>
-				<definition critical-change="true" display-name="ADMailQuery" name="ADMailQuery" type="password-ref">
-					<description/>
-					<value>ADMailQuery</value>
-				</definition>
-				<definition critical-change="true" display-name="Email Notification List" name="emailnotifylist" type="string">
-					<description>List of email admins to alert</description>
-					<value>tco.eab.list@census.gov,willie.joe.thomas@census.gov</value>
-				</definition>
-				<group>
-					<definition display-name="Manager confirms new employee via workflow" name="idv.confirm-new-employee" type="boolean">
-						<description>If true, then a new employee must be confirmed via workflow sent to the employee's manager before the new employee will be provisioned.</description>
-						<value>true</value>
-					</definition>
-					<subordinates active-value="true">
-						<definition display-name="Days before first working day to start confirmation" name="idv.workflow.new-employee.start-window" range-hi="365" range-lo="1" type="integer">
-							<description>The number of days before a new employee's hire date that the confirmation workflow addressed to the new employee's manager will be started.</description>
-							<value>7</value>
-						</definition>
-					</subordinates>
-				</group>
-				<group>
-					<definition display-name="Manager confirms employee termination via workflow" name="idv.confirm-employee-termination" type="boolean">
-						<description>If true, then a employee termination must be confirmed via workflow sent to the employee's manager before the employee termination process begins.</description>
-						<value>false</value>
-					</definition>
-					<subordinates active-value="true">
-						<definition display-name="Days before last working day to start confirmation" name="idv.workflow.employee-termination.start-window" range-hi="365" range-lo="1" type="integer">
-							<description>The number of days before a new employee's hire date that the confirmation workflow addressed to the new employee's manager will be started.</description>
-							<value>7</value>
-						</definition>
-					</subordinates>
-				</group>
-			</definitions>
 		</configuration-values>
 	</global-config-values>
 </driver-configuration>

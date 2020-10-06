@@ -1,0 +1,97 @@
+<project name="IdMUnitConnector" basedir=".">
+
+    <property name="idmunit.jar" location="${idmunit-core.dir}/dist/idmunit.jar"/>
+
+    <property name="build.dir" location="build/classes"/>
+
+    <path id="build-classpath">
+        <path refid="classpath"/>
+        <fileset file="${idmunit.jar}"/>
+        <fileset file="${idmunit-core.dir}/lib/slf4j-api-1.7.21.jar"/>
+    </path>
+
+    <target name="-setbuildnumber" unless="build.number">
+        <buildnumber/>
+    </target>
+
+    <target name="compile" depends="checkstyle, -setbuildnumber">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="src" destdir="${build.dir}" classpathref="build-classpath"  failonerror="true" source="1.5" target="1.5" debug="true" debuglevel="lines,vars,source"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <tstamp>
+            <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+        </tstamp>
+        <mkdir dir="dist"/>
+
+        <jar destfile="dist/${connector.name}.jar" basedir="${build.dir}" compress="false">
+            <manifest>
+                <attribute name="Built-Date" value="${TODAY}"/>
+                <section name="${section.name}">
+                    <attribute name="Implementation-Version" value="${version}-b${build.number}"/>
+                </section>
+            </manifest>
+        </jar>
+        <jar destfile="dist/${connector.name}-src.jar">
+            <manifest>
+                <attribute name="Built-Date" value="${TODAY}"/>
+                <section name="${section.name}">
+                    <attribute name="Implementation-Version" value="${version}-b${build.number}"/>
+                </section>
+            </manifest>
+            <fileset refid="src"/>
+        </jar>
+    </target>
+
+    <target name="dist" depends="jar">
+        <zip destfile="dist/${connector.name}-${version}.zip" filesonly="true">
+            <zipfileset file="dist/${connector.name}.jar" prefix="${connector.name}-${version}"/>
+            <zipfileset refid="docs" prefix="${connector.name}-${version}/doc"/>
+            <zipfileset refid="libs" prefix="${connector.name}-${version}/lib"/>
+            <zipfileset refid="dist-files"/>
+        </zip>
+    </target>
+
+    <target name="clean">
+        <available file="build" type="dir" property="build-dir-exists"/>
+        <available file="dist" type="dir" property="dist-dir-exists"/>
+
+        <ant target="delete-build-dir"/>
+        <ant target="delete-dist-dir"/>
+    </target>
+
+    <target name="delete-build-dir" if="build-dir-exists">
+        <delete includeEmptyDirs="true" failonerror="false">
+            <fileset dir="build"/>
+        </delete>
+    </target>
+
+    <target name="delete-dist-dir" if="dist-dir-exists">
+        <delete includeEmptyDirs="true" failonerror="false">
+            <fileset dir="dist"/>
+        </delete>
+    </target>
+
+    <target name="checkstyle"
+            description="Generates a report of code convention violation." depends="check-java-version" if="is-java-8">
+		<taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="${idmunit-core.dir}/lib/build/checkstyle-7.0-all.jar"/>
+		
+		<mkdir dir="build"/>
+		
+        <checkstyle config="${idmunit-core.dir}/checkstyle.xml">
+            <fileset dir="${basedir}" includes="**/*.java"/>
+            <formatter type="plain"/>
+            <formatter type="xml" tofile="build/checkstyle_report.xml"/>
+        </checkstyle>
+    </target>
+	
+	<target name="check-java-version">
+        <echo message="Checking java version for checkstyle (must be Java 1.8)"/>
+        <echo message="Current version: ${ant.java.version}"/>
+        <condition property="is-java-8">
+            <equals arg1="${ant.java.version}" arg2="1.8"/>
+        </condition>
+    </target>
+
+</project>

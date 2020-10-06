@@ -1,0 +1,13 @@
+bin
+build
+dist
+out
+report
+*.iml
+.idea
+.classpath
+.project
+.svn
+!lib/build
+!examples/.classpath
+!examples/.project

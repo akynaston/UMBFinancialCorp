@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<project name="IdMUnit" basedir="." default="dist">
+
+    <property name="version.required" value="1.8" />
+    <property name="release" value="2.1.54" />
+	<!-- This property is used in checkstyle config -->
+    <property name="idmunit-core.dir" value="."/>
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+
+    <path id="build-classpath">
+        <fileset dir="lib" includes="*.jar"/>
+    </path>
+
+    <target name="-setbuildnumber" unless="build.number">
+        <buildnumber/>
+    </target>
+
+    <target name="-init" depends="-setbuildnumber">
+        <fail message="FATAL ERROR: You must be running at least ant version ${version.required}.">
+            <condition>
+                <not>
+                    <antversion atleast="${version.required}" />
+                </not>
+            </condition>
+        </fail>
+        <tstamp>
+            <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss"/>
+        </tstamp>
+    </target>
+
+    <target name="compile" depends="checkstyle">
+        <mkdir dir="${build.dir}/classes"/>
+
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes" failonerror="true" source="1.5" target="1.5"
+               debug="true" debuglevel="lines,vars,source">
+            <classpath refid="build-classpath"/>
+        </javac>
+    </target>
+
+    <target name="javadoc" depends="compile">
+        <mkdir dir="${build.dir}/javadoc"/>
+        <javadoc
+                destdir="${build.dir}/javadoc"
+                classpathref="build-classpath"
+                author="true"
+                version="true"
+                use="true"
+                windowtitle="IdMUnit Source Documentation">
+
+            <fileset dir="${src.dir}" defaultexcludes="yes">
+                <include name="org/idmunit/**"/>
+            </fileset>
+
+            <doctitle><![CDATA[<h1>IdMUnit</h1>]]></doctitle>
+            <bottom>
+                <![CDATA[<i>Copyright &#169; 2005-2008 TriVir, LLC. Licensed under GNU GPL.  Please see www.idmunit.org for more information.</i>]]></bottom>
+            <tag name="todo" scope="all" description="To do:"/>
+            <group title="IdMUnit Packages" packages="org.idmunit.*"/>
+            <link offline="true" href="http://java.sun.com/products/jdk/1.2/docs/api/" packagelistLoc="tmp"/>
+            <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+        </javadoc>
+        <zip destfile="${build.dir}/idmunit-javadoc.zip">
+            <zipfileset dir="${build.dir}/javadoc" prefix="doc/api"/>
+        </zip>
+    </target>
+
+    <target name="jar" depends="-init,compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.dir}/idmunit.jar" index="true" keepcompression="true">
+            <fileset dir="${build.dir}/classes" excludes="**/*.xml;**/*.properties"/>
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+            <manifest>
+                <attribute name="Built-Date" value="${TODAY}"/>
+                <section name="org.idmunit">
+                    <attribute name="Implementation-Version" value="${release}-b${build.number}"/>
+                </section>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="dist" depends="-init,jar,javadoc">
+        <zip destfile="${dist.dir}/idmunit-${release}.zip">
+            <zipfileset file="${dist.dir}/idmunit.jar" prefix="idmunit-${release}/lib"/>
+            <zipfileset file="License.txt" prefix="idmunit-${release}"/>
+            <zipfileset file="LicensePolicies.txt" prefix="idmunit-${release}"/>
+            <zipfileset file="ThirdPartyLicenses.txt" prefix="idmunit-${release}"/>
+            <zipfileset file="examples/build.xml" prefix="idmunit-${release}"/>
+            <zipfileset file="examples/.classpath" prefix="idmunit-${release}"/>
+            <zipfileset file="examples/.project" prefix="idmunit-${release}"/>
+            <zipfileset file="examples/test/idmunit-config.xml" prefix="idmunit-${release}"/>
+            <zipfileset dir="doc" prefix="idmunit-${release}/doc"/>
+            <zipfileset file="${build.dir}/idmunit-javadoc.zip" prefix="idmunit-${release}/doc"/>
+            <zipfileset file="examples/test/idmunit.dtd" prefix="idmunit-${release}/doc"/>
+            <zipfileset dir="examples/test" prefix="idmunit-${release}/test"/>
+            <zipfileset dir="lib" prefix="idmunit-${release}/lib" includes="*.jar"/>
+        </zip>
+    </target>
+
+    <target name="run-examples" depends="jar">
+        <ant antfile="examples/build.xml"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="checkstyle"
+            description="Generates a report of code convention violation." depends="check-java-version" if="is-java-8">
+        <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="${basedir}/lib/build/checkstyle-7.0-all.jar"/>
+		
+		<mkdir dir="${build.dir}"/>
+		
+        <checkstyle config="${basedir}/checkstyle.xml">
+            <fileset dir="src" includes="**/*.java"/>
+            <formatter type="plain"/>
+            <formatter type="xml" tofile="${build.dir}/checkstyle_report.xml"/>
+        </checkstyle>
+    </target>
+	
+	<target name="check-java-version">
+        <echo message="Checking java version for checkstyle (must be Java 1.8)"/>
+        <echo message="Current version: ${ant.java.version}"/>
+        <condition property="is-java-8">
+            <equals arg1="${ant.java.version}" arg2="1.8"/>
+        </condition>
+    </target>
+	
+
+
+</project>

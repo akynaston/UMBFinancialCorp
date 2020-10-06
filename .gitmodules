@@ -1,0 +1,3 @@
+[submodule "idmunit-core"]
+	path = idmunit-core
+	url = ./idmunit-core

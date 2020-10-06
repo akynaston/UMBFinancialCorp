@@ -37,5 +37,5 @@ Release Deploy notes:
 ====================================================================================================
 CHANGELOG:
 
-Release 1
+Release 1.0 (Release 1, build 0)
  - Delivery of the requested files from the SOW, as listed above.

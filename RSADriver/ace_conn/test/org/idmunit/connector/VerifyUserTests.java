@@ -24,11 +24,11 @@ public class VerifyUserTests extends TestCase {
     public static final int endHour = 12; // 12 pm in utc
 
     protected void setUp() throws IdMUnitException, AceToolkitException {
-        atk = new AceApi71(null);
+        atk = new AceApi71(AllTests.getDefaultRSAConnConfig());
         
         createTempUser("tuser", "user", "test", startDate, startHour, endDate, endHour);
         try {
-            this.conn.setup(null);
+            this.conn.setup(AllTests.getDefaultRSAConnConfig());
         } catch (IdMUnitException e) {
             this.atk.destroy();
             throw e;
@@ -141,17 +141,21 @@ public class VerifyUserTests extends TestCase {
         addSingleValue(attrs, "DefaultLogin", "tuser");
         addSingleValue(attrs, "LastName", "user");
         addSingleValue(attrs, "objectClass", "User");
-        addSingleValue(attrs, "TempUser", "0");
+        addSingleValue(attrs, "TempUser", "FALSE");
      
         try {
             conn.execute("validateObject", attrs);
         } catch (AssertionFailedError e) {
-            assertEquals("Validation failed: Attribute [TempUser] not equal.  Expected dest value: [0] Actual dest value(s): [1]", e.getMessage());
+            assertEquals("Validation failed: Attribute [TempUser] not equal.  Expected dest value: [FALSE] Actual dest value(s): [TRUE]", e.getMessage());
             return;
         }
         fail("Expected failure verifying isTempUser");
     }
 
+    /**
+     * Invalid test now, dateStart, and dateEnd don't seem to be a part of API.
+     * 
+     
     public void testVerifyTempUserStartDate() throws IdMUnitException {
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
 
@@ -169,6 +173,7 @@ public class VerifyUserTests extends TestCase {
         }
         fail("Expected failure verifying startDate");
     }
+
 
     public void testVerifyTempUserStartHour() throws IdMUnitException {
         
@@ -227,8 +232,8 @@ public class VerifyUserTests extends TestCase {
         }
         fail("Expected failure verifying todEnd");
     }
-
-    private static final String tokenSerialNum = "000044619408";
+    */
+    private static final String tokenSerialNum = AllTests.tokenSerialNum;
 
     public void testVerifyTokenAssignment() throws IdMUnitException, AceToolkitException {
         atk.assignAnotherToken("-tuser", tokenSerialNum);
@@ -259,7 +264,7 @@ public class VerifyUserTests extends TestCase {
         fail("Expected failure verifying user with a bad token serial number");
     }
 
-    private static final String profileName = "VPN - Remotely Anywhere Applications";
+    private static final String profileName = AllTests.profileName;
 
     public void testVerifyProfileAssignment() throws IdMUnitException, AceToolkitException {
         atk.assignProfile("-tuser", profileName);
@@ -290,7 +295,7 @@ public class VerifyUserTests extends TestCase {
         fail("Expected failure verifying user with a bad profile name");
     }
 
-    private static final String groupName = "VPN - Remotely Anywhere Applications";
+    private static final String groupName = AllTests.groupName;
 
     public void testVerifyGroupMembership() throws IdMUnitException, AceToolkitException {
         atk.addLoginToGroup("", groupName, "", "-tuser");
@@ -304,7 +309,7 @@ public class VerifyUserTests extends TestCase {
         conn.execute("validateObject", attrs);
     }
     
-    private static final String groupNameInSite = "Test Group3@TestSite";
+    private static final String groupNameInSite = AllTests.groupName3WithNewSite;
 
     public void testVerifyGroupMembershipInSite() throws IdMUnitException, AceToolkitException {
         atk.addLoginToGroup("", groupNameInSite, "", "-tuser");

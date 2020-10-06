@@ -9,10 +9,16 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+//NOTE: you must run with "-Dsun.lang.ClassLoader.allowArraySyntax=true" per the Ace documentation; remember to set in Designer/Intellij.
+
 public class AllTests extends TestCase {
 
     public static final String tokenSerialNum = "000157228469";
+    public static final String tokenSerialNum2 = "000157228470";
+    public static final String tokenSerialNum3 = "000157228471";
     public static final String groupName = "TestGroup1";
+    public static final String groupName2 = "TestGroup2";
+    public static final String groupName3WithNewSite = "TestGroup3@TestSecurityDomain";
     public static final String profileName = "TESTPROFILE1";
     	/*
     	 * Profiles:

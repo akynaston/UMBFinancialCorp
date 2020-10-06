@@ -22,18 +22,19 @@ public class VerifyTokenTests extends TestCase {
     public static final String endDate = "12/12/2012";
     public static final int endHour = 12; // 12 pm in utc
 
-    private static final String tokenSerialNum = "000044619408";
+    private static final String tokenSerialNum = AllTests.tokenSerialNum;
+    private static final String tokenDefaultPin = "9999";
 
     
     protected void setUp() throws IdMUnitException, AceToolkitException {
-        atk = new AceApi71(null);
+        atk = new AceApi71(AllTests.getDefaultRSAConnConfig());
         
         createTempUser("tuserToken", "user", "test", startDate, startHour, endDate, endHour);
         atk.assignAnotherToken("-tuserToken", tokenSerialNum);
-        atk.setPin("", tokenSerialNum);
-
+        //atk.setPin(tokenDefaultPin, tokenSerialNum);
+                
         try {
-            this.conn.setup(null);
+            this.conn.setup(AllTests.getDefaultRSAConnConfig());
         } catch (IdMUnitException e) {
             this.atk.destroy();
             throw e;
@@ -50,8 +51,8 @@ public class VerifyTokenTests extends TestCase {
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
         
         addSingleValue(attrs, "objectClass", "Token");
-        addSingleValue(attrs, "TokenSerialNumber", "000044619408");
-        addSingleValue(attrs, "NewPinMode", "1");
+        addSingleValue(attrs, "TokenSerialNumber", AllTests.tokenSerialNum);
+        addSingleValue(attrs, "NewPinMode", "TRUE");
 
         conn.execute("validateObject", attrs);
     }
@@ -80,8 +81,8 @@ public class VerifyTokenTests extends TestCase {
     	
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
         addSingleValue(attrs, "objectClass", "Token");
-        addSingleValue(attrs, "TokenSerialNumber", "000044619408");
-        addSingleValue(attrs, "NewPinMode", "0");
+        addSingleValue(attrs, "TokenSerialNumber", AllTests.tokenSerialNum);
+        addSingleValue(attrs, "NewPinMode", "FALSE");
 
         conn.execute("validateObject", attrs);
     }
@@ -92,33 +93,35 @@ public class VerifyTokenTests extends TestCase {
     	
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
         addSingleValue(attrs, "objectClass", "Token");
-        addSingleValue(attrs, "TokenSerialNumber", "000044619408");
-        addSingleValue(attrs, "PIN", "True");
+        addSingleValue(attrs, "TokenSerialNumber", AllTests.tokenSerialNum);
+        addSingleValue(attrs, "PIN", "TRUE");
 
         conn.execute("validateObject", attrs);
     }
     
     public void testValidateClearPIN() throws IdMUnitException, AceToolkitException {
-	  
-    	atk.setPin("", tokenSerialNum);
+    	
+    	// Pin is already cleared and in new pin mode after setup; don't need to explicitly clear it.
+    	//atk.setPin("", tokenSerialNum);
     	
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
         addSingleValue(attrs, "objectClass", "Token");
-        addSingleValue(attrs, "TokenSerialNumber", "000044619408");
-        addSingleValue(attrs, "PIN", "False");
+        addSingleValue(attrs, "TokenSerialNumber", AllTests.tokenSerialNum);
+        addSingleValue(attrs, "PIN", "FALSE");
 
         conn.execute("validateObject", attrs);
     }
   
     public void testValidateTokenEnabled() throws IdMUnitException, AceToolkitException {
-  	  
+
+    	atk.setPin("1234234", AllTests.tokenSerialNum);
     	atk.enableToken(tokenSerialNum);
-    	
+    	    	    	
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
         addSingleValue(attrs, "objectClass", "Token");
-        addSingleValue(attrs, "TokenSerialNumber", "000044619408");
+        addSingleValue(attrs, "TokenSerialNumber", AllTests.tokenSerialNum);
         addSingleValue(attrs, "Disabled", "FALSE");
-
+   
         conn.execute("validateObject", attrs);
     }
   
@@ -128,7 +131,7 @@ public class VerifyTokenTests extends TestCase {
     	
         Map<String, Collection<String>> attrs = new TreeMap<String, Collection<String>>(String.CASE_INSENSITIVE_ORDER);
         addSingleValue(attrs, "objectClass", "Token");
-        addSingleValue(attrs, "TokenSerialNumber", "000044619408");
+        addSingleValue(attrs, "TokenSerialNumber", AllTests.tokenSerialNum);
         addSingleValue(attrs, "Disabled", "TRUE");
 
         conn.execute("validateObject", attrs);

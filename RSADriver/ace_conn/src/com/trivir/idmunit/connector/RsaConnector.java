@@ -368,7 +368,7 @@ public class RsaConnector extends BasicConnector {
             } catch (AceToolkitException e) {
                 throw new IdMUnitException("Error checking token info for enable status", e);
             }
-            String disabled = (enabled.equals("1") ? "FALSE" : "TRUE"); // Set to string value, and reverse boolean as the attr name in ACE is 'enabled'
+            String disabled = (enabled.equals("TRUE") ? "FALSE" : "TRUE"); // Set to string value, and reverse boolean as the attr name in ACE is 'enabled'
             if (expectedDisabled.equalsIgnoreCase(disabled) == false) {
                 throw new AssertionFailedError("Validation failed: Attribute [Disabled] not equal.  Expected dest value: [" + expectedDisabled +"] Actual dest value(s): [" + disabled + "]");
             }
@@ -476,9 +476,9 @@ public class RsaConnector extends BasicConnector {
         info.put("MustCreatePIN", (String) userInfo.get(AceApi.ATTR_MUST_CREATE_PIN));
         info.put("DefaultShell", (String) userInfo.get(AceApi.ATTR_DEFAULT_SHELL));
         info.put("TempUser", (String) userInfo.get(AceApi.ATTR_TEMP_USER));
-        info.put("dateStart", (String) userInfo.get(AceApi.ATTR_START));
+        //info.put("dateStart", (String) userInfo.get(AceApi.ATTR_START)); // Not part of 8.1 api apparently . . .
         // info.put("todStart", values[9]); NOTE: Doesn't exist anymore. The dateStart is a ctime in longs.
-        info.put("dateEnd", (String) userInfo.get(AceApi.ATTR_END));
+        //info.put("dateEnd", (String) userInfo.get(AceApi.ATTR_END)); // Not part of 8.1 api apparently . . .
         info.put("Password", (String) userInfo.get(AceApi.ATTR_PASSWORD));
         // info.put("todEnd", values[11]); NOTE: Doesn't exist anymore. The dateEnd is a ctime in longs.
 
@@ -495,7 +495,11 @@ public class RsaConnector extends BasicConnector {
     }
 
     private static String getSingleValue(Map<String, Collection<String>> data, String key) {
-		return data.get(key).iterator().next();
+    	if (data.get(key) == null) {
+    		return null;
+    	} else {    		
+    		return data.get(key).iterator().next();
+    	}
 	}
 
 	private static Map<String, String> convertToSingleValues(Map<String, Collection<String>> data) throws IdMUnitException {

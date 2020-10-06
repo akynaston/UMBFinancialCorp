@@ -1,0 +1,85 @@
+<project name="jace" default="dist">
+    <property name="version" value="1.0"/>
+
+    <property name="build.dir" location="build"/>
+    <property name="dist.dir" location="delivery"/>
+    
+    <path id="class.path">
+        <fileset file="${build.dir}/jace.jar"/>
+        <!--
+        <path location="${build.dir}/classes"/>
+        -->
+        <fileset dir="lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    
+    <property name="junit-test-build.dir" value="${build.dir}/test-classes"/>
+
+    <path id="test-class.path">
+<!--
+        <path refid="class.path"/>
+-->
+        <fileset file="${build.dir}/jace.jar"/>
+        <!--
+        <path location="${build.dir}/classes"/>
+        -->
+        <fileset dir="lib/test">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}/classes"/>
+        
+        <javac srcdir="src" destdir="${build.dir}/classes" classpathref="class.path" debug="off" source="1.5" target="1.5"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${build.dir}"/>
+        <buildnumber/>
+        
+        <jar destfile="${build.dir}/jace.jar" basedir="${build.dir}/classes" compress="false">
+            <manifest>
+                <attribute name="Implementation-Version" value="${version}.${build.number}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="dist" depends="jar" description="generate the distribution">
+        <mkdir dir="${dist.dir}"/>
+
+        <copy file="${build.dir}/jace.jar" todir="${dist.dir}"/>
+    </target>
+
+    <target name="junit-test-compile" depends="jar">
+        <mkdir dir="${junit-test-build.dir}"/>
+        
+        <javac srcdir="test" destdir="${junit-test-build.dir}" classpathref="test-class.path" debug="on" source="1.5"/>
+    </target>
+
+    <target name="junit-test" depends="junit-test-compile">
+          <junit printsummary="yes" haltonfailure="yes">
+            <classpath>
+                <pathelement location="${junit-test-build.dir}"/>
+                 <path refid="test-class.path"/>
+            </classpath>
+        
+            <formatter type="plain"/>
+            <test name="com.trivir.ace.AllTests" haltonfailure="no" outfile="result"/>
+        </junit>
+    </target>
+
+    <target name="test-jar" depends="junit-test-compile">
+        <jar destfile="${build.dir}/test-jace.jar" includes="TestJace.class" basedir="${junit-test-build.dir}" compress="false">
+            <manifest>
+                <attribute name="Main-Class" value="TestJace"/>
+                <attribute name="Class-Path" value="jace.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="generate-header" depends="compile">
+        <javah destdir="native" class="com.trivir.ace.AceToolkit" classpath="${build.dir}/classes" force="yes"/>
+    </target>
+</project>

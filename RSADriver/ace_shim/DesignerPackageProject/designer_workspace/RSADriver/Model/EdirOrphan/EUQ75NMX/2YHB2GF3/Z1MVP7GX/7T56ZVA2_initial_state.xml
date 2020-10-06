@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-Rule" ds-object-name="TRVRSADCFG-sub-cp-CreateUser" name="TRVRSADCFG-sub-cp-CreateUser">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<policy>
+					<rule>
+						<description>Exit if not user</description>
+						<conditions>
+							<and>
+								<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+							</and>
+						</conditions>
+						<actions>
+							<do-break/>
+						</actions>
+					</rule>
+					<rule>
+						<description>Require attributes</description>
+						<comment xml:space="preserve">Veto if required attributes not present.</comment>
+						<conditions/>
+						<actions>
+							<do-veto-if-op-attr-not-available name="CN"/>
+							<do-veto-if-op-attr-not-available name="Given Name"/>
+							<do-veto-if-op-attr-not-available name="Surname"/>
+						</actions>
+					</rule>
+				</policy>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-installationdirective">
+			<ds-value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48aW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4KCTxwbGFjZW1lbnQgbG9jYXRpb249InN1YnNjcmliZXIiLz4KCTxkcy1hdHRyaWJ1dGVzLz4KCTxwb2xpY3ktbGlua2FnZT4KCQk8cG9saWN5LXNldCBjaGFubmVsPSJzdWJzY3JpYmVyIiBuYW1lPSJjcmVhdGlvbiIgb3JkZXI9IldlaWdodCIgdmFsdWU9IjUwMCIvPgoJPC9wb2xpY3ktbGlua2FnZT4KPC9pbnN0YWxsYXRpb24tZGlyZWN0aXZlPg==</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-directivechecksum">
+			<ds-value>611505891</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>EYFG3DF1_201103251338260026</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>220837937</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

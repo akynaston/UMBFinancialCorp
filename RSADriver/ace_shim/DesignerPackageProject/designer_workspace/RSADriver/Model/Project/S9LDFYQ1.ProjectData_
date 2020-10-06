@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:com.novell.designer.model="http://com.novell.designer.model" name="ProjectData" type="ProjectData">
+  <relations name="Child" type="Child" key="#HCBJPC77.CObject_"/>
+  <relations name="Idm:Catalog" type="Child" key="#T6TIGKBF.IdmCatalog_"/>
+</com.novell.designer.model:CObject>

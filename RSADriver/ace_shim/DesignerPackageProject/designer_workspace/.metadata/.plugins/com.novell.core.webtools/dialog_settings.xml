@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.novell.core.webtools.common.dialog.StyledTextFindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="210" key="y"/>
+		<item value="global" key="selection"/>
+		<item value="840" key="x"/>
+		<list key="findhistory">
+			<item value="global"/>
+			<item value="Global"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>

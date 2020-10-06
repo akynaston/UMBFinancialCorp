@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><configuration-values>
+	<definitions>
+		<header display-name="Driver Information" driver-name="true"/>
+		<definition display-name="Driver Name" driver-name="true" mandatory="true" name="name" type="string">
+			<description>Enter the driver name.</description>
+			<value>RSA</value>
+		</definition>
+	</definitions>
+</configuration-values>

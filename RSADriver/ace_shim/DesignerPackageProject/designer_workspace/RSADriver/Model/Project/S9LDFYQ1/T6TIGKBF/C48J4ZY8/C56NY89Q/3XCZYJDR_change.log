@@ -1,0 +1,47 @@
+3/25/11 9:32 AM    Changed installation directive for 'null' (version='1.0.0').
+3/25/11 9:34 AM    Changed installation directive for 'RSA Default Configuration' (version='1.0.0').
+3/25/11 9:34 AM    Changed supported drivers for package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 9:48 AM    Changed installation directive for object 'TRVRRSADCFG-UpgradeSettings' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 9:48 AM    Added object 'TRVRRSADCFG-UpgradeSettings' (package association id 'Z1DLYO28_201103250948270119') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 9:48 AM    Changed installation directive for object 'TRVRRSADCFG-UpgradeSettings' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 9:48 AM    Changed installation directive for object 'TRVRRSADCFG-UpgradeSettings' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:45 AM    Changed installation directive for object 'TRVRRSADCFG-Filter' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:45 AM    Added object 'TRVRRSADCFG-Filter' (package association id '18VU057I_201103251045570260') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:46 AM    Changed installation directive for object 'TRVRRSADCFG-GCVs' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:46 AM    Added object 'TRVRRSADCFG-GCVs' (package association id 'KHVTZ2KZ_201103251046160854') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Changed installation directive for object 'TRVRRSADCFG-GCVs-Prompt' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Added object 'TRVRRSADCFG-GCVs-Prompt' (package association id '0TXCL8MZ_201103251047260572') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Changed installation directive for object 'TRVRRSADCFG-GCVs-Prompt' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Changed installation directive for object 'TRVRRSADCFG-GCVs-Prompt' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Changed installation directive for object 'TRVRRSADCFG-GCVs-Prompt' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Changed installation directive for object 'TRVRRSADCFG-GCVs-Prompt' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 10:47 AM    Sync'd object 'TRVRRSADCFG-GCVs-Prompt' (association id = '0TXCL8MZ_201103251047260572') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:19 PM    Changed installation directive for object 'TRVRRSADCFG-SchemaMap' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:19 PM    Added object 'TRVRRSADCFG-SchemaMap' (package association id '6O5S3HNV_201103251319220229') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:27 PM    Changed installation directive for object 'Publisher Filter Events' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:27 PM    Added object 'Publisher Filter Events' (package association id '31BD0YAL_201103251327270776') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:29 PM    Changed installation directive for object 'Publisher Filter Events' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:29 PM    Sync'd object 'Publisher Filter Events' (association id = '31BD0YAL_201103251327270776') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:38 PM    Changed installation directive for object 'Subscriber Create User' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:38 PM    Added object 'Subscriber Create User' (package association id 'EYFG3DF1_201103251338260026') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:38 PM    Changed installation directive for object 'Subscriber Filter Events' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:38 PM    Added object 'Subscriber Filter Events' (package association id 'ZE21Z77T_201103251338260026') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:38 PM    Changed installation directive for object 'Subscriber Match User' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 1:38 PM    Added object 'Subscriber Match User' (package association id '8TQDKN7I_201103251338260041') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:31 PM    Changed installation directive for object 'TRVRRSADCFG-pub-ep-DefaultFilter' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:31 PM    Sync'd object 'TRVRRSADCFG-pub-ep-DefaultFilter' (association id = '31BD0YAL_201103251327270776') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:33 PM    Changed installation directive for object 'TRVRSADCFG-sub-cp-CreateUser' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:33 PM    Sync'd object 'TRVRSADCFG-sub-cp-CreateUser' (association id = 'EYFG3DF1_201103251338260026') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:35 PM    Changed installation directive for object 'TRVRRSADCFG-sub-ep-DefaultFilter' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:35 PM    Sync'd object 'TRVRRSADCFG-sub-ep-DefaultFilter' (association id = 'ZE21Z77T_201103251338260026') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:35 PM    Changed installation directive for object 'TRVRRSADCFG-sub-mp-MatchUser' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:35 PM    Sync'd object 'TRVRRSADCFG-sub-mp-MatchUser' (association id = '8TQDKN7I_201103251338260041') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:38 PM    Changed installation directive for object 'TRVRRSADCFG-SchemaMap' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:38 PM    Sync'd object 'TRVRRSADCFG-SchemaMap' (association id = '6O5S3HNV_201103251319220229') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:39 PM    Changed installation directive for object 'TRVRRSADCFG-smp' in package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 2:39 PM    Sync'd object 'TRVRRSADCFG-smp' (association id = '6O5S3HNV_201103251319220229') to package 'RSA Default Configuration' (version='1.0.0').
+3/25/11 3:16 PM    Built release of package 'RSA Default Configuration' (version='1.0.0') at 201103251516350260.
+3/25/11 5:18 PM    Built release of package 'RSA Default Configuration' (version='1.0.0') at 201103251718430885.
+3/28/11 9:52 AM    Built release of package 'RSA Default Configuration' (version='1.0.0') at 201103280952160584.
+3/28/11 9:52 AM    Built release of package 'RSA Default Configuration' (version='1.0.0') at 201103280952380662.
+3/28/11 9:55 AM    Publish package 'RSA Default Configuration' (version='1.0.0').

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Resources">
+  <attributes xsi:type="com.novell.designer.model:CInteger" attrName="Idm:FolderId" value="2"/>
+  <relations name="Idm:Resources" type="Child" key="#WR0A012Q.IDMResource_"/>
+  <relations name="Idm:Resources" type="Child" key="#9UUACZVF.IDMResource_"/>
+  <relations name="Idm:Resources" type="Child" key="#7VDOGAE5.IDMResource_"/>
+  <relations name="Idm:Resources" type="Child" key="#BP2V9N2R.IDMResource_"/>
+</com.novell.designer.model:CObject>

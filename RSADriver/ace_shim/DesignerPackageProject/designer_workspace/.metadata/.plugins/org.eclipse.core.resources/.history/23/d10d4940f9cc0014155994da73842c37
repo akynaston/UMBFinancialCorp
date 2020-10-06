@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="RSA Default Configuration">
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="license"/>
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="en" extension="properties"/>
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="change" extension="log"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageGuid" value="3XCZYJDR_201103250934350416"/>
+  <attributes xsi:type="com.novell.designer.model:CInteger" attrName="Idm:PackageType" value="2"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:BasePackage" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:ContentChecksum" value="588897124"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:DirectiveChecksum" value="2096525014"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:description" value="RSA Default Configuration"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:shortName" value="TRVRRSADCFG"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:Protected" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:newVersion" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:vendorName" value="Trivir, LLC"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:ContactName" value="Trivir"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:ContactEmail" value="info@trivir.com"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:minIdmVersion" value="4.0.0"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:InstallationDirective" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;installation-directive>&#xA;&#x9;&lt;ds-attributes/>&#xA;&#x9;&lt;supported-drivers>&#xA;&#x9;&#x9;&lt;definition display-name=&quot;Driver for RSA&quot; driver-id=&quot;RSA-Driver&quot; id=&quot;RSA&quot;/>&#xA;&#x9;&lt;/supported-drivers>&#xA;&lt;/installation-directive>"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:PackageImported" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:Released" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageVersion" value="1.0.2.20150317143938"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:minAppVersion" value="7.1"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:maxAppVersion" value="8.1"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:InternalVersion" value="3"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:CreationTime" value="201503171439540881"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#XF34UTSD.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#Y5P9J6E7.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#X0HD2XED.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#WVMX0ZJY.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#C5WI8FAS.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#5423GGS8.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#XRL7V3VG.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#20STWZMA.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#9C82MM2N.IdmPackageFolder_"/>
+</com.novell.designer.model:CObject>

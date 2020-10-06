@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bea-licenses>
+    <license-group format="1.0" product="WebLogic Platform" release="10.0">
+        <license
+            company="RSA Security Inc"
+            component="2PC - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQCTzkm90O0KYNsm0sQNjWaPUmW4CwIUE+YRpeADXjmNFVxrW2izFYuP4BY="
+        />
+        <license
+            appnames="consoleapp"
+            company="RSA Security Inc"
+            component="Campaign Manager - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQC3g/1PXi7vJXQnaCE8N0081NhnfgIVAJbvBkvqvgtnTMvpl0G3Kfz7diSY"
+        />
+        <license
+            company="RSA Security Inc"
+            component="Cluster - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQC3g/1PXi7vJXQnaCE8N0081NhnfgIVAOMgrkzXC38GV/5yc6NiiExmp0kQ"
+        />
+        <license
+            company="RSA Security Inc"
+            component="Clustered JMS - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQC3g/1PXi7vJXQnaCE8N0081NhnfgIUZLqo50i9alsiryFsPSeu2mBFkA4="
+        />
+        <license
+            appnames="consoleapp"
+            company="RSA Security Inc"
+            component="Commerce - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQC3g/1PXi7vJXQnaCE8N0081NhnfgIVAOLG8GAUPgkAdQbRWHwnK/P358zp"
+        />
+        <license
+            company="RSA Security Inc"
+            component="Connector - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQC3g/1PXi7vJXQnaCE8N0081NhnfgIUDmiE8z/kDlAwhJwXf2iNpROPso8="
+        />
+        <license
+            company="RSA Security Inc"
+            component="EJB 1.0 - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQC3g/1PXi7vJXQnaCE8N0081NhnfgIUOz1lhlib+WZ2YO/8EMD/QzT0nkA="
+        />
+        <license
+            company="RSA Security Inc"
+            component="EJB 2.0 - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIVAIKZwfxpjsU1MGvrQqs0m3WwOKMX"
+        />
+        <license
+            company="RSA Security Inc"
+            component="EJB 3.0 - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIVAJHqOMM3WGgPr+q2Zijrzz/43xzw"
+        />
+        <license
+            company="RSA Security Inc"
+            component="Enterprise Web Services - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIUSk0B/4O4zWv9+cNncTYS9n1ueZE="
+        />
+        <license
+            company="RSA Security Inc"
+            component="In-memory Replication - EJB - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIUAKAQacisEcicF3nljlI+0iXW6AY="
+        />
+        <license
+            company="RSA Security Inc"
+            component="In-memory Replication - Servlet - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIUdOov8oNWlkP6TayzcMvJQwNdEBM="
+        />
+        <license
+            company="RSA Security Inc"
+            component="JMS - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIVALBYW6r1ZZYwl+VGAF9cSY+Sm6Up"
+        />
+        <license
+            appnames="consoleapp"
+            company="RSA Security Inc"
+            component="Personalization - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC4CFQDfeCzBwEpoCrSN5zqpQ+AkFtFegQIVALrVFqCEnrsgrxapyvOc+Wq6jQUP"
+        />
+        <license
+            appnames="consoleapp"
+            company="RSA Security Inc"
+            component="Portal - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFFb3cSPjZ5m1l1oFn657WpO4z6H9AhUAznzxH8mmNGNVEApO2F/pGnV4nuI="
+        />
+        <license
+            appnames="consoleapp"
+            company="RSA Security Inc"
+            component="PortalFramework - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFFb3cSPjZ5m1l1oFn657WpO4z6H9AhUAkuQe1RgDQ44bBl7jcW7EE/9wlBE="
+        />
+        <license
+            company="RSA Security Inc"
+            component="SSL/Domestic - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MCwCFFb3cSPjZ5m1l1oFn657WpO4z6H9AhRzW9ZgBV96Cfv3cMEY7RVJhChKRw=="
+        />
+        <license
+            company="RSA Security Inc"
+            component="SSL/Export - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MCwCFFb3cSPjZ5m1l1oFn657WpO4z6H9AhRiEnxZjTfkhdcr8S03milbvwxlOQ=="
+        />
+        <license
+            company="RSA Security Inc"
+            component="Servlet Session - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            sessions="unlimited"
+            type="ISV"
+            units="unlimited"
+            signature="MC0CFFb3cSPjZ5m1l1oFn657WpO4z6H9AhUAk35ZAyeqieurEhmUUJgTrqqonmQ="
+        />
+        <license
+            company="RSA Security Inc"
+            component="WebLogic - ISV"
+            cpus="unvalued"
+            expiration="never"
+            ip="any"
+            serial="454493271161-2340213585742"
+            type="ISV"
+            units="unlimited"
+            signature="MCwCFFb3cSPjZ5m1l1oFn657WpO4z6H9AhQWmzgeBLuxC8YR6RnScXsb7LYk8w=="
+        />
+    </license-group>
+</bea-licenses>

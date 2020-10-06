@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><libraryInfos>
+<libraryInfo home="C:\Program Files (x86)\Novell\Designer" version="1.6.0_31">
+<bootpath>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\jaxb-api.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\resolver.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\serializer.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xalan.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xerces.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xercesImpl.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xml-apis.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\resources.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\rt.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\jce.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\modules\jdk.boot.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\Novell\Designer" version="1.6.0_20">
+<bootpath>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\endorsed\jaxb-api.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\endorsed\xalan.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\endorsed\xerces.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\Novell\Designer\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Novell\Designer\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files (x86)\Novell\Designer\jre" version="1.6.0_31">
+<bootpath>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\jaxb-api.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\resolver.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\serializer.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xalan.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xerces.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xercesImpl.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed\xml-apis.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\resources.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\rt.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\jce.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\modules\jdk.boot.jar"/>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files (x86)\Novell\Designer\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

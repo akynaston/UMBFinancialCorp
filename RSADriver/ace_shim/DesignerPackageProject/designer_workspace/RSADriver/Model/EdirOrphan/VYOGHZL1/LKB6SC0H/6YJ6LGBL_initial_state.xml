@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-GlobalConfigDef" ds-object-name="TRVRRSADCFG-GCVs" name="TRVRRSADCFG-GCVs">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="idm-installationdirective">
+			<ds-value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48aW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4KCTxwbGFjZW1lbnQgbG9jYXRpb249ImRlZmF1bHQiLz4KCTxkcy1hdHRyaWJ1dGVzLz4KCTxwb2xpY3ktbGlua2FnZT4KCQk8cG9saWN5LXNldCBuYW1lPSJnY3YiIG9yZGVyPSJXZWlnaHQiIHZhbHVlPSI1MDAiLz4KCTwvcG9saWN5LWxpbmthZ2U+CjwvaW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4=</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-directivechecksum">
+			<ds-value>2084565320</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>KHVTZ2KZ_201103251046160854</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>135834418</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

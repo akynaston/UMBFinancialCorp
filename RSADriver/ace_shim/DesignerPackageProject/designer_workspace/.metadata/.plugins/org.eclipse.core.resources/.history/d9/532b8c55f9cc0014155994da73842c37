@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Publisher" type="Publisher">
+  <relations name="Idm:EventPolicies" type="Reference" key="#U8XH2JJV.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#U8XH2JJV.ScriptPolicy_"/>
+</com.novell.designer.model:CObject>

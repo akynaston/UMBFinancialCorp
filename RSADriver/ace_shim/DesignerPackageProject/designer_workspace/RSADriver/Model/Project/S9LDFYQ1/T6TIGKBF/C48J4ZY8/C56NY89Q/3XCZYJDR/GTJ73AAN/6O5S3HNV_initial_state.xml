@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-Rule" ds-object-name="TRVRRSADCFG-SchemaMap" mapping-policy="true" name="TRVRRSADCFG-SchemaMap">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<attr-name-map>
+					<class-name>
+						<nds-name>User</nds-name>
+						<app-name>User</app-name>
+					</class-name>
+					<attr-name class-name="User">
+						<nds-name>CN</nds-name>
+						<app-name>DefaultLogin</app-name>
+					</attr-name>
+					<attr-name class-name="User">
+						<nds-name>Given Name</nds-name>
+						<app-name>FirstName</app-name>
+					</attr-name>
+					<attr-name class-name="User">
+						<nds-name>Surname</nds-name>
+						<app-name>LastName</app-name>
+					</attr-name>
+				</attr-name-map>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>6O5S3HNV_201103251319220229</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>1113092577</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

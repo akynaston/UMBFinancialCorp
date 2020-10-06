@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="ID Policies">
+  <attributes xsi:type="com.novell.designer.model:CInteger" attrName="Idm:FolderId" value="8"/>
+</com.novell.designer.model:CObject>

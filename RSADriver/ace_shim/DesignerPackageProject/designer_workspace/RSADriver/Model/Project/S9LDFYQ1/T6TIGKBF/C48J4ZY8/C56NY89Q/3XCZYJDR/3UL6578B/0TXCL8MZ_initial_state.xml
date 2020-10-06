@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object DirXML-ContentType="application/vnd.novell.dirxml.pkg-prompt+xml" ds-object-class="DirXML-Resource" ds-object-name="TRVRRSADCFG-GCVs-Prompt" name="TRVRRSADCFG-GCVs-Prompt">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="idm-pkgprompttype">
+			<ds-value>1</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-installationdirective">
+			<ds-value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48aW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4KCTxwbGFjZW1lbnQgbG9jYXRpb249ImRlZmF1bHQiLz4KCTxkcy1hdHRyaWJ1dGVzLz4KCTxwcm9tcHQtc3R5bGVzaGVldC8+Cgk8dGFyZ2V0LXN0eWxlc2hlZXQvPgo8L2luc3RhbGxhdGlvbi1kaXJlY3RpdmU+</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-directivechecksum">
+			<ds-value>37117179</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>0TXCL8MZ_201103251047260572</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>2744363033</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

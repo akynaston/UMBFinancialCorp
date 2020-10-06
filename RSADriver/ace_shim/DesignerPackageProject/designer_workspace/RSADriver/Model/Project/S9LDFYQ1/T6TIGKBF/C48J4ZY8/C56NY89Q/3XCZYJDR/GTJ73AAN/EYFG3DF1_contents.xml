@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><policy>
+	<rule>
+		<description>Exit if not user</description>
+		<conditions>
+			<and>
+				<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+			</and>
+		</conditions>
+		<actions>
+			<do-break/>
+		</actions>
+	</rule>
+	<rule>
+		<description>Require attributes</description>
+		<comment xml:space="preserve">Veto if required attributes not present.</comment>
+		<conditions/>
+		<actions>
+			<do-veto-if-op-attr-not-available name="CN"/>
+			<do-veto-if-op-attr-not-available name="Given Name"/>
+			<do-veto-if-op-attr-not-available name="Surname"/>
+		</actions>
+	</rule>
+</policy>

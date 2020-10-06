@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="TRVRSADCFG-sub-cp-CreateUser">
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="contents"/>
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="initial_state"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:InstallationDirective" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;installation-directive>&#xA;&#x9;&lt;placement location=&quot;subscriber&quot;/>&#xA;&#x9;&lt;ds-attributes/>&#xA;&#x9;&lt;policy-linkage>&#xA;&#x9;&#x9;&lt;policy-set channel=&quot;subscriber&quot; name=&quot;creation&quot; order=&quot;Weight&quot; value=&quot;500&quot;/>&#xA;&#x9;&lt;/policy-linkage>&#xA;&lt;/installation-directive>"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:DirectiveChecksum" value="611505891"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageAssocGuid" value="EYFG3DF1_201103251338260026"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageGuid" value="3XCZYJDR_201103250934350416"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdmParameter:Modeler.NameInited" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:InstalledLinkages" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;policy-linkage>&#xA;&#x9;&lt;policy-set channel=&quot;subscriber&quot; name=&quot;creation&quot; order=&quot;Weight&quot; package-id=&quot;3XCZYJDR_201103250934350416&quot; value=&quot;500&quot;/>&#xA;&lt;/policy-linkage>"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:ContentChecksum" value="220837937"/>
+  <relations name="Idm:CreatePolicyRefs" type="BackReference" key="#BLM4P9Q6.Subscriber_"/>
+</com.novell.designer.model:CObject>

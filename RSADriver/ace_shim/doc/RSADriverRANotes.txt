@@ -1,0 +1,182 @@
+The RSA Authentication Manager, formerly know as ACE/Server, is part of the SecurID Product offering from RSA.
+
+There are three ways the RSA Authentication Manager can be used to authenticate users: agent host, radius server, or custom application. Agent host integrate into an OS to allow users to authenticate to the OS using an RSA token. The radius server is used is typically used in conjunction with a VPN or firewall. When the user attempts to access the VPN or firewall they are prompted to authenticate using their RSA token. The authentication is done by the radius server. Once the authentication is complete the radius server returns information from the profile which is used by the VPN or firewall to determine what access should be granted to the user. The other option is for a custom application to authenticate a user with a token by using the RSA authentication API.
+
+General Terms
+open Agent Host - An Agent Host is open if users are not required to be directly activated on the Agent Host or members of a group activated on the Agent Host. Any user registered in your Server database can be authenticated on an open Agent Host.
+
+RADIUS profile - A list of requirements that must be met before a RADIUS user is granted access to an RSA SecurID-protected network. Each profile name in the RSA Authentication Manager database must have a matching profile name in the RSA RADIUS Server database.
+
+Site - A way to organize Agent Hosts and groups. In addition, if you are taking advantage of the network authentication feature, sites are a convenient way to keep track of Agent Hosts and realms. For example, all of your Agent Host records created for network authentication with the Los Angeles realm can be associated with a Log Angeles Host site.
+
+task list - A named set of task that administrators are enabled to perform within their scopes.
+
+
+
+Do they have more than one realm?
+
+The term “realm” refers to the Primary Server and its Replica Servers, databases, users, tokens, and Agent Hosts. A realm is similar to a partition in eDirectory or a domain in Active Directory. The RSA Authentication Manager shim currently only supports communicating with a single realm. If more than one realm needs to be managed a separate driver will need to be configured for each realm.
+
+In order for a user to authenticate to a different realm than where their account exists, a remote user record must exist in the realm they are authenticating to. Remote user records can be created automatically by the RSA Authentication Manager or manually by the administrator. The shim does not currently support creating remote user records but the functionality could be added.
+
+Do they use replication?
+
+The RSA Authentication Manager supports replication for fault tolerance. In a realm that is configured for replication, one server is designated as the Primary Server the others are Replica Servers. The RSA Authentication Manager IdM shim has not been tested in an environment with replication so I don't know whether or not it will work on a Replica Server. Until we are able to test it, we should require that the shim connect to the Primary Server.
+
+What platform is the RSA Authentication Manager running on?
+
+The shim currently does not support authenticating to an AM server remotely so the shim must run on the same server as the AM.
+
+The following user information can be retrieved from the shim:
+* User’s last name
+* User’s first name
+* User’s default login
+* Whether user can create PIN
+* Whether user must create PIN
+* User’s default shell
+* Whether user is a temporary user
+* Start date and time for temporary user
+* End date and time for temporary user
+
+What triggers a user to be created in RSA AM?
+
+Husky uses entitlements, IMF uses an attribute. They could sync all users and then have a trigger for assigning a token.
+
+Do they change the DefaultLogin in RSA AM?
+
+DefaultLogin is used as the association value. The shim does not currently support updating the DefaultLogin.
+
+How will existing users be migrated?
+
+Will they use the standard IdM "Migrate" functionality, will they use a trigger attribute, or will they just wait for it to happen naturally over time using the matching rule?
+
+How will accounts be matched?
+
+The shim currently supports matching on DefaultLogin. IMF may need matching based on an extension attribute.
+
+Do they use Temporary Users?
+
+Do they assign Profiles, Groups, Administrative Roles, Task Lists, or Agent Hosts?
+
+The shim does not currently support password synchronization. It may be possible to support this for the subscriber channel but not for the publisher channel.
+
+Do they need disable authentication for user accounts, similar to eDirectory's LoginExpirationTime?
+
+The RSA Authentication does not support disabling a user account. To provide similar functionality we can change the user to a temporary user with and end date that has already past (e.g. yesterday). The other option is to disable all of the user's tokens.
+
+Do they have any extension records that need to be managed by the driver?
+
+The RSA Authentication Manager schema is fixed. The only way to add custom data is using extension records. Extension records are key-value data pairs that can be added to user, token, group, site, or client records. Extension records are free-form, they do not need to be consistent between records of the same type. This creates an opportunity for data cleansing.
+
+Do they use passwords on user accounts? If so, do we need to manage them?
+
+A user may be assigned a password. A user password is a special type of token, provided for the convenience of an administrator, that allows a user to enter a password at the passcode prompt during authentication.
+
+Do they restrict authentication times?
+
+The shim does not currently support this and I have not been able to find an API to set or modify these values. Additional research will be necessary before we can commit to this functionality.
+
+Do they use groups?
+
+Groups are typically used
+
+Are the groups assigned to sites?
+
+Do the groups restrict access time?
+
+The Groups feature is useful only for Agent Hosts that are restricted to a specified list of users and groups of users.
+
+To provide another level of organization, you can associate groups with sites. A site can have any number of groups.
+
+When a user is added to a group they can be assigned a different login to use when authenticating as a member of that group.
+
+The following token information can be retrieved from the shim:
+* Token serial number
+* PIN status (PIN set or not)
+* Number of digits in the token display
+* Number of seconds between display changes
+* Date and time the token was activated
+* Date and time the token will shut down
+* Date and time of the last login with this token
+* Token type (RSA SecurID Standard Card, RSA SecurID PINPad, RSA SecurID Key Fob,  RSA SecurID Software Token, RSA SecurID modem)
+* Whether the display is hexadecimal
+* Whether the token is enabled
+* Whether the token is in New PIN mode
+* User to whom token is assigned
+* Next tokencode status
+* Number of bad tokencodes entered
+* Number of bad PINs entered
+* Date and time PIN was last changed
+* Date and time token was last enabled or disabled
+* Date and time token counts were last modified
+
+Token Terms:
+Lost Status - Only tokens with Lost status can be assigned temporary passwords.
+
+New PIN mode - When the user is required to receive or create a new PIN in order to gain access to an RSA SecurID-protected system.
+
+next Tokencode mode - The Server puts a token into Next Tokencode mode if it has drifted out of sync with the Server system's clock or if there has been a series of unsuccessful authentication attempts. Requiring two consecutive tokencodes to ensure that the user actually has possession of the token.
+
+Passcode - The passcode consists of the user's secret, memorized Personal Identification Number (PIN) and the current code, referred to as the tokencode, displayed by the user's assigned token.
+
+PIN - The PIN is one factor in the RSA Security authentication system. The other factor is the tokencode.
+
+token serial number - Each token is assigned a 12 digit number by RSA when it is manufactured that uniquely identifies the token.
+
+How are tokens assigned?
+
+The shim does not currently support automatically assigning tokens from the list of unassigned tokens.
+
+How are tokens distributed?
+
+RSA suggest that tokens be distributed assigned but disabled. Then enable a token only after you are satisfied that it is in the possession of the assigned user and that the user is ready to login for the first time using this token. If you must distribute enabled tokens to assigned users, do so though secure channels (hand delivered).
+
+Are users assigned more than one token?
+
+Users can be assigned up to three tokens. When a user fails a login attempt the failed login count is incremented for all assigned tokens.
+
+If users are assigned more than one token, how will this be handled during initial migration?
+
+Will token information be synchronized to eDir?
+
+If users can be assigned more than one token this can make storing the information complex. IMF is storing all of the information for each token as a single value in a delimited form on the user object to allow for users having multiple tokens. Husky is storing each piece of information for a token in a different attribute since each user is only assigned a single token.
+
+What happens when a user no longer needs their token?
+
+Unassigning a token clears the PIN.
+
+If a token is misplaced, do not unassign it. Instead, disable it.
+
+When a token is disabled, all of the information -- including the user's PIN -- is preserved in the token record.
+
+What are the PIN settings?
+
+Alphanumeric or numeric, fixed or varying lengths (ACE supports 4-8 characters, admin configures limits within this range), generated by the user or the system.
+
+Do they need to automate clearing PINs or setting New PIN Mode?
+
+The shim does not currently support this but it should be straight forward.
+
+Do they need to be able to automate the setting of Temporary Passwords?
+
+A temporary password is a password that you can assign to temporarily replace a lost token. The shim does not currently support this feature.
+
+Do they use software tokens?
+
+RSA SecurID Software Token - A software-based security token (formerly named SoftID) residing on devices such as personal computers, smard cards, wireless phones, Palm Handhelds, PDAs, and so on. It uses a two-factor authentication method when users access a network or standalone resource that is protected by an RSA Authentication Manager.
+
+We haven't tested with software tokens so I don't know if there is any additional work required for the shim to manage them.
+
+Note:
+The Server disables tokens after a series of three authentication attempts with a valid code but with and incorrect PIN.
+
+
+** Misc Information **
+
+Things to collect: export of container structure, driver set, password policy, user, temp user
+
+sdconf.rec - The configuration file created by the installation program. When you install an Agent Host, you must copy this configuration file to the Agent Host machine (unless it is a third-party device that integrates RSA ACE/Agent code and has its own configuration record).
+
+sdtest on Windows and sdinfo on UNIX can be used to display the contents of sdconf.rec.
+
+"Configuration Management" on Windows and ACEPROG/sdinfo can be used to display the contents of license.rec.

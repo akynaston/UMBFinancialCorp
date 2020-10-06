@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><configuration-values>
+	<definitions>
+		<header display-name="Application Authentication"/>
+		<definition display-name="Authentication ID" name="shim-auth-id" type="string">
+			<description>Enter the RSA Authentication Id for the driver. This will be the username you chose for the RSA administrative account you created for this driver.</description>
+			<value></value>
+		</definition>
+		<definition display-name="Connection Information" name="shim-auth-server" type="string">
+			<description>Enter the RSA Connection Information used by the driver to connect to the application. e.g. t3s://amserver.example.com:7002</description>
+			<value></value>
+		</definition>
+		<definition display-name="Password" name="shim-auth-password" type="password-ref">
+			<description>Specify the RSA password for the driver. This will be the password you chose for the RSA administrative account you created for this driver.</description>
+			<value>shim-auth-password</value>
+		</definition>
+	</definitions>
+</configuration-values>

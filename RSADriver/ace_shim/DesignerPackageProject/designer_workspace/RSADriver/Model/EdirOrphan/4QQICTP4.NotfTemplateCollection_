@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Default Notification Collection">
+  <relations name="Idm:IdentityVaults" type="BackReference" key="#OZHK0WM3.IdentityVault_"/>
+</com.novell.designer.model:CObject>

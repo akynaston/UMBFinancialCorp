@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="RSA 2" type="RSA">
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdmParameter:Modeler.NameInited" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdmParameter:NewItemFromDrop" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="ContactInfo"/>
+  <relations name="Idm:Drivers" type="Reference" key="#BTL7RK87.Driver_"/>
+</com.novell.designer.model:CObject>

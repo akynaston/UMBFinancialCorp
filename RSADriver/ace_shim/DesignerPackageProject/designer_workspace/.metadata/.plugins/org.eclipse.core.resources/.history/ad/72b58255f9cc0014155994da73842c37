@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="RSA Default Configuration">
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="license"/>
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="en" extension="properties"/>
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="change" extension="log"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageGuid" value="3XCZYJDR_201103250934350416"/>
+  <attributes xsi:type="com.novell.designer.model:CInteger" attrName="Idm:PackageType" value="2"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:BasePackage" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:ContentChecksum" value="588897124"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:DirectiveChecksum" value="2096525014"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:description" value="RSA Default Configuration"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:shortName" value="TRVRRSADCFG"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:Protected" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:newVersion" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:vendorName" value="Trivir, LLC"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:ContactName" value="Trivir"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:ContactEmail" value="info@trivir.com"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:minIdmVersion" value="4.0.0"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:minAppVersion" value="6.1"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:maxAppVersion" value="7.1"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:InstallationDirective" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;installation-directive>&#xA;&#x9;&lt;ds-attributes/>&#xA;&#x9;&lt;supported-drivers>&#xA;&#x9;&#x9;&lt;definition display-name=&quot;Driver for RSA&quot; driver-id=&quot;RSA-Driver&quot; id=&quot;RSA&quot;/>&#xA;&#x9;&lt;/supported-drivers>&#xA;&lt;/installation-directive>"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:PackageImported" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:InternalVersion" value="2"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:CreationTime" value="201303181750140236"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:BuildHost" value="RSA-AD-EDIR-DEV"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:BuildUser" value="Administrator"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:BuildTime" value="20130320170625"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageVersion" value="1.0.2.20130320170625"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="Idm:Released" value="true"/>
+  <relations name="Idm:InstalledPackageDriverRefs" type="BackReference" key="#LKB6SC0H.Driver_"/>
+  <relations name="Idm:InstalledPackageDriverRefs" type="BackReference" key="#2YHB2GF3.Driver_"/>
+  <relations name="Idm:InstalledPackageDriverRefs" type="BackReference" key="#BTL7RK87.Driver_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#KYD3QNTG.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#SNHGOUEN.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#7KMVHJRN.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#SSZN8DJS.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#7AM2COHA.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#AHUVDN4A.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#K39PEVGF.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#B6S4BL56.IdmPackageFolder_"/>
+  <relations name="Idm:PackageFolders" type="Child" key="#QOPTUK4U.IdmPackageFolder_"/>
+</com.novell.designer.model:CObject>

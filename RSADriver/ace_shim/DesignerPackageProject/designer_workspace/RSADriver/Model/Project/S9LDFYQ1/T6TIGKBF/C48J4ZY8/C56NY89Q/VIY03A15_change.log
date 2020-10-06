@@ -1,0 +1,6 @@
+3/18/13 5:50 PM    Created new package version '1.0.2.20130318175006' from package 'RSA Default Configuration' (version = '1.0.1')
+3/20/13 3:53 PM    Sync'd object 'TRVRRSADCFG-smp' (association id = '6O5S3HNV_201103251319220229') to package 'RSA Default Configuration' (version='1.0.2.20130318175006').
+3/20/13 4:01 PM    Sync'd object 'TRVRRSADCFG-Filter' (association id = '18VU057I_201103251045570260') to package 'RSA Default Configuration' (version='1.0.2.20130318175006').
+3/20/13 4:38 PM    Built release of package 'RSA Default Configuration' (version='1.0.2.20130320163848') at 20130320163848.
+3/20/13 5:06 PM    Built release of package 'RSA Default Configuration' (version='1.0.2.20130320170625') at 20130320170625.
+3/20/13 5:07 PM    Publish package 'RSA Default Configuration' (version='1.0.2.20130320170625').

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><policy>
+	<rule>
+		<description>Exit if not user</description>
+		<conditions>
+			<and>
+				<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+			</and>
+		</conditions>
+		<actions>
+			<do-break/>
+		</actions>
+	</rule>
+	<rule>
+		<description>Exit if CN not available</description>
+		<conditions>
+			<and>
+				<if-op-attr name="CN" op="not-available"/>
+			</and>
+		</conditions>
+		<actions>
+			<do-break/>
+		</actions>
+	</rule>
+	<rule>
+		<description>Execute user match</description>
+		<conditions/>
+		<actions>
+			<do-find-matching-object scope="subtree">
+				<arg-match-attr name="CN"/>
+			</do-find-matching-object>
+		</actions>
+	</rule>
+</policy>

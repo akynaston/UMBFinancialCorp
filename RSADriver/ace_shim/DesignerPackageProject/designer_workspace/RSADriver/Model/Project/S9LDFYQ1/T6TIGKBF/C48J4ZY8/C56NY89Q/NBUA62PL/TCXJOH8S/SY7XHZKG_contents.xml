@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><configuration-values>
+	<definitions>
+		<header display-name="Remote Loader"/>
+		<group>
+			<definition display-name="Connect To Remote Loader" name="use-remote-loader" type="enum">
+				<description/>
+				<enum-choice display-name="yes">true</enum-choice>
+				<enum-choice display-name="no">false</enum-choice>
+				<value>false</value>
+			</definition>
+			<subordinates active-value="true">
+				<definition display-name="Host Name" name="rl-hostname" type="string">
+					<description>Enter the Host Name or IP Address where the Remote Loader Service has been installed and is running for this driver. [Host Name or IP Address; ###.###.###.###]</description>
+					<value></value>
+				</definition>
+				<definition display-name="Port" name="rl-port" range-hi="" range-lo="" type="integer">
+					<description>Enter the Port Number where the Remote Loader Service has been installed and is running for this driver. The Default Port is 8090.</description>
+					<value>8090</value>
+				</definition>
+				<definition display-name="Remote Password" name="rl-password" type="password-ref">
+					<description>The Remote Loader password is used to control access to the Remote Loader instance.  It must be the same password that is specified as the Remote Loader password on the Identity Manager Remote Loader.</description>
+					<value>rl-password</value>
+				</definition>
+				<definition display-name="Driver Password" name="driver-password" type="password-ref">
+					<description>The Driver Object Password is used by the Remote Loader to authenticate itself to the Identity Manager server.  It must be the same password that is specified as the Driver Object Password on the Identity Manager Remote Loader.</description>
+					<value>driver-password</value>
+				</definition>
+			</subordinates>
+		</group>
+	</definitions>
+</configuration-values>

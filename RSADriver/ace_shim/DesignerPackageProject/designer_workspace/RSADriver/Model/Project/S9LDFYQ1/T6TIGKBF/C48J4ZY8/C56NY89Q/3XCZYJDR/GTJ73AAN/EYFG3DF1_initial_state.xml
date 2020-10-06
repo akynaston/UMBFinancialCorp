@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-Rule" ds-object-name="Subscriber Create User" name="Subscriber Create User">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<policy>
+					<rule>
+						<description>Exit if not user</description>
+						<conditions>
+							<and>
+								<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+							</and>
+						</conditions>
+						<actions>
+							<do-break/>
+						</actions>
+					</rule>
+					<rule>
+						<description>Require attributes</description>
+						<comment xml:space="preserve">Veto if required attributes not present.</comment>
+						<conditions/>
+						<actions>
+							<do-veto-if-op-attr-not-available name="CN"/>
+							<do-veto-if-op-attr-not-available name="Given Name"/>
+							<do-veto-if-op-attr-not-available name="Surname"/>
+						</actions>
+					</rule>
+				</policy>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>EYFG3DF1_201103251338260026</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>3537059074</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

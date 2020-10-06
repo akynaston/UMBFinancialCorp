@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:com.novell.designer.model="http://com.novell.designer.model" name="RSA">
+  <relations name="Idm:Packages" type="Child" key="#NBUA62PL.IdmPackage_"/>
+  <relations name="Idm:Packages" type="Child" key="#3XCZYJDR.IdmPackage_"/>
+  <relations name="Idm:Packages" type="Child" key="#S59ECSN8.IdmPackage_"/>
+  <relations name="Idm:Packages" type="Child" key="#TTL71MJS.IdmPackage_"/>
+  <relations name="Idm:Packages" type="Child" key="#G1JVZE3H.IdmPackage_"/>
+  <relations name="Idm:Packages" type="Child" key="#VIY03A15.IdmPackage_"/>
+</com.novell.designer.model:CObject>

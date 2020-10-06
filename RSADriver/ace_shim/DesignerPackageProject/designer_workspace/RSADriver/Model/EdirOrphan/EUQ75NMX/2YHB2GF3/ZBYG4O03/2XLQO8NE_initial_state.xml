@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-Rule" ds-object-name="TRVRRSADCFG-pub-ep-DefaultFilter" name="TRVRRSADCFG-pub-ep-DefaultFilter">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<policy>
+					<rule>
+						<description>Filter Events</description>
+						<conditions>
+							<or>
+								<if-operation mode="case" op="equal">add</if-operation>
+								<if-operation mode="case" op="equal">move</if-operation>
+								<if-operation mode="case" op="equal">rename</if-operation>
+							</or>
+						</conditions>
+						<actions>
+							<do-veto/>
+						</actions>
+					</rule>
+				</policy>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-installationdirective">
+			<ds-value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48aW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4KCTxwbGFjZW1lbnQgbG9jYXRpb249InB1Ymxpc2hlciIvPgoJPGRzLWF0dHJpYnV0ZXMvPgoJPHBvbGljeS1saW5rYWdlPgoJCTxwb2xpY3ktc2V0IGNoYW5uZWw9InB1Ymxpc2hlciIgbmFtZT0iZXZlbnQiIG9yZGVyPSJXZWlnaHQiIHZhbHVlPSI1MDAiLz4KCTwvcG9saWN5LWxpbmthZ2U+CjwvaW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4=</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-directivechecksum">
+			<ds-value>2666951277</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>31BD0YAL_201103251327270776</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>487147959</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

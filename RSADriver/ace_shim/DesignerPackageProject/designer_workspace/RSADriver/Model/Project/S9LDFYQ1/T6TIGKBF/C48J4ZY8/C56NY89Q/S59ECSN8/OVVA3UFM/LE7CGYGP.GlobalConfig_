@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="TRVRRSADCFG-GCVs">
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:InstallationDirective" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;installation-directive>&#xA;&#x9;&lt;placement location=&quot;default&quot;/>&#xA;&#x9;&lt;ds-attributes/>&#xA;&#x9;&lt;policy-linkage>&#xA;&#x9;&#x9;&lt;policy-set name=&quot;gcv&quot; order=&quot;Weight&quot; value=&quot;500&quot;/>&#xA;&#x9;&lt;/policy-linkage>&#xA;&lt;/installation-directive>"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:DirectiveChecksum" value="2084565320"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageAssocGuid" value="KHVTZ2KZ_201103251046160854"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageGuid" value="3XCZYJDR_201103250934350416"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:ContentChecksum" value="1509819458"/>
+</com.novell.designer.model:CObject>

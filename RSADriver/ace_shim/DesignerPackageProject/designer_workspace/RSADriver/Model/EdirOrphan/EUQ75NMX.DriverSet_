@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Driver Set" type="DriverSet">
+  <associatedAttrSets objectURI="EdirOrphan/8DF6XCQ3.Server_">
+    <attributes xsi:type="com.novell.designer.model:CStructure" attrName="NamedPasswords"/>
+  </associatedAttrSets>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdmParameter:Modeler.NameInited" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="DirXML-LogEvents"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="DSetCreatePartition" value="true"/>
+  <relations name="Idm:Drivers" type="Child" key="#2YHB2GF3.Driver_"/>
+  <relations name="Idm:IdentityVaults" type="BackReference" key="#9T8VZUY9.IdentityVault_"/>
+  <relations name="Idm:Servers" type="Reference" key="#8DF6XCQ3.Server_"/>
+</com.novell.designer.model:CObject>

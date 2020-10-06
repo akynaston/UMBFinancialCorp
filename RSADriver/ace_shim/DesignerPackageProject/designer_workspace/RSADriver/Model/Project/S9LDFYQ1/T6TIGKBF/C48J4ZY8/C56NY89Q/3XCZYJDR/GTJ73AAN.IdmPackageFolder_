@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Policies">
+  <attributes xsi:type="com.novell.designer.model:CInteger" attrName="Idm:FolderId" value="1"/>
+  <relations name="Idm:Policies" type="Child" key="#6O5S3HNV.MappingPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#31BD0YAL.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#EYFG3DF1.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#ZE21Z77T.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#8TQDKN7I.ScriptPolicy_"/>
+</com.novell.designer.model:CObject>

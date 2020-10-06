@@ -1,0 +1,92 @@
+<project name="RSA/ACE-Driver" default="dist" basedir=".">
+    <property name="version" value="2.1"/>
+
+    <property name="build.dir" location="build"/>
+    <property name="dist.dir" location="delivery"/>
+    <property name="lib.dir" location="lib"/>
+    <property name="doc.dir" location="doc"/>
+    <property name="jace.dir" location="../jace"/>
+    <property name="jace.lib.dir" location="../jace/lib"/>
+    
+    <property name="junit-test-build.dir" value="${build.dir}/test-classes"/>
+
+    <path id="class.path">
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset file="${jace.dir}/delivery/jace.jar"/>
+		<fileset file="${lib.dir}/test/wlfullclient.jar"/>
+		<fileset file="${lib.dir}/test/ims-client.jar"/>
+    </path>
+    
+    <path id="test-class.path">
+        <path refid="class.path"/>
+        <path location="${build.dir}/classes"/>
+        <fileset dir="lib/test">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}/classes"/>
+        
+        <javac srcdir="src" destdir="${build.dir}/classes" classpathref="class.path" source="1.5" debug="true" debuglevel="lines,source"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${build.dir}"/>
+        <buildnumber/>
+        
+        <jar destfile="${build.dir}/ACEShim.jar" basedir="${build.dir}/classes" compress="false">
+            <manifest>
+                <attribute name="Implementation-Version" value="${version}.${build.number}"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="dist" depends="jar" description="generate the distribution">
+        <mkdir dir="${dist.dir}"/>
+        
+        <zip destfile="${dist.dir}/RSA-ACE-driver-${version}.zip">
+            <zipfileset file="${build.dir}/ACEShim.jar"/>
+		<zipfileset file="${lib.dir}/hsqldb.jar"/>
+		<zipfileset file="${lib.dir}/gson-2.2.4.jar"/>
+		<zipfileset file="${jace.dir}/delivery/jace.jar"/>
+		<zipfileset file="${jace.dir}/delivery/jace_api.dll"/>
+		<zipfileset file="${doc.dir}/whatsnew.txt"/>
+		<zipfileset file="${doc.dir}/readme.txt"/>
+		<zipfileset dir="designer_packages" prefix="designer_packages"/>
+	</zip>
+    </target>
+
+    <target name="junit-test-compile" depends="jar">
+        <mkdir dir="${junit-test-build.dir}"/>
+        
+        <javac srcdir="test/junit" destdir="${junit-test-build.dir}" classpathref="test-class.path" debug="on" source="1.5"/>
+    </target>
+
+    <target name="junit-test" depends="junit-test-compile">
+        <junit printsummary="yes" haltonfailure="yes">
+            <classpath>
+                <pathelement location="${junit-test-build.dir}"/>
+                <path refid="test-class.path"/>
+            </classpath>
+
+            <formatter type="plain"/>
+            <test name="com.trivir.idm.driver.ace.AllTests" haltonfailure="no" outfile="result"/>
+        </junit>
+    </target>
+	
+	<target name="monitor-build">
+        <mkdir dir="${build.dir}/classes"/>
+        
+        <javac srcdir="test" destdir="${build.dir}/classes" classpathref="test-class.path" source="1.5" debug="true" debuglevel="lines,source"/>
+		<jar destfile="${build.dir}/activity_monitor_tool.jar" basedir="${build.dir}/classes" compress="false">
+            <manifest>
+                <attribute name="Implementation-Version" value="1.0"/>
+            	<attribute name="Main-Class" value="com.trivir.idm.driver.ace.ActivityMonitorTool"/>
+            	<attribute name="Class-Path" value="am-client.jar commons-beanutils.jar commons-logging.jar iScreen.jar log4j.jar ognl.jar spring-asm.jar spring-beans.jar spring-context.jar spring-core.jar spring-expression.jar wlfullclient.jar"/>
+            </manifest>
+        </jar>
+    </target>
+</project>

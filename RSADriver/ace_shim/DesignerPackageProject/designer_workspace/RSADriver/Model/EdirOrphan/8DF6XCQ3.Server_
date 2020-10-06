@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="server">
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="ServerEngineID" value="4.0.1"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="ServerEDirID" value="8.8"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="ServerEDirVersion" value="eDirectory 8.8"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="ServerContext" value="context"/>
+  <attributes xsi:type="com.novell.designer.model:CInteger" attrName="ServerEngineEdition" value="2"/>
+  <relations name="Idm:DriverSets" type="BackReference" key="#EUQ75NMX.DriverSet_"/>
+  <relations name="Idm:IdentityVaults" type="BackReference" key="#9T8VZUY9.IdentityVault_"/>
+</com.novell.designer.model:CObject>

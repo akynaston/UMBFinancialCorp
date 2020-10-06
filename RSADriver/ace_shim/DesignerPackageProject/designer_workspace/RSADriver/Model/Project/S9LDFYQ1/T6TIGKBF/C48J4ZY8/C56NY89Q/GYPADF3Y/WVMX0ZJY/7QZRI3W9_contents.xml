@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><policy>
+	<rule>
+		<description>Filter Events</description>
+		<comment xml:space="preserve">Veto unprocessed events.</comment>
+		<conditions>
+			<or>
+				<if-operation mode="case" op="equal">move</if-operation>
+				<if-operation mode="case" op="equal">rename</if-operation>
+			</or>
+		</conditions>
+		<actions>
+			<do-veto/>
+		</actions>
+	</rule>
+</policy>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Driver Set" type="DriverSet">
+  <associatedAttrSets objectURI="EdirOrphan/IRTE320X.Server_">
+    <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="DirXML-ConfigValues"/>
+    <attributes xsi:type="com.novell.designer.model:CStructure" attrName="JavaEnvParameters"/>
+    <attributes xsi:type="com.novell.designer.model:CStructure" attrName="NamedPasswords"/>
+  </associatedAttrSets>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="DSetContext" value="O=services"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="DSetCreatePartition" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="DirXML-LogEvents"/>
+  <relations name="Idm:Drivers" type="Child" key="#LKB6SC0H.Driver_"/>
+  <relations name="Idm:IdentityVaults" type="BackReference" key="#OZHK0WM3.IdentityVault_"/>
+  <relations name="Idm:Servers" type="Reference" key="#IRTE320X.Server_"/>
+</com.novell.designer.model:CObject>

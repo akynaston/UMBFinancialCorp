@@ -1,0 +1,1 @@
+Update schema appendix for user's password. Remove the bold "NOTE:" in the user's description.

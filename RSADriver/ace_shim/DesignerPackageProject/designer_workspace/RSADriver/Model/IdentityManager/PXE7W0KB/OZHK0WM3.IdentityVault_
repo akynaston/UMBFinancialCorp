@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="RSADEVTREE" type="IdentityVault">
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="ContactInfo"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdentityVaultHost" value="172.17.2.93"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdentityVaultUsername" value="admin.services"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="IdentityVaultSavePassword" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdentityVaultPassword" value="^[]HJddmply"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="IdentityVaultPkgBuilderEnabled" value="false"/>
+  <relations name="Idm:DriverSets" type="ContainedReference" key="#VYOGHZL1.DriverSet_"/>
+  <relations name="Idm:Schema" type="Child" key="#25Q0D2OA.SchemaDef_"/>
+  <relations name="Idm:Servers" type="ContainedReference" key="#IRTE320X.Server_"/>
+  <relations name="Idm:TemplateCollections" type="ContainedReference" key="#4QQICTP4.NotfTemplateCollection_"/>
+</com.novell.designer.model:CObject>

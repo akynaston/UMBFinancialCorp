@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-Rule" ds-object-name="Subscriber Filter Events" name="Subscriber Filter Events">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<policy>
+					<rule>
+						<description>Filter Events</description>
+						<comment xml:space="preserve">Veto unprocessed events.</comment>
+						<conditions>
+							<or>
+								<if-operation mode="case" op="equal">move</if-operation>
+								<if-operation mode="case" op="equal">rename</if-operation>
+							</or>
+						</conditions>
+						<actions>
+							<do-veto/>
+						</actions>
+					</rule>
+				</policy>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>ZE21Z77T_201103251338260026</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>4206006921</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

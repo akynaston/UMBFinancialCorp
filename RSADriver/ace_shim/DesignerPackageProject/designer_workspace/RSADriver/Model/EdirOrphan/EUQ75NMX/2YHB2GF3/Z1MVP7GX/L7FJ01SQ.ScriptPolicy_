@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="TRVRRSADCFG-sub-mp-MatchUser">
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="contents"/>
+  <attributes xsi:type="com.novell.designer.model:CHeavyData" attrName="initial_state"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:InstallationDirective" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;installation-directive>&#xA;&#x9;&lt;placement location=&quot;subscriber&quot;/>&#xA;&#x9;&lt;ds-attributes/>&#xA;&#x9;&lt;policy-linkage>&#xA;&#x9;&#x9;&lt;policy-set channel=&quot;subscriber&quot; name=&quot;matching&quot; order=&quot;Weight&quot; value=&quot;500&quot;/>&#xA;&#x9;&lt;/policy-linkage>&#xA;&lt;/installation-directive>"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:DirectiveChecksum" value="3651018916"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageAssocGuid" value="8TQDKN7I_201103251338260041"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="Idm:PackageGuid" value="3XCZYJDR_201103250934350416"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdmParameter:Modeler.NameInited" value="true"/>
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="IdmParameter:Weight:Z1MVP7GX:matching" value="500"/>
+  <attributes xsi:type="com.novell.designer.model:CLong" attrName="Idm:ContentChecksum" value="3035022189"/>
+  <relations name="Idm:MatchingPolicyRefs" type="BackReference" key="#Z1MVP7GX.Subscriber_"/>
+</com.novell.designer.model:CObject>

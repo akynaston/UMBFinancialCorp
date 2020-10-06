@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/**" kind="src" path="src"/>
+	<classpathentry excluding="**/.svn/**" kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3.8.1"/>
+	<classpathentry kind="lib" path="lib/dirxml_misc.jar"/>
+	<classpathentry kind="lib" path="lib/dirxml.jar"/>
+	<classpathentry kind="lib" path="lib/nxsl.jar"/>
+	<classpathentry kind="lib" path="lib/xds.jar"/>
+	<classpathentry kind="lib" path="lib/test/xmlunit-1.1beta2.jar"/>
+	<classpathentry kind="lib" path="lib/test/xp.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jace"/>
+	<classpathentry kind="lib" path="lib/test/commons-lang-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="lib/test/dbunit-2.4.9.jar"/>
+	<classpathentry kind="lib" path="lib/test/slf4j-api-1.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/test/slf4j-simple-1.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/test/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

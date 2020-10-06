@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Package Catalog" type="IdmCatalog">
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="Idm:DoNotImportList"/>
+  <relations name="Idm:Categories" type="Child" key="#C48J4ZY8.IdmCategory_"/>
+</com.novell.designer.model:CObject>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Dev Driver Set" type="IdentityVault">
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="IdentityVaultSavePassword" value="false"/>
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="ContactInfo"/>
+  <attributes xsi:type="com.novell.designer.model:CBoolean" attrName="IdentityVaultPkgBuilderEnabled" value="true"/>
+  <relations name="Idm:DriverSets" type="ContainedReference" key="#EUQ75NMX.DriverSet_"/>
+  <relations name="Idm:Schema" type="Child" key="#LUR2ECOZ.SchemaDef_"/>
+  <relations name="Idm:Servers" type="ContainedReference" key="#8DF6XCQ3.Server_"/>
+  <relations name="Idm:TemplateCollections" type="ContainedReference" key="#9CPDP52S.NotfTemplateCollection_"/>
+</com.novell.designer.model:CObject>

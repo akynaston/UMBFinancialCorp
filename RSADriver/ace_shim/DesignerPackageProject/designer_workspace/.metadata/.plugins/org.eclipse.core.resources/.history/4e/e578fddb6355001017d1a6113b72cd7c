@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Notes">
+  <relations name="Idm:Packages" type="Child" key="#F91PLE13.IdmPackage_"/>
+</com.novell.designer.model:CObject>

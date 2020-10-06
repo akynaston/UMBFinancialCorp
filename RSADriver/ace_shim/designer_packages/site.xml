@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><site>
+        <description url="http://test">
+                This site contains the packages for Novell Identity Manager
+        </description>        
+<feature id="TRVRRSABASE.feature" url="features/TRVRRSABASE.feature_1.0.1.jar" version="1.0.1"/>
+	<feature id="TRVRRSABASE.feature" url="features/TRVRRSABASE.feature_1.0.2.20130320170553.jar" version="1.0.2.20130320170553"/>
+	<feature id="TRVRRSABASE.feature" url="features/TRVRRSABASE.feature_1.0.2.20150317171209.jar" version="1.0.2.20150317171209"/>
+	<feature id="TRVRRSADCFG.feature" url="features/TRVRRSADCFG.feature_1.0.1.jar" version="1.0.1"/>
+	<feature id="TRVRRSADCFG.feature" url="features/TRVRRSADCFG.feature_1.0.2.20130320170625.jar" version="1.0.2.20130320170625"/>
+	<feature id="TRVRRSADCFG.feature" url="features/TRVRRSADCFG.feature_1.0.2.20150317171228.jar" version="1.0.2.20150317171228"/>
+</site>

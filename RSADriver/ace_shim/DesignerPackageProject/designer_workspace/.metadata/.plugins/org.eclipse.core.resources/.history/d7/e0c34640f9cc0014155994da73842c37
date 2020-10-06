@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.idm.model:ModelerNodes xmlns:com.novell.idm.model="http://com.novell.idm.model" name="Modeler Diagram">
+  <modelerNodes height="681" width="846" objectURI="#PXE7W0KB.Domain_"/>
+  <modelerNodes height="123" width="140" x="10" y="30" objectURI="#OZHK0WM3.IdentityVault_">
+    <sourcePorts name="source-top"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <modelerNodes height="39" width="43" x="20" y="40" objectURI="#VYOGHZL1.DriverSet_">
+    <sourcePorts name="source-top" edges="//@edges.0"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <modelerNodes height="110" width="140" x="324" y="185" objectURI="#9T8VZUY9.IdentityVault_">
+    <sourcePorts name="source-top"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <modelerNodes height="39" width="43" x="20" y="40" objectURI="#EUQ75NMX.DriverSet_">
+    <sourcePorts name="source-top" edges="//@edges.1"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <modelerNodes height="44" width="55" x="91" y="213" objectURI="#IJUC19DC.Application_">
+    <sourcePorts name="source-top"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top" edges="//@edges.0"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <modelerNodes height="44" width="55" x="665" y="292" objectURI="#O7TVWLJI.Application_">
+    <sourcePorts name="source-top"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top" edges="//@edges.1"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <modelerNodes height="44" width="55" x="460" y="399" objectURI="#KOM5YW7I.Application_">
+    <sourcePorts name="source-top"/>
+    <sourcePorts name="source-bottom"/>
+    <sourcePorts name="source-left"/>
+    <sourcePorts name="source-right"/>
+    <sourcePorts name="source-center"/>
+    <targetPorts name="target-top"/>
+    <targetPorts name="target-bottom"/>
+    <targetPorts name="target-left"/>
+    <targetPorts name="target-right"/>
+    <targetPorts name="target-center"/>
+  </modelerNodes>
+  <edges targetPort="//@modelerNodes.5/@targetPorts.0" sourcePort="//@modelerNodes.2/@sourcePorts.0"/>
+  <edges targetPort="//@modelerNodes.6/@targetPorts.0" sourcePort="//@modelerNodes.4/@sourcePorts.0"/>
+  <project href="../../RSADriver.proj#/"/>
+</com.novell.idm.model:ModelerNodes>

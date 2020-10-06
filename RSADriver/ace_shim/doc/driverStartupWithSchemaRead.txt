@@ -1,0 +1,820 @@
+*** Novell eDirectory Trace Utility - BEGIN Logging *** Wed Dec 19 10:21:31 2007
+[12/21/2007 10:21:14.49][c:4294967295] DirXML  : ENG EV: SetDriverStateHandler: setting driver <.RSADriver.EAPDrivers.resources.TESTTREE.> state to <1>
+[12/21/2007 10:21:14.51][c:4294967295] DirXML  : ENG EV: SetDriverStateHandler: reporting state change to <1> for driver <.RSADriver.EAPDrivers.resources.TESTTREE.>
+[12/21/2007 10:21:14.51][c:4294967295] Drvrs   : RSADriver :Reading named passwords list.
+[12/21/2007 10:21:14.54][c:4294967295] Drvrs   : RSADriver :Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-EngineControlValues.
+[12/21/2007 10:21:14.56][c:4294967295] Drvrs   : RSADriver :Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers#DirXML-ConfigValues.
+[12/21/2007 10:21:14.56][c:4294967295] Drvrs   : RSADriver :Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-ConfigValues.
+[12/21/2007 10:21:14.56][c:4294967295] Drvrs   : RSADriver :Global Configuration Values:
+[12/21/2007 10:21:14.57][c:4294967295] Drvrs   : RSADriver :  Name: USERS_CONTAINER Value: eap\rsa\users
+[12/21/2007 10:21:14.57][c:4294967295] Drvrs   : RSADriver :  Name: dirxml.auto.treename Value: TESTTREE
+[12/21/2007 10:21:14.57][c:4294967295] Drvrs   : RSADriver :  Name: dirxml.auto.driverdn Value: \TESTTREE\resources\EAPDrivers\RSADriver
+[12/21/2007 10:21:14.57][c:4294967295] Drvrs   : RSADriver :  Name: dirxml.auto.driverguid Value: {F8FE2212-7BC6-46af-B9B6-A12B859F302F}
+[12/21/2007 10:21:14.59][c:4294967295] Drvrs   : RSADriver :Found subscriber resources\EAPDrivers\RSADriver\Subscriber.
+[12/21/2007 10:21:14.59][c:4294967295] Drvrs   : RSADriver :Found publisher resources\EAPDrivers\RSADriver\Publisher.
+[12/21/2007 10:21:14.59][c:4294967295] Drvrs   : RSADriver :Creating subscriber thread.
+[12/21/2007 10:21:14.60][c:4294967295] Drvrs   : RSADriver ST:Subscriber thread starting.
+[12/21/2007 10:21:15.09][c:4294967295] Drvrs   : RSADriver ST:Initializing driver shim.
+[12/21/2007 10:21:15.09][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-ConfigManifest.
+[12/21/2007 10:21:15.10][c:4294967295] Drvrs   : RSADriver ST:Reading driver information from the \TESTTREE\resources\EAPDrivers\RSADriver object.
+[12/21/2007 10:21:15.10][c:4294967295] Drvrs   : RSADriver ST:Loading Java shim com.novell.nds.dirxml.remote.driver.DriverShimImpl.
+[12/21/2007 10:21:15.10][c:4294967295] Drvrs   : RSADriver ST:Calling DriverShim.getSchema().
+[12/21/2007 10:21:15.10][c:4294967295] Drvrs   : DirXML Driver <.RSADriver.EAPDrivers.resources.TESTTREE.> requesting password.
+[12/21/2007 10:21:15.14][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-ShimConfigInfo.
+[12/21/2007 10:21:15.17][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <input>
+    <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver">
+      <authentication-info>
+        <server>REMOTE(hostname=172.17.2.38 port=8090 )</server>
+        <user>authid</user>
+        <password><!-- content suppressed --></password>
+      </authentication-info>
+      <driver-options/>
+      <subscriber-options>
+        <disable display-name="Disable subscriber?">_</disable>
+      </subscriber-options>
+      <publisher-options>
+        <disable display-name="Disable publisher?">_</disable>
+        <pollRate display-name="Polling Interval in Seconds">3</pollRate>
+        <pub-heartbeat-interval display-name="Publisher heartbeat interval in Seconds">3</pub-heartbeat-interval>
+      </publisher-options>
+    </init-params>
+  </input>
+</nds>
+[12/21/2007 10:21:15.18][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: start getSchema()
+[12/21/2007 10:21:15.18][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Opening connection...
+[12/21/2007 10:21:15.18][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Client socket parameters: hostname = '172.17.2.38' port = 8090'
+[12/21/2007 10:21:15.18][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Creating a standard Socket
+[12/21/2007 10:21:15.21][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Connection established...
+[12/21/2007 10:21:15.21][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Sending...
+[12/21/2007 10:21:15.21][c:4294967295] Drvrs   : RSADriver ST:
+<handshake version="1.0">
+  <password><!-- content suppressed --></password>
+</handshake>
+[12/21/2007 10:21:15.23][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:15.23][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+[12/21/2007 10:21:15.24][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received.
+[12/21/2007 10:21:15.24][c:4294967295] Drvrs   : RSADriver :
+<handshake version="1.0">
+  <password><!-- content suppressed --></password>
+</handshake>
+[12/21/2007 10:21:15.24][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received document for subscriber channel
+[12/21/2007 10:21:15.26][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Sending...
+[12/21/2007 10:21:15.26][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="success"/>
+  </output>
+</nds>
+[12/21/2007 10:21:15.26][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:15.26][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Sending...
+[12/21/2007 10:21:15.46][c:4294967295] Drvrs   : RSADriver ST:
+<top>
+  <driver-init>
+    <nds dtdversion="3.5" ndsversion="8.x">
+      <source>
+        <product version="3.5.1.20070411 ">DirXML</product>
+        <contact>Novell, Inc.</contact>
+      </source>
+      <input>
+        <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver">
+          <authentication-info>
+            <user>authid</user>
+            <password><!-- content suppressed --></password>
+          </authentication-info>
+          <driver-options/>
+          <subscriber-options>
+            <disable display-name="Disable subscriber?">_</disable>
+          </subscriber-options>
+          <publisher-options>
+            <disable display-name="Disable publisher?">_</disable>
+            <pollRate display-name="Polling Interval in Seconds">3</pollRate>
+            <pub-heartbeat-interval display-name="Publisher heartbeat interval in Seconds">3</pub-heartbeat-interval>
+          </publisher-options>
+        </init-params>
+      </input>
+    </nds>
+  </driver-init>
+</top>
+[12/21/2007 10:21:15.46][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:15.46][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+[12/21/2007 10:21:17.51][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received.
+[12/21/2007 10:21:17.54][c:4294967295] Drvrs   : RSADriver :
+<nds dtdversion="2.0">
+  <source>
+    <contact>TriVir</contact>
+    <product instance="RSADriver" version="2.0.2">RSA/ACE IDM Driver</product>
+  </source>
+  <output>
+    <schema-def application-name="RSA/ACE" hierarchical="false">
+      <class-def class-name="User" container="false">
+        <attr-def attr-name="DefaultLogin" case-sensitive="false" multi-valued="false" naming="true" read-only="false" required="true" type="string"/>
+        <attr-def attr-name="DefaultShell" case-sensitive="false" multi-valued="false" naming="false" read-only="false" required="false" type="string"/>
+        <attr-def attr-name="FirstName" case-sensitive="false" multi-valued="false" naming="false" read-only="false" required="true" type="string"/>
+        <attr-def attr-name="LastName" case-sensitive="false" multi-valued="false" naming="false" read-only="false" required="true" type="string"/>
+      </class-def>
+    </schema-def>
+    <status level="success" type="driver-status"/>
+  </output>
+</nds>
+[12/21/2007 10:21:17.54][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received document for subscriber channel
+[12/21/2007 10:21:17.54][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+[12/21/2007 10:21:17.54][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Closing connection...
+[12/21/2007 10:21:17.54][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Connection closed
+[12/21/2007 10:21:17.59][c:4294967295] Drvrs   : RSADriver ST:Remote Interface Driver: end getSchema()
+[12/21/2007 10:21:17.59][c:4294967295] Drvrs   : RSADriver ST:DriverShim.getSchema() returned:
+[12/21/2007 10:21:17.59][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="2.0">
+  <source>
+    <contact>TriVir</contact>
+    <product instance="RSADriver" version="2.0.2">RSA/ACE IDM Driver</product>
+  </source>
+  <output>
+    <schema-def application-name="RSA/ACE" hierarchical="false">
+      <class-def class-name="User" container="false">
+        <attr-def attr-name="DefaultLogin" case-sensitive="false" multi-valued="false" naming="true" read-only="false" required="true" type="string"/>
+        <attr-def attr-name="DefaultShell" case-sensitive="false" multi-valued="false" naming="false" read-only="false" required="false" type="string"/>
+        <attr-def attr-name="FirstName" case-sensitive="false" multi-valued="false" naming="false" read-only="false" required="true" type="string"/>
+        <attr-def attr-name="LastName" case-sensitive="false" multi-valued="false" naming="false" read-only="false" required="true" type="string"/>
+      </class-def>
+    </schema-def>
+    <status level="success" type="driver-status"/>
+  </output>
+</nds>
+[12/21/2007 10:21:19.95][c:4294967295] Drvrs   : RSADriver ST:Reading driver information from the \TESTTREE\resources\EAPDrivers\RSADriver object.
+[12/21/2007 10:21:19.95][c:4294967295] Drvrs   : RSADriver ST:Loading Java shim com.novell.nds.dirxml.remote.driver.DriverShimImpl.
+[12/21/2007 10:21:19.95][c:4294967295] Drvrs   : DirXML Driver <.RSADriver.EAPDrivers.resources.TESTTREE.> requesting password.
+[12/21/2007 10:21:19.96][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-ShimConfigInfo.
+[12/21/2007 10:21:19.98][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <input>
+    <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver">
+      <authentication-info>
+        <server>REMOTE(hostname=172.17.2.38 port=8090 )</server>
+        <user>authid</user>
+        <password><!-- content suppressed --></password>
+      </authentication-info>
+      <driver-options/>
+    </init-params>
+  </input>
+</nds>
+[12/21/2007 10:21:19.99][c:4294967295] Drvrs   : RSADriver ST:DriverShim.init() returned:
+[12/21/2007 10:21:19.99][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="success">
+      <provides-secure-channel>false</provides-secure-channel>
+    </status>
+  </output>
+</nds>
+[12/21/2007 10:21:20.01][c:4294967295] Drvrs   : RSADriver ST:Initializing ECMAScript extensions.
+[12/21/2007 10:21:20.01][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-DriverFilter.
+[12/21/2007 10:21:20.03][c:4294967295] Drvrs   : RSADriver ST:Loaded filter.
+[12/21/2007 10:21:20.03][c:4294967295] Drvrs   : RSADriver ST:
+<filter>
+	<filter-class class-name="User" publisher="sync" subscriber="sync">
+		<filter-attr attr-name="CN" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="ignore"/>
+		<filter-attr attr-name="Given Name" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="ignore"/>
+		<filter-attr attr-name="Surname" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="ignore"/>
+		<filter-attr attr-name="Login Expiration Time" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="ignore"/>
+		<filter-attr attr-name="rsaTokenSerial" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="ignore"/>
+		<filter-attr attr-name="workforceID" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="ignore"/>
+	</filter-class>
+</filter>
+[12/21/2007 10:21:20.04][c:4294967295] Drvrs   : RSADriver ST:Initializing subscriber resources\EAPDrivers\RSADriver\Subscriber for \TESTTREE\resources\EAPDrivers\RSADriver.
+[12/21/2007 10:21:20.04][c:4294967295] DirXML  : RSADriver EV: Setting subscriber thread ID to 5564
+[12/21/2007 10:21:20.06][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber input transformation policies.
+[12/21/2007 10:21:20.06][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.07][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber output transformation policies.
+[12/21/2007 10:21:20.07][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.07][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber schema mapping policies.
+[12/21/2007 10:21:20.09][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/MappingRule#XmlData.
+[12/21/2007 10:21:20.09][c:4294967295] Drvrs   : RSADriver ST:Found schema map.
+[12/21/2007 10:21:20.10][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/MappingRule#XmlData.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Found schema map.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Loading policies.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber event transformation policies.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber object matching policies.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber object creation policies.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber object placement policies.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Loading Subscriber command transformation policies.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.14][c:4294967295] Drvrs   : RSADriver ST:Mapping sensitive attribute names to application space
+[12/21/2007 10:21:20.15][c:4294967295] Drvrs   : RSADriver ST:Initializing subscriber shim.
+[12/21/2007 10:21:20.15][c:4294967295] Drvrs   : DirXML Driver <.RSADriver.EAPDrivers.resources.TESTTREE.> requesting password.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-ShimConfigInfo.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Applying policy: MappingRule.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:  Mapping class-name 'User' to 'User'.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <input>
+    <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver\Subscriber">
+      <authentication-info>
+        <server>REMOTE(hostname=172.17.2.38 port=8090 )</server>
+        <user>authid</user>
+        <password><!-- content suppressed --></password>
+      </authentication-info>
+      <driver-filter>
+        <allow-class class-name="User"/>
+      </driver-filter>
+      <subscriber-options>
+        <disable display-name="Disable subscriber?">_</disable>
+      </subscriber-options>
+    </init-params>
+  </input>
+</nds>
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:SubscriptionShim.init() returned:
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="success"/>
+  </output>
+</nds>
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:No input transformation policies.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Applying schema mapping policies to input.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Applying policy: MappingRule.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Resolving association references.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Applying policy: MappingRule.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:  Mapping class-name 'User' to 'User'.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:  Mapping attr-name 'DefaultLogin' to 'CN'.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:  Mapping attr-name 'FirstName' to 'Given Name'.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:  Mapping attr-name 'LastName' to 'Surname'.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Application DN form: slash.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Creating publisher.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher input transformation policies.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher output transformation policies.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher schema mapping policies.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/MappingRule#XmlData.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Found schema map.
+[12/21/2007 10:21:20.43][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/MappingRule#XmlData.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Found schema map.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher event transformation policies.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher object matching policies.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Policy not found.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher object creation policies.
+[12/21/2007 10:21:20.46][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/Publisher/PN-RequiredAttrs#XmlData.
+[12/21/2007 10:21:20.49][c:4294967295] Drvrs   : RSADriver ST:Found DirXMLScript policy.
+[12/21/2007 10:21:20.73][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher object placement policies.
+[12/21/2007 10:21:20.73][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/Publisher/PP-PlaceUsers#XmlData.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver ST:Found DirXMLScript policy.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver ST:Loading Publisher command transformation policies.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver ST:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver/Publisher/PC-Construct+RSAToken+combined+attr#XmlData.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver ST:Found DirXMLScript policy.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver ST:Creating publisher thread.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver ST:Publisher thread created.
+[12/21/2007 10:21:20.74][c:4294967295] DirXML  : ENG EV: SetDriverStateHandler: setting driver <.RSADriver.EAPDrivers.resources.TESTTREE.> state to <1>
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:In publisher thread.
+[12/21/2007 10:21:20.74][c:4294967295] DirXML  : RSADriver EV: Setting publisher thread ID to 7548
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : DirXML Driver <.RSADriver.EAPDrivers.resources.TESTTREE.> requesting password.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Reading XML attribute vnd.nds.stream://TESTTREE/resources/EAPDrivers/RSADriver#DirXML-ShimConfigInfo.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:  Mapping attr-name 'CN' to 'DefaultLogin'.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:  Mapping attr-name 'Given Name' to 'FirstName'.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:  Mapping attr-name 'rsaTokenSerial' to 'TokenSerialNumber'.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:  Mapping attr-name 'Surname' to 'LastName'.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:  Mapping attr-name 'workforceID' to 'FUNDID'.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:  Mapping class-name 'User' to 'User'.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Initializing publisher shim.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <input>
+    <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver\Publisher">
+      <authentication-info>
+        <server>REMOTE(hostname=172.17.2.38 port=8090 )</server>
+        <user>authid</user>
+        <password><!-- content suppressed --></password>
+      </authentication-info>
+      <driver-filter>
+        <allow-class class-name="User">
+          <allow-attr attr-name="DefaultLogin"/>
+          <allow-attr attr-name="FirstName"/>
+          <allow-attr attr-name="Login Expiration Time"/>
+          <allow-attr attr-name="TokenSerialNumber"/>
+          <allow-attr attr-name="LastName"/>
+          <allow-attr attr-name="FUNDID"/>
+        </allow-class>
+      </driver-filter>
+      <publisher-options>
+        <disable display-name="Disable publisher?">_</disable>
+        <pollRate display-name="Polling Interval in Seconds">3</pollRate>
+        <pub-heartbeat-interval display-name="Publisher heartbeat interval in Seconds">3</pub-heartbeat-interval>
+      </publisher-options>
+    </init-params>
+  </input>
+</nds>
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:PublicationShim.init() returned:
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="success"/>
+  </output>
+</nds>
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:No input transformation policies.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to input.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Resolving association references.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:Receiving DOM document from application.
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <input>
+    <query dest-dn="\TESTTREE\resources\EAPDrivers\RSADriver" scope="entry">
+      <read-attr attr-name="Public Key"/>
+    </query>
+  </input>
+</nds>
+[12/21/2007 10:21:20.74][c:4294967295] Drvrs   : RSADriver PT:No input transformation policies.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to input.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver PT:  No mapping for attr-name 'Public Key'.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver PT:Resolving association references.
+[12/21/2007 10:21:20.76][c:4294967295] DirXML  : ENG EV: SetDriverStateHandler: reporting state change to <1> for driver <.RSADriver.EAPDrivers.resources.TESTTREE.>
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver ST:Starting event loop.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver ST:Received state change event.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver ST:Transitioned from state 'Stopped' to state 'Starting'.
+[12/21/2007 10:21:20.76][c:4294967295] DirXML  : ENG EV: SetDriverStateHandler: setting driver <.RSADriver.EAPDrivers.resources.TESTTREE.> state to <2>
+[12/21/2007 10:21:20.76][c:4294967295] DirXML  : ENG EV: SetDriverStateHandler: reporting state change to <2> for driver <.RSADriver.EAPDrivers.resources.TESTTREE.>
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver ST:Successfully processed state change event.
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver ST:Submitting identification query to subscriber shim:
+[12/21/2007 10:21:20.76][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <input>
+    <query event-id="query-driver-ident" scope="entry">
+      <search-class class-name="__driver_identification_class__"/>
+      <read-attr/>
+    </query>
+  </input>
+</nds>
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:No event transformation policies.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Skipping publisher filter on operation query.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Publisher processing query for .
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying command transformation policies.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying policy: PC-Construct RSAToken combined attr.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:  Applying to query #1.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:    Evaluating selection criteria for rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:      (if-class-name not-equal "User") = TRUE.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:    Rule selected.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:    Applying rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:      Action: do-break().
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Policy returned:
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <input>
+    <query dest-dn="\TESTTREE\resources\EAPDrivers\RSADriver" scope="entry">
+      <read-attr attr-name="Public Key"/>
+    </query>
+  </input>
+</nds>
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Filtering out notification-only attributes.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Pumping XDS to eDirectory.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Performing operation query for \TESTTREE\resources\EAPDrivers\RSADriver.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Fixing up association references.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to output.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:  No mapping for class-name 'DirXML-Driver'.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:No output transformation policies.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <output>
+    <instance class-name="DirXML-Driver" event-id="0" qualified-src-dn="O=resources\CN=EAPDrivers\CN=RSADriver" src-dn="\TESTTREE\resources\EAPDrivers\RSADriver" src-entry-id="33089">
+      <attr attr-name="Public Key">
+        <value timestamp="1198256761#2" type="octet">AQAAAAQAAAA0AIIAAABAATQATgC9AAAAAABDAE4APQBFAEEAUABEAHIAaQB2AGUAcgBzAC4ATwA9AHIAZQBzAG8AdQByAGMAZQBzAAAAQwBOAD0AUgBTAEEARAByAGkAdgBlAHIALgBDAE4APQBFAEEAUABEAHIAaQB2AGUAcgBzAC4ATwA9AHIAZQBzAG8AdQByAGMAZQBzAAAAAQAAAAMAAQCzAEJWBAAxLjdiQkMBAANCQQEAMEJMAgCkAU5OOABXA4j/LpWx0+vdG4ti+CsNn5vzbFca2L2yLmf20mPQYZw3nhcj+o2iCX1rW+0/ZW5K5DAvCwAAAE5JPgAIDzFvYkT5owRm68t55mVfYLvEHWRax/66n9SUlrHUqz/fT9aMWXiXAR1cr1U/H6XRUief4xYAAAAAAAAAAEVOBQABAAEAAE1BCACHs9YbhUJ1+KsAUFVSU0FGbw==</value>
+      </attr>
+    </instance>
+    <status event-id="0" level="success"></status>
+  </output>
+</nds>
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Receiving DOM document from application.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <input>
+    <check-password event-id="This check-password result is expected. It is the result of the shim verifying that the driver object password is non-empty."><!-- content suppressed --></check-password>
+  </input>
+</nds>
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:No input transformation policies.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to input.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Resolving association references.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:No event transformation policies.
+[12/21/2007 10:21:20.78][c:4294967295] Drvrs   : RSADriver PT:Applying publisher filter.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Publisher processing check-password for .
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Applying command transformation policies.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Applying policy: PC-Construct RSAToken combined attr.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:  Applying to check-password #1.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:    Evaluating selection criteria for rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:      (if-class-name not-equal "User") = TRUE.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:    Rule selected.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:    Applying rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:      Action: do-break().
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Policy returned:
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <input>
+    <check-password event-id="This check-password result is expected. It is the result of the shim verifying that the driver object password is non-empty."><!-- content suppressed --></check-password>
+  </input>
+</nds>
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Filtering out notification-only attributes.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Pumping XDS to eDirectory.
+[12/21/2007 10:21:20.82][c:4294967295] Drvrs   : RSADriver PT:Performing operation check-password for .
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:SubscriptionShim.execute() returned:
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="retry" type="remoteloader">No connection to remote loader</status>
+  </output>
+</nds>
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:Requesting 30 second retry delay.
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:
+DirXML Log Event -------------------
+     Driver:   \TESTTREE\resources\EAPDrivers\RSADriver
+     Channel:  Subscriber
+     Status:   Retry
+     Message:  Code(-9006) The driver returned a "retry" status indicating that the operation should be retried later. Detail from driver: No connection to remote loader
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:Received state change event.
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:Transitioned from state 'Starting' to state 'Running'.
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:Successfully processed state change event.
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:Submitting identification query to subscriber shim:
+[12/21/2007 10:21:21.76][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <input>
+    <query event-id="query-driver-ident" scope="entry">
+      <search-class class-name="__driver_identification_class__"/>
+      <read-attr/>
+    </query>
+  </input>
+</nds>
+[12/21/2007 10:21:22.76][c:4294967295] Drvrs   : RSADriver ST:SubscriptionShim.execute() returned:
+[12/21/2007 10:21:22.76][c:4294967295] Drvrs   : RSADriver ST:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="retry" type="remoteloader">No connection to remote loader</status>
+  </output>
+</nds>
+[12/21/2007 10:21:22.76][c:4294967295] Drvrs   : RSADriver ST:Requesting 30 second retry delay.
+[12/21/2007 10:21:22.76][c:4294967295] Drvrs   : RSADriver ST:
+DirXML Log Event -------------------
+     Driver:   \TESTTREE\resources\EAPDrivers\RSADriver
+     Channel:  Subscriber
+     Status:   Retry
+     Message:  Code(-9006) The driver returned a "retry" status indicating that the operation should be retried later. Detail from driver: No connection to remote loader
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Fixing up association references.
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to output.
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:No output transformation policies.
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <output>
+    <status event-id="This check-password result is expected. It is the result of the shim verifying that the driver object password is non-empty." level="error">Code(-9046) Invalid password specified for &lt;check-password>.</status>
+  </output>
+</nds>
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Opening connection...
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Client socket parameters: hostname = '172.17.2.38' port = 8090'
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Creating a standard Socket
+[12/21/2007 10:21:24.34][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Connection established...
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Sending...
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:
+<handshake version="1.0">
+  <password><!-- content suppressed --></password>
+</handshake>
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver :
+<handshake version="1.0">
+  <password><!-- content suppressed --></password>
+</handshake>
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received document for subscriber channel
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Receiving DOM document from application.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <input>
+    <check-password><!-- content suppressed --></check-password>
+  </input>
+</nds>
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:No input transformation policies.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to input.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Resolving association references.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:No event transformation policies.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Applying publisher filter.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Publisher processing check-password for .
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Applying command transformation policies.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Applying policy: PC-Construct RSAToken combined attr.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:  Applying to check-password #1.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:    Evaluating selection criteria for rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:      (if-class-name not-equal "User") = TRUE.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:    Rule selected.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:    Applying rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:      Action: do-break().
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Policy returned:
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <input>
+    <check-password><!-- content suppressed --></check-password>
+  </input>
+</nds>
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Filtering out notification-only attributes.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Pumping XDS to eDirectory.
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver PT:Performing operation check-password for .
+[12/21/2007 10:21:24.35][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Fixing up association references.
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to output.
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:No output transformation policies.
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <output>
+    <status event-id="0" level="success"></status>
+  </output>
+</nds>
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Sending...
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status level="success"/>
+  </output>
+</nds>
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Sending...
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:
+<top>
+  <driver-init>
+    <nds dtdversion="3.5" ndsversion="8.x">
+      <source>
+        <product version="3.5.1.20070411 ">DirXML</product>
+        <contact>Novell, Inc.</contact>
+      </source>
+      <input>
+        <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver">
+          <authentication-info>
+            <user>authid</user>
+            <password><!-- content suppressed --></password>
+          </authentication-info>
+          <driver-options/>
+        </init-params>
+      </input>
+    </nds>
+  </driver-init>
+  <subscriber-init>
+    <nds dtdversion="3.5" ndsversion="8.x">
+      <source>
+        <product version="3.5.1.20070411 ">DirXML</product>
+        <contact>Novell, Inc.</contact>
+      </source>
+      <input>
+        <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver\Subscriber">
+          <authentication-info>
+            <user>authid</user>
+            <password><!-- content suppressed --></password>
+          </authentication-info>
+          <driver-filter>
+            <allow-class class-name="User"/>
+          </driver-filter>
+          <subscriber-options>
+            <disable display-name="Disable subscriber?">_</disable>
+          </subscriber-options>
+        </init-params>
+      </input>
+    </nds>
+  </subscriber-init>
+  <publisher-init>
+    <nds dtdversion="3.5" ndsversion="8.x">
+      <source>
+        <product version="3.5.1.20070411 ">DirXML</product>
+        <contact>Novell, Inc.</contact>
+      </source>
+      <input>
+        <init-params src-dn="\TESTTREE\resources\EAPDrivers\RSADriver\Publisher">
+          <authentication-info>
+            <user>authid</user>
+            <password><!-- content suppressed --></password>
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   :           </authentication-info>
+          <driver-filter>
+            <allow-class class-name="User">
+              <allow-attr attr-name="DefaultLogin"/>
+              <allow-attr attr-name="FirstName"/>
+              <allow-attr attr-name="Login Expiration Time"/>
+              <allow-attr attr-name="TokenSerialNumber"/>
+              <allow-attr attr-name="LastName"/>
+              <allow-attr attr-name="FUNDID"/>
+            </allow-class>
+          </driver-filter>
+          <publisher-options>
+            <disable display-name="Disable publisher?">_</disable>
+            <pollRate display-name="Polling Interval in Seconds">3</pollRate>
+            <pub-heartbeat-interval display-name="Publisher heartbeat interval in Seconds">3</pub-heartbeat-interval>
+          </publisher-options>
+        </init-params>
+      </input>
+    </nds>
+  </publisher-init>
+</top>
+[12/21/2007 10:21:24.43][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver :
+<nds dtdversion="3.5" ndsversion="8.x">
+  <output>
+    <status event-id="report status" level="success">Remote driver successfully started</status>
+    <init-params event-id="write-state"/>
+  </output>
+</nds>
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received document for subscriber channel
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Receiving DOM document from application.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x" remote-interface="yes">
+  <input>
+    <status event-id="report status" level="success">Remote driver successfully started</status>
+    <init-params event-id="write-state"/>
+  </input>
+</nds>
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:No input transformation policies.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to input.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Resolving association references.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:No event transformation policies.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying publisher filter.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Publisher processing status for .
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying command transformation policies.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying policy: PC-Construct RSAToken combined attr.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:  Applying to status #1.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:    Evaluating selection criteria for rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:      (if-class-name not-equal "User") = TRUE.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:    Rule selected.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:    Applying rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:      Action: do-break().
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Policy returned:
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x" remote-interface="yes">
+  <input>
+    <status event-id="report status" level="success">Remote driver successfully started</status>
+  </input>
+</nds>
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Filtering out notification-only attributes.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Pumping XDS to eDirectory.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Performing operation status for .
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:
+DirXML Log Event -------------------
+     Driver:   \TESTTREE\resources\EAPDrivers\RSADriver
+     Channel:  Publisher
+     Status:   Success
+     Message:  Remote driver successfully started
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying publisher filter.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Publisher processing init-params for .
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying command transformation policies.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying policy: PC-Construct RSAToken combined attr.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:  Applying to init-params #1.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:    Evaluating selection criteria for rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:      (if-class-name not-equal "User") = TRUE.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:    Rule selected.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:    Applying rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:      Action: do-break().
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Policy returned:
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x" remote-interface="yes">
+  <input>
+    <init-params event-id="write-state"/>
+  </input>
+</nds>
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Filtering out notification-only attributes.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Pumping XDS to eDirectory.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:
+DirXML Log Event -------------------
+     Driver:   \TESTTREE\resources\EAPDrivers\RSADriver
+     Channel:  Publisher
+     Status:   Success
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Fixing up association references.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to output.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:25.31][c:4294967295] Drvrs   : RSADriver PT:No output transformation policies.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <output>
+    <status event-id="report status" level="success"></status>
+    <status event-id="write-state" level="success"><application>DirXML</application>
+      <module>RSADriver</module>
+      <object-dn></object-dn>
+      <component>Publisher</component>
+    </status>
+  </output>
+</nds>
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver :
+<nds dtdversion="2.0">
+  <input>
+    <status level="success" type="heartbeat"/>
+  </input>
+</nds>
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Received document for publisher channel
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Receiving DOM document from application.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="2.0">
+  <input>
+    <status level="success" type="heartbeat"/>
+  </input>
+</nds>
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:No input transformation policies.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to input.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Resolving association references.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:No event transformation policies.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying publisher filter.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Publisher processing status for .
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying command transformation policies.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying policy: PC-Construct RSAToken combined attr.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:  Applying to status #1.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:    Evaluating selection criteria for rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:      (if-class-name not-equal "User") = TRUE.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:    Rule selected.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:    Applying rule 'Is User add with RSATokenSerial'.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:      Action: do-break().
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Policy returned:
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="2.0">
+  <input>
+    <status level="success" type="heartbeat"/>
+  </input>
+</nds>
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Filtering out notification-only attributes.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Pumping XDS to eDirectory.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Performing operation status for .
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:
+DirXML Log Event -------------------
+     Driver:   \TESTTREE\resources\EAPDrivers\RSADriver
+     Channel:  Publisher
+     Status:   Success
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Fixing up association references.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying schema mapping policies to output.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Applying policy: MappingRule.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:No output transformation policies.
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <output>
+    <status event-id="0" level="success"></status>
+  </output>
+</nds>
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Sending...
+[12/21/2007 10:21:25.53][c:4294967295] Drvrs   : RSADriver PT:
+<nds dtdversion="3.5" ndsversion="8.x">
+  <source>
+    <product version="3.5.1.20070411 ">DirXML</product>
+    <contact>Novell, Inc.</contact>
+  </source>
+  <output>
+    <status event-id="0" level="success"></status>
+  </output>
+</nds>
+[12/21/2007 10:21:25.54][c:4294967295] Drvrs   : RSADriver PT:Remote Interface Driver: Document sent.
+[12/21/2007 10:21:25.54][c:4294967295] Drvrs   : RSADriver :Remote Interface Driver: Waiting for receive...
+*** Novell eDirectory Trace Utility - END   Logging *** Fri Dec 21 10:21:27 2007

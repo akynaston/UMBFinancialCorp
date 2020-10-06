@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <public publicId="dirxmlfilter" uri="C:\Program Files (x86)\Novell\Designer\plugins\com.novell.idm.filter_4.0.0.201206110753\DTD\dirxmlfilter.dtd"/>
+  <public publicId="policy-builder-dtd" uri="C:\Program Files\Novell\Designer\plugins\com.novell.idm.policybuilder_4.0.0.201103141202\DTD\dirxmlscript4.0.dtd"/>
+  <public publicId="nds_2" uri="C:\Program Files (x86)\Novell\Designer\plugins\com.novell.idm.schemamap_4.0.0.201206110753\DTD\nds_2.dtd"/>
+</catalog>

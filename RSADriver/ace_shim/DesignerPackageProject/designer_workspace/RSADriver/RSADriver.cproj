@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.idm.model:IdmAdapterProject xmlns:com.novell.idm.model="http://com.novell.idm.model" name="RSADriver">
+  <relations name="Roots" type="Child" key="#IdentityManager.CRoot_"/>
+  <relations name="Roots" type="Child" key="#Project.CRoot_"/>
+  <relations name="Roots" type="Child" key="#EdirOrphan.CRoot_"/>
+</com.novell.idm.model:IdmAdapterProject>

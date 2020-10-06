@@ -1,0 +1,13 @@
+To enable debug logging for the publisher polling, edit the logging.properties file in the jre/lib directory and make the following changes:
+
+* Add a file handler
+handlers= java.util.logging.FileHandler, java.util.logging.ConsoleHandler
+
+* Change the formatter for the file handler
+java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
+
+* Change the level of the console handler if you want more than info displayed on the console
+java.util.logging.ConsoleHandler.level = FINEST
+
+* Set the level for the logger
+com.trivir.idm.driver.ace.level = FINEST

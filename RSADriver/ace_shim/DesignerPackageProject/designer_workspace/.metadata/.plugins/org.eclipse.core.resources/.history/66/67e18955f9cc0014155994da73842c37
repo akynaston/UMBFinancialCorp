@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:com.novell.designer.model="http://com.novell.designer.model" name="Subscriber" type="Subscriber">
+  <relations name="Idm:CreatePolicies" type="Reference" key="#R2LCD023.ScriptPolicy_"/>
+  <relations name="Idm:EventPolicies" type="Reference" key="#K0YM81FX.ScriptPolicy_"/>
+  <relations name="Idm:MatchingPolicies" type="Reference" key="#L1FYKA5N.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#R2LCD023.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#K0YM81FX.ScriptPolicy_"/>
+  <relations name="Idm:Policies" type="Child" key="#L1FYKA5N.ScriptPolicy_"/>
+</com.novell.designer.model:CObject>

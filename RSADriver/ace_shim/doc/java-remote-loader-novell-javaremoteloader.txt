@@ -1,0 +1,67 @@
+#!/bin/bash
+# -- [ Remote loader startup and shutdown script ] --
+# Based on script from here, with some chkconfig items added: https://www.novell.com/coolsolutions/feature/16975.html
+# status from "https://www.netiq.com/communities/cool-solutions/status-checking-script-dirxml-remote-loader/"
+# Copy this file to /etc/init.d/novell-javaremoteloader, then install
+# it as a service: chkconfig --add novell-javaremoteloader
+# 
+
+
+### BEGIN INIT INFO
+# Provides: novell-javaremoteloader
+# Required-Start: $null
+# Required-Stop: $null
+# Should-Start: $null
+# Should-Stop: $null
+# Default-Start: 3 5
+# Default-Stop: 0 1 2 6
+# Description: Starts/Stops the novell java remote loader, specifically built for the TriVir RSA driver.
+### END INIT INFO
+
+DIRXML_HOME="/opt/novell/idm/javaRemoteLoader"
+DIRXML_CONF="/opt/novell/idm/javaRemoteLoader/config8000.txt"
+REMOTELOADER="/opt/novell/idm/javaRemoteLoader/dirxml_jremote"
+REMOTELOADERPASSWD="trivir"
+DRIVERPASSWD="trivir"
+PIDFILE="/var/run/remoteloader.pid"
+RLPORT=8090
+
+case "$1" in
+
+       "start" )
+               /bin/echo -n "Setting up DirXML Remote Loader..."
+               cd $DIRXML_HOME
+               $REMOTELOADER -config $DIRXML_CONF -sp $REMOTELOADERPASSWD $DRIVERPASSWD
+               /bin/echo -n "Starting the DirXML Remote Loader..."
+               $REMOTELOADER -config $DIRXML_CONF &
+               sleep 1s
+               # This is probably not the best way to get the PID, but it certainly works. Change 8003 to whatever the local listening port is.
+               netstat -plant | grep LIST | grep java | grep $RLPORT |awk '{print $7}' | awk -F "/" '{print $1}' > $PIDFILE
+               echo "done"
+       ;;
+
+       "stop" )
+               /bin/echo -n "Stopping the DirXML Remote Loader..."
+               /bin/kill `cat $PIDFILE`
+               rm -f $PIDFILE
+               /bin/echo "done"
+       ;;
+
+       "status" )
+              PRG_PID=`cat $PIDFILE`
+              if [ "$PRG_PID" ]; then
+                  echo "DirXML Remote Loader is running with pid $PRG_PID"
+                  exit 0
+              else
+                  echo "DirXML Remote Loader is not running"
+                  exit 1
+              fi
+       ;;
+
+       * )
+               /bin/echo "Usage: /etc/init.d/novell-remoteloader {start|stop}"
+               exit 1
+       ;;
+esac
+
+exit 0

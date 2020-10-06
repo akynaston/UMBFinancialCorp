@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novell.designer.model:CObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.novell.designer.model="http://com.novell.designer.model" name="ep4dfu2M60uTVz3arVfQ3A==" type="Idm:deploydata">
+  <attributes xsi:type="com.novell.designer.model:CString" attrName="name" value=".RSADEVTREE."/>
+  <attributes xsi:type="com.novell.designer.model:CStructure" attrName="DeletedChildMap">
+    <attributes xsi:type="com.novell.designer.model:CStructure" attrName="I5OZB3MK">
+      <attributes xsi:type="com.novell.designer.model:CString" attrName="DeployedURI" value="RSA-ACE.Driver Set.services"/>
+      <attributes xsi:type="com.novell.designer.model:CString" attrName="DeployedGuid" value="cNqSrqCyNkyUsgwgv4IRog=="/>
+    </attributes>
+  </attributes>
+</com.novell.designer.model:CObject>

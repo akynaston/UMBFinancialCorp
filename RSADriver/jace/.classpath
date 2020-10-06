@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/**" kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="../jace/native/windows/Release"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**/.svn/**" kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3.8.1"/>
+	<classpathentry exported="true" kind="lib" path="C:/Work/RSADriver/jace/lib/rsa8_1/am-client.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8/iScreen.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8/ognl.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8/wlfullclient.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8_1/spring-asm.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8_1/spring-beans.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8_1/spring-context.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8_1/spring-core.jar"/>
+	<classpathentry kind="lib" path="lib/rsa8_1/spring-expression.jar"/>
+	<classpathentry kind="output" path="bin1"/>
+</classpath>

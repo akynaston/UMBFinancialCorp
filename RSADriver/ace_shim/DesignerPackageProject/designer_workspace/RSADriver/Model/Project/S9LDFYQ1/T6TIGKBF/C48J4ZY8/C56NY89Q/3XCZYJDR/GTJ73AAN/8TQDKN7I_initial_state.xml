@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object ds-object-class="DirXML-Rule" ds-object-name="Subscriber Match User" name="Subscriber Match User">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<policy>
+					<rule>
+						<description>Exit if not user</description>
+						<conditions>
+							<and>
+								<if-class-name mode="nocase" op="not-equal">User</if-class-name>
+							</and>
+						</conditions>
+						<actions>
+							<do-break/>
+						</actions>
+					</rule>
+					<rule>
+						<description>Exit if CN not available</description>
+						<conditions>
+							<and>
+								<if-op-attr name="CN" op="not-available"/>
+							</and>
+						</conditions>
+						<actions>
+							<do-break/>
+						</actions>
+					</rule>
+					<rule>
+						<description>Execute user match</description>
+						<conditions/>
+						<actions>
+							<do-find-matching-object scope="subtree">
+								<arg-match-attr name="CN"/>
+							</do-find-matching-object>
+						</actions>
+					</rule>
+				</policy>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>8TQDKN7I_201103251338260041</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>255449908</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

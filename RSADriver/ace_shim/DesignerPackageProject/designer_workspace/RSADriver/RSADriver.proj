@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><com.novell.idm.model:Project cprojectURI="RSADriver/RSADriver.cproj" domainURI="IdentityManager/PXE7W0KB.domain" guid="1F8HIA6L" name="RSADriver" productID="4.0" type="Project" version="4.0" xmlns:com.novell.idm.model="http://com.novell.idm.model">
+  <modelerNodes href="Model/IdentityManager/ZLPWDKDS.ModelerNodes_#/"/>
+  <adapterProject href="RSADriver.cproj#/"/>
+</com.novell.idm.model:Project>

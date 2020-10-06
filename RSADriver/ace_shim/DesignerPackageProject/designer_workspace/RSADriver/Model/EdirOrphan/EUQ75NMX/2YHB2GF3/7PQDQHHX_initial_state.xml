@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><ds-object DirXML-ContentType="application/vnd.novell.dirxml.filter-ext+xml" ds-object-class="DirXML-Resource" ds-object-name="TRVRRSADCFG-Filter" name="TRVRRSADCFG-Filter">
+	<ds-attributes>
+		<ds-attribute ds-attr-name="XmlData">
+			<ds-value>
+				<filter>
+					<filter-class class-name="User" publisher="sync" subscriber="sync">
+						<filter-attr attr-name="CN" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+						<filter-attr attr-name="Given Name" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+						<filter-attr attr-name="Surname" merge-authority="default" publisher="sync" publisher-optimize-modify="true" subscriber="sync"/>
+						<filter-attr attr-name="nspmDistributionPassword" merge-authority="default" publisher="ignore" publisher-optimize-modify="true" subscriber="sync"/>
+					</filter-class>
+				</filter>
+			</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-installationdirective">
+			<ds-value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48aW5zdGFsbGF0aW9uLWRpcmVjdGl2ZT4KCTxwbGFjZW1lbnQgbG9jYXRpb249ImRlZmF1bHQiLz4KCTxkcy1hdHRyaWJ1dGVzLz4KPC9pbnN0YWxsYXRpb24tZGlyZWN0aXZlPg==</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-directivechecksum">
+			<ds-value>2768975614</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageassocguid">
+			<ds-value>18VU057I_201103251045570260</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-packageguid">
+			<ds-value>3XCZYJDR_201103250934350416</ds-value>
+		</ds-attribute>
+		<ds-attribute ds-attr-name="idm-contentchecksum">
+			<ds-value>2986930220</ds-value>
+		</ds-attribute>
+	</ds-attributes>
+</ds-object>

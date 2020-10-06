@@ -31,16 +31,11 @@
         <buildnumber/>
     </target>
 
-	<!-- 
-		This target not called for now, not sending ace_conn in first release as it doesn't build, and wasn't explicitly asked for.
-	-->
 	<target name="build-ace_conn">
-		<!--
-			<antcall C:\work\UMBBank\RSADriver\ace_conn
-		-->		
+		<ant antfile="RSADriver/ace_conn"/>
 	</target>
 	
-    <target name="dist-idmunit" depends="init">
+    <target name="dist-idmunit" depends="init, build-ace_conn">
 		<mkdir dir="${build.dir}"/>
         
         <zip destfile="${build.dir}/${customer.name}-IdMUnitTests.zip">
@@ -52,10 +47,14 @@
 
             <!-- Get the main libraries: -->
             <zipfileset dir="${idmunit-lib.dir}" prefix="${customer.name}-IdMUnitTests/lib"/>
+			
+			<!-- Get the ace_conn libraries: -->
+			<zipfileset file="RSADriver\ace_conn\dist\ace_conn.jar" fullpath="${customer.name}-IdMUnitTests/lib/ace_conn.jar"/>
             
             <zipfileset file="${build.dir}/idmunit-configTEMP.xml" fullpath="${customer.name}-IdMUnitTests/test/idmunit-config.xml"/>
         </zip>
     </target>
+	
 	
 	<target name="dist" depends="init, dist-idmunit"> <!-- , build-ace_conn"> -->
 

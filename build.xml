@@ -32,7 +32,7 @@
     </target>
 
 	<target name="build-ace_conn">
-		<ant antfile="RSADriver/ace_conn"/>
+		<ant antfile="RSADriver/ace_conn" target="dist"/>
 	</target>
 	
     <target name="dist-idmunit" depends="init, build-ace_conn">

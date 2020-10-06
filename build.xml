@@ -31,7 +31,9 @@
         <buildnumber/>
     </target>
 
+	
 	<target name="build-ace_conn">
+		<echo>***** For this to build properly in its current state, you'll need to remove 'checkstyle' from idmunit-core's dependencies as it doesn't pass! **</echo>
 		<ant target="dist" dir="RSADriver/ace_conn"/>
 	</target>
 	

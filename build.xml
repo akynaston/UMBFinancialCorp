@@ -38,6 +38,7 @@
 	</target>
 
 	<target name="build-idmunit-core">
+		<echo>***** Please run getidmunit-core.git to get a copy of the core we used *** </echo>
 		<ant target="dist" dir="idmunit-core"/>
 	</target>
 

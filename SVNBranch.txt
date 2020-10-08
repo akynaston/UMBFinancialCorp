@@ -1,3 +1,0 @@
-https://src.trivir.com/product/RSADriver/branches/UMBBank:622
-https://src.trivir.com/product/IdMUnitEnterprise/branches/IdMUnit-CustomerVersion:13609
-

@@ -1,0 +1,1 @@
+git clone ssh://git@git.trivir.com:7999/idmunit/idmunit-core.git

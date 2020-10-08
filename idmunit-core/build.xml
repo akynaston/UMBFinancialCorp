@@ -30,7 +30,7 @@
         </tstamp>
     </target>
 
-    <target name="compile" depends="checkstyle">
+    <target name="compile" depends="">
         <mkdir dir="${build.dir}/classes"/>
 
         <javac srcdir="${src.dir}" destdir="${build.dir}/classes" failonerror="true" source="1.5" target="1.5"

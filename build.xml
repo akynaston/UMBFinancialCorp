@@ -36,6 +36,11 @@
 		<echo>***** For this to build properly in its current state, you'll need to remove 'checkstyle' from idmunit-core's dependencies as it doesn't pass! **</echo>
 		<ant target="dist" dir="RSADriver/ace_conn"/>
 	</target>
+
+	<target name="build-idmunit-core">
+		<ant target="dist" dir="idmunit-core"/>
+	</target>
+
 	
     <target name="dist-idmunit" depends="init, build-ace_conn">
 		<mkdir dir="${build.dir}"/>
@@ -58,7 +63,7 @@
     </target>
 	
 	
-	<target name="dist" depends="init, dist-idmunit"> <!-- , build-ace_conn"> -->
+	<target name="dist" depends="init, build-idmunit-core, dist-idmunit, build-ace_conn">
 
         <!-- Set up rev filter -->
         <filter token="BUILD_AND_REV" value="${iteration}.${build.number}"/>

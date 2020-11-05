@@ -10,7 +10,7 @@ doc\readme.txt: RSA readme, delivered previously.
 doc\rsa.pdf: RSA documentation delivered previously.
 export\RSA-vanilla-from-packages: - Latest TriVir RSA Driver XML created from the designer packages included in the RSA delivery zip.
 README.txt: this file
-RSA-ACE-driver-2.1.62.zip: latest ACE driver shim, and corresponding 
+RSA-ACE-driver-2.1.62.zip: latest ACE driver shim, and libraries.
 UMBBank-IdMUnitTests.zip: Latest Designer importable project 'archive' of the IdMUnit customer release, version 2.1.54-b31
 	 - This file can be directly imported as an 'archived' java project into Designer.
 	 
@@ -39,3 +39,6 @@ CHANGELOG:
 
 Release 1.0 (Release 1, build 0)
  - Delivery of the requested files from the SOW, as listed above.
+
+Release (NEXT)
+ - Fixed some documentation issues.
